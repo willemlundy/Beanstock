@@ -13,6 +13,7 @@
 		B2AD2D9C1BE9A560006EFD53 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B2AD2D9A1BE9A560006EFD53 /* Main.storyboard */; };
 		B2AD2D9E1BE9A560006EFD53 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B2AD2D9D1BE9A560006EFD53 /* Assets.xcassets */; };
 		B2AD2DA11BE9A560006EFD53 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B2AD2D9F1BE9A560006EFD53 /* LaunchScreen.storyboard */; };
+		B2AD2DF31BE9B32A006EFD53 /* AddBeanViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B2AD2DF21BE9B32A006EFD53 /* AddBeanViewController.m */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,8 @@
 		B2AD2D9D1BE9A560006EFD53 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B2AD2DA01BE9A560006EFD53 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B2AD2DA21BE9A560006EFD53 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B2AD2DF11BE9B32A006EFD53 /* AddBeanViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddBeanViewController.h; sourceTree = "<group>"; };
+		B2AD2DF21BE9B32A006EFD53 /* AddBeanViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddBeanViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +66,8 @@
 				B2AD2D971BE9A560006EFD53 /* ViewController.h */,
 				B2AD2D981BE9A560006EFD53 /* ViewController.m */,
 				B2AD2D9A1BE9A560006EFD53 /* Main.storyboard */,
+				B2AD2DF11BE9B32A006EFD53 /* AddBeanViewController.h */,
+				B2AD2DF21BE9B32A006EFD53 /* AddBeanViewController.m */,
 				B2AD2D9D1BE9A560006EFD53 /* Assets.xcassets */,
 				B2AD2D9F1BE9A560006EFD53 /* LaunchScreen.storyboard */,
 				B2AD2DA21BE9A560006EFD53 /* Info.plist */,
@@ -149,6 +154,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B2AD2DF31BE9B32A006EFD53 /* AddBeanViewController.m in Sources */,
 				B2AD2D991BE9A560006EFD53 /* ViewController.m in Sources */,
 				B2AD2D961BE9A560006EFD53 /* AppDelegate.m in Sources */,
 				B2AD2D931BE9A560006EFD53 /* main.m in Sources */,
