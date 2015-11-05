@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" initialViewController="01J-lp-oVM">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9059" systemVersion="15A284" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" initialViewController="01J-lp-oVM">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -17,22 +18,46 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="BeanStocks" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eG8-2t-hu4">
-                                <rect key="frame" x="180" y="289" width="240" height="21"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Robot" translatesAutoresizingMaskIntoConstraints="NO" id="vfs-xn-LoB">
+                                <rect key="frame" x="171" y="170" width="259" height="259"/>
+                                <animations/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="240" id="QiC-Hx-3oY"/>
+                                    <constraint firstAttribute="height" constant="259" id="MQE-bI-9zI"/>
+                                    <constraint firstAttribute="width" constant="259" id="oTE-YQ-3YW"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="BEAN STOCK" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8j9-1E-iHS">
+                                <rect key="frame" x="60" y="95" width="481" height="58"/>
+                                <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="58" id="kjM-Um-IBa"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="MAKING LIFE EASIER." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Yrz-Di-UDc">
+                                <rect key="frame" x="60" y="469" width="481" height="39"/>
+                                <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="39" id="6OW-a9-ace"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <animations/>
-                        <color key="backgroundColor" red="0.56957447301508335" green="0.7137720815702171" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="eG8-2t-hu4" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="ZML-C6-vQ6"/>
-                            <constraint firstItem="eG8-2t-hu4" firstAttribute="top" secondItem="Llm-lL-Icb" secondAttribute="bottom" constant="269" id="f0G-00-18W"/>
-                            <constraint firstItem="eG8-2t-hu4" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="ge0-fI-GX7"/>
+                            <constraint firstItem="vfs-xn-LoB" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="MFg-of-G0K"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Yrz-Di-UDc" secondAttribute="trailing" constant="39" id="N6x-Gm-55Y"/>
+                            <constraint firstItem="Yrz-Di-UDc" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leadingMargin" constant="40" id="Wyg-yq-RTH"/>
+                            <constraint firstItem="vfs-xn-LoB" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="hkT-fg-IZ6"/>
+                            <constraint firstItem="vfs-xn-LoB" firstAttribute="top" secondItem="8j9-1E-iHS" secondAttribute="bottom" constant="17" id="onM-Gd-QML"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="8j9-1E-iHS" secondAttribute="trailing" constant="39" id="pem-OS-4SR"/>
+                            <constraint firstItem="8j9-1E-iHS" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leadingMargin" constant="40" id="qld-xe-Kng"/>
+                            <constraint firstItem="Yrz-Di-UDc" firstAttribute="top" secondItem="vfs-xn-LoB" secondAttribute="bottom" constant="40" id="rnV-Qz-IyV"/>
                         </constraints>
                     </view>
                 </viewController>
@@ -41,4 +66,7 @@
             <point key="canvasLocation" x="53" y="375"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Robot" width="253" height="261"/>
+    </resources>
 </document>
