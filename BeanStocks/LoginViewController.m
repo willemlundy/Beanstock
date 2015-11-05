@@ -9,8 +9,8 @@
 #import "LoginViewController.h"
 
 @interface LoginViewController ()
-@property (weak, nonatomic) IBOutlet UIButton *signUpButton;
-@property (weak, nonatomic) IBOutlet UIButton *logInButton;
+@property (weak, nonatomic) IBOutlet UITextField *usernameField;
+@property (weak, nonatomic) IBOutlet UITextField *passwordField;
 
 @end
 
@@ -18,16 +18,19 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.signUpButton.layer.cornerRadius = 5;
-    self.logInButton.layer.cornerRadius = 5;
+//    self.signUpButton.layer.cornerRadius = 5;
+//    self.logInButton.layer.cornerRadius = 5;
 
 }
-- (IBAction)onSignUpButtonTapped:(UIButton *)sender {
 
-}
 - (IBAction)onLogInButtonTapped:(UIButton *)sender {
 }
 
+#pragma mark - Segue
+// Going to main ViewController identifier - "ShowMainController"
 
+//-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
+//    
+//}
 
 @end

@@ -9,10 +9,9 @@
 #import "SignUpViewController.h"
 
 @interface SignUpViewController ()
-@property (weak, nonatomic) IBOutlet UITextField *emailTextField;
-@property (weak, nonatomic) IBOutlet UITextField *userNameTextField;
-@property (weak, nonatomic) IBOutlet UITextField *passwordTextField;
-@property (weak, nonatomic) IBOutlet UIButton *signUpButton;
+@property (weak, nonatomic) IBOutlet UITextField *usernameField;
+@property (weak, nonatomic) IBOutlet UITextField *passwordField;
+@property (weak, nonatomic) IBOutlet UITextField *emailField;
 
 @end
 
@@ -20,8 +19,9 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.signUpButton.layer.cornerRadius = 5;
+//    self.signUpButton.layer.cornerRadius = 5;
 }
+
 - (IBAction)onSignUpButtonTapped:(UIButton *)sender {
 }
 
