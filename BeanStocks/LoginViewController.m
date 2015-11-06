@@ -9,7 +9,7 @@
 #import "LoginViewController.h"
 #import <Parse/Parse.h>
 
-@interface LoginViewController ()
+@interface LoginViewController () <UITextFieldDelegate>
 @property (weak, nonatomic) IBOutlet UITextField *usernameField;
 @property (weak, nonatomic) IBOutlet UITextField *passwordField;
 
@@ -21,11 +21,14 @@
     [super viewDidLoad];
 //    self.signUpButton.layer.cornerRadius = 5;
 //    self.logInButton.layer.cornerRadius = 5;
+    
+    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(resignKeyboard:)];
+    [self.view addGestureRecognizer:tap];
 
 }
 
 - (IBAction)onLogInButtonTapped:(UIButton *)sender {
-
+    
     if ([self.usernameField hasText] && [self.passwordField hasText]) {
         [PFUser logInWithUsernameInBackground:self.usernameField.text password:self.passwordField.text block:^(PFUser * _Nullable user, NSError * _Nullable error) {
             if (error) {
@@ -45,6 +48,11 @@
         [controller addAction:action];
         [self presentViewController:controller animated:YES completion:nil];
     }
+}
+
+-(void)resignKeyboard:(UIGestureRecognizer *)sender{
+    [self.passwordField resignFirstResponder];
+    [self.usernameField resignFirstResponder];
 }
 
 #pragma mark - Segue

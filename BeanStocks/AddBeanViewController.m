@@ -90,6 +90,21 @@ static NSString *CellIdentifier = @"BeanListCell";
         
         // TODO: - Implement AlertViewController
         
+        UIAlertController *alertController = [UIAlertController
+                                              alertControllerWithTitle:@"Bluetooth"
+                                              message:@"Turn on Bluetooth to continue"
+                                              preferredStyle:UIAlertControllerStyleAlert];
+        
+        UIAlertAction *okAction = [UIAlertAction
+                                   actionWithTitle:NSLocalizedString(@"OK", @"OK Action")
+                                   style:UIAlertActionStyleDefault
+                                   handler:^(UIAlertAction * _Nonnull action) {
+                                       NSLog(@"OK action");
+                                   }];
+        [alertController addAction:okAction];
+        
+        [self presentViewController:alertController animated:YES completion:nil];
+        
 //        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Error" message:@"Turn on bluetooth to continue" delegate:nil cancelButtonTitle:nil otherButtonTitles:@"Ok", nil];
 //        [alert show];
         return;
@@ -109,6 +124,22 @@ static NSString *CellIdentifier = @"BeanListCell";
 - (void)BeanManager:(PTDBeanManager*)beanManager didConnectToBean:(PTDBean*)bean error:(NSError*)error{
     if (error) {
         
+        UIAlertController *alertController = [UIAlertController
+                                              alertControllerWithTitle:@"Error"
+                                              message:[error localizedDescription]
+                                              preferredStyle:UIAlertControllerStyleAlert];
+        
+        UIAlertAction *okAction = [UIAlertAction
+                                   actionWithTitle:NSLocalizedString(@"OK", @"OK Action")
+                                   style:UIAlertActionStyleDefault
+                                   handler:^(UIAlertAction * _Nonnull action) {
+                                       NSLog(@"OK action");
+                                   }];
+        [alertController addAction:okAction];
+        
+        [self presentViewController:alertController animated:YES completion:nil];
+        
+        
         
 //        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Error" message:[error localizedDescription] delegate:nil cancelButtonTitle:nil otherButtonTitles:@"Ok", nil];
 //        [alert show];
@@ -118,6 +149,20 @@ static NSString *CellIdentifier = @"BeanListCell";
     [self.beanManager stopScanningForBeans_error:&error];
     if (error) {
         
+        UIAlertController *alertController = [UIAlertController
+                                              alertControllerWithTitle:@"Error"
+                                              message:[error localizedDescription]
+                                              preferredStyle:UIAlertControllerStyleAlert];
+        
+        UIAlertAction *okAction = [UIAlertAction
+                                   actionWithTitle:NSLocalizedString(@"OK", @"OK Action")
+                                   style:UIAlertActionStyleDefault
+                                   handler:^(UIAlertAction * _Nonnull action) {
+                                       NSLog(@"OK action");
+                                   }];
+        [alertController addAction:okAction];
+        
+        [self presentViewController:alertController animated:YES completion:nil];
         
 //        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Error" message:[error localizedDescription] delegate:nil cancelButtonTitle:nil otherButtonTitles:@"Ok", nil];
 //        [alert show];
@@ -129,5 +174,37 @@ static NSString *CellIdentifier = @"BeanListCell";
 - (void)BeanManager:(PTDBeanManager*)beanManager didDisconnectBean:(PTDBean*)bean error:(NSError*)error{
     [self.tableView reloadData];
 }
+
+#pragma mark Actions
+
+- (IBAction)handleRefresh:(id)sender {
+    if(self.beanManager.state == BeanManagerState_PoweredOn){
+        NSError *error;
+        [self.beanManager startScanningForBeans_error:&error];
+        if (error) {
+            
+            UIAlertController *alertController = [UIAlertController
+                                                  alertControllerWithTitle:@"Error"
+                                                  message:[error localizedDescription]
+                                                  preferredStyle:UIAlertControllerStyleAlert];
+            
+            UIAlertAction *okAction = [UIAlertAction
+                                       actionWithTitle:NSLocalizedString(@"OK", @"OK Action")
+                                       style:UIAlertActionStyleDefault
+                                       handler:^(UIAlertAction * _Nonnull action) {
+                                           NSLog(@"OK action");
+                                       }];
+            [alertController addAction:okAction];
+            
+            [self presentViewController:alertController animated:YES completion:nil];
+            
+//            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Error" message:[error localizedDescription] delegate:nil cancelButtonTitle:nil otherButtonTitles:@"Ok", nil];
+//            [alert show];
+        }
+    }
+    [(UIRefreshControl *)sender endRefreshing];
+}
+
+
 
 @end
