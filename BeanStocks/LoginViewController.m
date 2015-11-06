@@ -7,6 +7,7 @@
 //
 
 #import "LoginViewController.h"
+#import <Parse/Parse.h>
 
 @interface LoginViewController ()
 @property (weak, nonatomic) IBOutlet UITextField *usernameField;
@@ -24,6 +25,26 @@
 }
 
 - (IBAction)onLogInButtonTapped:(UIButton *)sender {
+
+    if ([self.usernameField hasText] && [self.passwordField hasText]) {
+        [PFUser logInWithUsernameInBackground:self.usernameField.text password:self.passwordField.text block:^(PFUser * _Nullable user, NSError * _Nullable error) {
+            if (error) {
+                UIAlertController *controller = [UIAlertController alertControllerWithTitle:@"Error" message:@"Sorry, the information you provided is incorrect!" preferredStyle:UIAlertControllerStyleAlert];
+                UIAlertAction *action = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:nil];
+                [controller addAction:action];
+                [self presentViewController:controller animated:YES completion:nil];
+            }else{
+                [self performSegueWithIdentifier:@"ShowMainController" sender:self];
+            }
+        }];
+        
+    }else{
+
+        UIAlertController *controller = [UIAlertController alertControllerWithTitle:@"Error" message:@"Some of the information is missing. Try again!" preferredStyle:UIAlertControllerStyleAlert];
+        UIAlertAction *action = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:nil];
+        [controller addAction:action];
+        [self presentViewController:controller animated:YES completion:nil];
+    }
 }
 
 #pragma mark - Segue
