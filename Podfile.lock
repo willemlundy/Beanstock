@@ -1,0 +1,16 @@
+PODS:
+  - Bean-iOS-OSX-SDK (0.10.0)
+  - Bolts/Tasks (1.4.0)
+  - Parse (1.9.1):
+    - Bolts/Tasks (>= 1.4.0)
+
+DEPENDENCIES:
+  - Bean-iOS-OSX-SDK
+  - Parse
+
+SPEC CHECKSUMS:
+  Bean-iOS-OSX-SDK: 7396a43e999a2e53c16e89ff302ffea5fcc1c4c5
+  Bolts: 0e9bce58b9b9f5e8a7a4d47b16d2fabec289072b
+  Parse: 54a965c8c19a6dde90284ab654dbcc77ef8c001b
+
+COCOAPODS: 0.39.0
