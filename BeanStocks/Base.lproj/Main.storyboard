@@ -21,7 +21,7 @@
                                 <animations/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" id="1WJ-Jd-TlZ">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" id="1WJ-Jd-TlZ" customClass="BeanTableViewCell">
                                         <rect key="frame" x="0.0" y="92" width="600" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="1WJ-Jd-TlZ" id="n6o-L4-Cyn">
@@ -82,7 +82,6 @@
                                 </state>
                                 <connections>
                                     <action selector="onLogInButtonTapped:" destination="Qxt-ki-CKR" eventType="touchUpInside" id="sWn-V6-lwZ"/>
-                                    <segue destination="BYZ-38-t0r" kind="show" identifier="ShowMainController" id="O5H-96-SOq"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pY1-Wk-Nmd">
@@ -103,7 +102,7 @@
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="9zd-K1-ufh">
                                 <rect key="frame" x="150" y="311" width="300" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                             </textField>
                         </subviews>
                         <animations/>
@@ -126,6 +125,7 @@
                     <connections>
                         <outlet property="passwordField" destination="9zd-K1-ufh" id="bDX-su-WT5"/>
                         <outlet property="usernameField" destination="WIx-FR-P7b" id="9ux-Qd-DAN"/>
+                        <segue destination="BYZ-38-t0r" kind="show" identifier="ShowMainController" id="tEe-MT-IVS"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qoW-Zn-IZa" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -165,7 +165,7 @@
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="RfL-eQ-pke">
                                 <rect key="frame" x="150" y="241" width="300" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hVc-gP-0Ah">
                                 <rect key="frame" x="150" y="279" width="300" height="30"/>
@@ -211,9 +211,49 @@
                     <view key="view" contentMode="scaleToFill" id="AmE-nN-daS">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="hTC-XP-9pN">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="BeanListCell" id="g6l-t5-K1J" customClass="BeanTableViewCell">
+                                        <rect key="frame" x="0.0" y="92" width="600" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="g6l-t5-K1J" id="mxa-Tx-mVY">
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d2P-uU-ip9">
+                                                    <rect key="frame" x="8" y="0.0" width="288" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="nameLabel" destination="d2P-uU-ip9" id="N4Z-B6-wii"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="ycL-Nd-noD" id="dKR-GA-UWA"/>
+                                    <outlet property="delegate" destination="ycL-Nd-noD" id="7Rz-YQ-e9W"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="hTC-XP-9pN" secondAttribute="trailing" id="JdX-He-AXV"/>
+                            <constraint firstItem="hTC-XP-9pN" firstAttribute="leading" secondItem="AmE-nN-daS" secondAttribute="leading" id="R9y-Fc-Cpo"/>
+                            <constraint firstItem="hTC-XP-9pN" firstAttribute="top" secondItem="AmE-nN-daS" secondAttribute="top" id="Yh1-fA-Lua"/>
+                            <constraint firstItem="UOq-v5-KRZ" firstAttribute="top" secondItem="hTC-XP-9pN" secondAttribute="bottom" id="ZWX-FI-ZYd"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="tableView" destination="hTC-XP-9pN" id="0E6-To-hjS"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xTD-0a-6Tp" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
