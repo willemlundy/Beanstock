@@ -14,6 +14,8 @@ typedef enum {
     ActionCellSendSerialString,
     ActionCellReadAccel,
     ActionCellWriteBlue,
+    ActionCellWriteRed,
+    ActionCellWriteGreen,
     ActionCellReadLed,
     ActionCellReadTemp,
     ActionCellReadConfig,
@@ -179,6 +181,16 @@ static NSString *CellIdentifier = @"BeanDetailListCell";
                 cell.textLabel.text = @"Send LED Write Blue";
                 return cell;
             }
+            case ActionCellWriteRed: {
+                UITableViewCell *cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:nil];
+                cell.textLabel.text = @"Send LED Write Red";
+                return cell;
+            }
+            case ActionCellWriteGreen: {
+                UITableViewCell *cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:nil];
+                cell.textLabel.text = @"Send LED Write Green";
+                return cell;
+            }
             case ActionCellReadLed: {
                 UITableViewCell *cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:nil];
                 cell.textLabel.text = @"Send Read LED";
@@ -266,6 +278,14 @@ static NSString *CellIdentifier = @"BeanDetailListCell";
             }
             case ActionCellWriteBlue: {
                 [self.bean setLedColor:[UIColor blueColor]];
+                break;
+            }
+            case ActionCellWriteRed: {
+                [self.bean setLedColor:[UIColor redColor]];
+                break;
+            }
+            case ActionCellWriteGreen: {
+                [self.bean setLedColor:[UIColor greenColor]];
                 break;
             }
             case ActionCellReadLed: {
