@@ -278,6 +278,7 @@ static NSString *CellIdentifier = @"BeanDetailListCell";
             }
             case ActionCellWriteBlue: {
                 [self.bean setLedColor:[UIColor blueColor]];
+                //[self.bean
                 break;
             }
             case ActionCellWriteRed: {

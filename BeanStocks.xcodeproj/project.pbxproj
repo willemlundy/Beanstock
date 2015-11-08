@@ -12,6 +12,7 @@
 		2FE7D5391BEAC86A001FA967 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2FE7D5371BEAC86A001FA967 /* Main.storyboard */; };
 		89A7653B1BEC3AC8006E569B /* BeanTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 89A7653A1BEC3AC8006E569B /* BeanTableViewCell.m */; };
 		89A7653E1BEC4005006E569B /* BeanDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 89A7653D1BEC4005006E569B /* BeanDetailViewController.m */; };
+		89FBB80B1BEF193100E9B71A /* Bean.m in Sources */ = {isa = PBXBuildFile; fileRef = 89FBB80A1BEF193100E9B71A /* Bean.m */; };
 		B2AD2D931BE9A560006EFD53 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B2AD2D921BE9A560006EFD53 /* main.m */; };
 		B2AD2D961BE9A560006EFD53 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B2AD2D951BE9A560006EFD53 /* AppDelegate.m */; };
 		B2AD2D991BE9A560006EFD53 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B2AD2D981BE9A560006EFD53 /* ViewController.m */; };
@@ -32,6 +33,8 @@
 		89A7653A1BEC3AC8006E569B /* BeanTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BeanTableViewCell.m; sourceTree = "<group>"; };
 		89A7653C1BEC4005006E569B /* BeanDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BeanDetailViewController.h; sourceTree = "<group>"; };
 		89A7653D1BEC4005006E569B /* BeanDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BeanDetailViewController.m; sourceTree = "<group>"; };
+		89FBB8091BEF193100E9B71A /* Bean.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Bean.h; sourceTree = "<group>"; };
+		89FBB80A1BEF193100E9B71A /* Bean.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Bean.m; sourceTree = "<group>"; };
 		B2AD2D8E1BE9A560006EFD53 /* BeanStocks.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BeanStocks.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B2AD2D921BE9A560006EFD53 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		B2AD2D941BE9A560006EFD53 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -68,6 +71,15 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		89FBB8081BEF183E00E9B71A /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				89FBB8091BEF193100E9B71A /* Bean.h */,
+				89FBB80A1BEF193100E9B71A /* Bean.m */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
 		9DF45D068761305E297314D5 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -97,6 +109,7 @@
 		B2AD2D901BE9A560006EFD53 /* BeanStocks */ = {
 			isa = PBXGroup;
 			children = (
+				89FBB8081BEF183E00E9B71A /* Models */,
 				2FE7D5371BEAC86A001FA967 /* Main.storyboard */,
 				B2AD2D941BE9A560006EFD53 /* AppDelegate.h */,
 				B2AD2D951BE9A560006EFD53 /* AppDelegate.m */,
@@ -249,6 +262,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				89FBB80B1BEF193100E9B71A /* Bean.m in Sources */,
 				B2AD2DF31BE9B32A006EFD53 /* AddBeanViewController.m in Sources */,
 				89A7653B1BEC3AC8006E569B /* BeanTableViewCell.m in Sources */,
 				B2AD2D991BE9A560006EFD53 /* ViewController.m in Sources */,
