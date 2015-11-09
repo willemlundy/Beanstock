@@ -12,6 +12,9 @@
 		2FE7D5391BEAC86A001FA967 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2FE7D5371BEAC86A001FA967 /* Main.storyboard */; };
 		89A7653B1BEC3AC8006E569B /* BeanTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 89A7653A1BEC3AC8006E569B /* BeanTableViewCell.m */; };
 		89A7653E1BEC4005006E569B /* BeanDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 89A7653D1BEC4005006E569B /* BeanDetailViewController.m */; };
+		89BD40B31BF11FCF00FAAAE5 /* Event.m in Sources */ = {isa = PBXBuildFile; fileRef = 89BD40B21BF11FCF00FAAAE5 /* Event.m */; };
+		89BD40B61BF13C8D00FAAAE5 /* Location.m in Sources */ = {isa = PBXBuildFile; fileRef = 89BD40B51BF13C8D00FAAAE5 /* Location.m */; };
+		89EE82391BF023B200DB1E3D /* Step.m in Sources */ = {isa = PBXBuildFile; fileRef = 89EE82381BF023B200DB1E3D /* Step.m */; };
 		89FBB80B1BEF193100E9B71A /* Bean.m in Sources */ = {isa = PBXBuildFile; fileRef = 89FBB80A1BEF193100E9B71A /* Bean.m */; };
 		B2AD2D931BE9A560006EFD53 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B2AD2D921BE9A560006EFD53 /* main.m */; };
 		B2AD2D961BE9A560006EFD53 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B2AD2D951BE9A560006EFD53 /* AppDelegate.m */; };
@@ -33,6 +36,12 @@
 		89A7653A1BEC3AC8006E569B /* BeanTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BeanTableViewCell.m; sourceTree = "<group>"; };
 		89A7653C1BEC4005006E569B /* BeanDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BeanDetailViewController.h; sourceTree = "<group>"; };
 		89A7653D1BEC4005006E569B /* BeanDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BeanDetailViewController.m; sourceTree = "<group>"; };
+		89BD40B11BF11FCF00FAAAE5 /* Event.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Event.h; sourceTree = "<group>"; };
+		89BD40B21BF11FCF00FAAAE5 /* Event.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Event.m; sourceTree = "<group>"; };
+		89BD40B41BF13C8D00FAAAE5 /* Location.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Location.h; sourceTree = "<group>"; };
+		89BD40B51BF13C8D00FAAAE5 /* Location.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Location.m; sourceTree = "<group>"; };
+		89EE82371BF023B200DB1E3D /* Step.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Step.h; sourceTree = "<group>"; };
+		89EE82381BF023B200DB1E3D /* Step.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Step.m; sourceTree = "<group>"; };
 		89FBB8091BEF193100E9B71A /* Bean.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Bean.h; sourceTree = "<group>"; };
 		89FBB80A1BEF193100E9B71A /* Bean.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Bean.m; sourceTree = "<group>"; };
 		B2AD2D8E1BE9A560006EFD53 /* BeanStocks.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BeanStocks.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -76,6 +85,12 @@
 			children = (
 				89FBB8091BEF193100E9B71A /* Bean.h */,
 				89FBB80A1BEF193100E9B71A /* Bean.m */,
+				89EE82371BF023B200DB1E3D /* Step.h */,
+				89EE82381BF023B200DB1E3D /* Step.m */,
+				89BD40B11BF11FCF00FAAAE5 /* Event.h */,
+				89BD40B21BF11FCF00FAAAE5 /* Event.m */,
+				89BD40B41BF13C8D00FAAAE5 /* Location.h */,
+				89BD40B51BF13C8D00FAAAE5 /* Location.m */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -262,14 +277,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				89BD40B31BF11FCF00FAAAE5 /* Event.m in Sources */,
 				89FBB80B1BEF193100E9B71A /* Bean.m in Sources */,
 				B2AD2DF31BE9B32A006EFD53 /* AddBeanViewController.m in Sources */,
 				89A7653B1BEC3AC8006E569B /* BeanTableViewCell.m in Sources */,
 				B2AD2D991BE9A560006EFD53 /* ViewController.m in Sources */,
 				2FE7D5361BEAC6D8001FA967 /* SignUpViewController.m in Sources */,
+				89EE82391BF023B200DB1E3D /* Step.m in Sources */,
 				B2AD2D961BE9A560006EFD53 /* AppDelegate.m in Sources */,
 				89A7653E1BEC4005006E569B /* BeanDetailViewController.m in Sources */,
 				B2AD2D931BE9A560006EFD53 /* main.m in Sources */,
+				89BD40B61BF13C8D00FAAAE5 /* Location.m in Sources */,
 				2FE7D5331BEA99A7001FA967 /* LoginViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

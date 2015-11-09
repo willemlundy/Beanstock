@@ -72,5 +72,6 @@
 - (NSString *)description
 {
     return [NSString stringWithFormat:@"%@, %@, %@", self.beanName, self.beanUUID, self.beanPTD];
+    
 }
 @end
