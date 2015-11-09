@@ -7,6 +7,7 @@
 //
 
 #import "ViewController.h"
+#import "BeanManager.h"
 
 @interface ViewController () <UITableViewDataSource,UITableViewDelegate>
 
@@ -19,6 +20,7 @@
     // Do any additional setup after loading the view, typically from a nib.
     
     self.navigationItem.hidesBackButton = YES;
+    
 }
 
 - (void)didReceiveMemoryWarning {
