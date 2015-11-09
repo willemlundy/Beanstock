@@ -88,14 +88,17 @@
 			children = (
 				89FBB8091BEF193100E9B71A /* Bean.h */,
 				89FBB80A1BEF193100E9B71A /* Bean.m */,
+<<<<<<< HEAD
 				89EE82371BF023B200DB1E3D /* Step.h */,
 				89EE82381BF023B200DB1E3D /* Step.m */,
 				89BD40B11BF11FCF00FAAAE5 /* Event.h */,
 				89BD40B21BF11FCF00FAAAE5 /* Event.m */,
 				89BD40B41BF13C8D00FAAAE5 /* Location.h */,
 				89BD40B51BF13C8D00FAAAE5 /* Location.m */,
+=======
 				B2AD2EB51BF101A8006EFD53 /* BeanManager.h */,
 				B2AD2EB61BF101A8006EFD53 /* BeanManager.m */,
+>>>>>>> managerSingleton
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -288,7 +291,11 @@
 				89A7653B1BEC3AC8006E569B /* BeanTableViewCell.m in Sources */,
 				B2AD2D991BE9A560006EFD53 /* ViewController.m in Sources */,
 				2FE7D5361BEAC6D8001FA967 /* SignUpViewController.m in Sources */,
+<<<<<<< HEAD
+				89EE82391BF023B200DB1E3D /* Step.m in Sources */,
+=======
 				B2AD2EB71BF101A8006EFD53 /* BeanManager.m in Sources */,
+>>>>>>> managerSingleton
 				B2AD2D961BE9A560006EFD53 /* AppDelegate.m in Sources */,
 				89A7653E1BEC4005006E569B /* BeanDetailViewController.m in Sources */,
 				B2AD2D931BE9A560006EFD53 /* main.m in Sources */,
