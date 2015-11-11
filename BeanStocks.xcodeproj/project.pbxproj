@@ -14,7 +14,8 @@
 		89A7653E1BEC4005006E569B /* BeanDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 89A7653D1BEC4005006E569B /* BeanDetailViewController.m */; };
 		89BD40B31BF11FCF00FAAAE5 /* Event.m in Sources */ = {isa = PBXBuildFile; fileRef = 89BD40B21BF11FCF00FAAAE5 /* Event.m */; };
 		89BD40B61BF13C8D00FAAAE5 /* Location.m in Sources */ = {isa = PBXBuildFile; fileRef = 89BD40B51BF13C8D00FAAAE5 /* Location.m */; };
-		89EE82391BF023B200DB1E3D /* Step.m in Sources */ = {isa = PBXBuildFile; fileRef = 89EE82381BF023B200DB1E3D /* Step.m */; };
+		89EFC4591BF286C5009F6AB9 /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 89EFC4581BF286C5009F6AB9 /* HomeViewController.m */; };
+		89EFC4661BF2C0DD009F6AB9 /* CoffeeStepViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 89EFC4651BF2C0DD009F6AB9 /* CoffeeStepViewController.m */; };
 		89FBB80B1BEF193100E9B71A /* Bean.m in Sources */ = {isa = PBXBuildFile; fileRef = 89FBB80A1BEF193100E9B71A /* Bean.m */; };
 		B2AD2D931BE9A560006EFD53 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B2AD2D921BE9A560006EFD53 /* main.m */; };
 		B2AD2D961BE9A560006EFD53 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B2AD2D951BE9A560006EFD53 /* AppDelegate.m */; };
@@ -22,7 +23,7 @@
 		B2AD2D9E1BE9A560006EFD53 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B2AD2D9D1BE9A560006EFD53 /* Assets.xcassets */; };
 		B2AD2DA11BE9A560006EFD53 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B2AD2D9F1BE9A560006EFD53 /* LaunchScreen.storyboard */; };
 		B2AD2DF31BE9B32A006EFD53 /* AddBeanViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B2AD2DF21BE9B32A006EFD53 /* AddBeanViewController.m */; };
-		B2AD2EB71BF101A8006EFD53 /* BeanManager.m in Sources */ = {isa = PBXBuildFile; fileRef = B2AD2EB61BF101A8006EFD53 /* BeanManager.m */; settings = {ASSET_TAGS = (); }; };
+		B2AD2EB71BF101A8006EFD53 /* BeanManager.m in Sources */ = {isa = PBXBuildFile; fileRef = B2AD2EB61BF101A8006EFD53 /* BeanManager.m */; };
 		B2EC01DBDD1749D311BD9C6A /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 591FD67865B5A60D4D4575EE /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -43,6 +44,10 @@
 		89BD40B51BF13C8D00FAAAE5 /* Location.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Location.m; sourceTree = "<group>"; };
 		89EE82371BF023B200DB1E3D /* Step.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Step.h; sourceTree = "<group>"; };
 		89EE82381BF023B200DB1E3D /* Step.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Step.m; sourceTree = "<group>"; };
+		89EFC4571BF286C5009F6AB9 /* HomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeViewController.h; sourceTree = "<group>"; };
+		89EFC4581BF286C5009F6AB9 /* HomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeViewController.m; sourceTree = "<group>"; };
+		89EFC4641BF2C0DD009F6AB9 /* CoffeeStepViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoffeeStepViewController.h; sourceTree = "<group>"; };
+		89EFC4651BF2C0DD009F6AB9 /* CoffeeStepViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoffeeStepViewController.m; sourceTree = "<group>"; };
 		89FBB8091BEF193100E9B71A /* Bean.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Bean.h; sourceTree = "<group>"; };
 		89FBB80A1BEF193100E9B71A /* Bean.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Bean.m; sourceTree = "<group>"; };
 		B2AD2D8E1BE9A560006EFD53 /* BeanStocks.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BeanStocks.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -83,19 +88,114 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		89EFC45A1BF286DB009F6AB9 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				89EFC45E1BF28847009F6AB9 /* LoginViewControllers */,
+				89EFC45D1BF287A5009F6AB9 /* HomeViewControllers */,
+				89EFC45F1BF28991009F6AB9 /* LocationViewControllers */,
+				89EFC4601BF289A8009F6AB9 /* EventViewControllers */,
+				89EFC4611BF289B9009F6AB9 /* StepViewControllers */,
+				89EFC4621BF289C8009F6AB9 /* BeanViewControllers */,
+				89EFC4631BF289D9009F6AB9 /* SketchViewControllers */,
+				B2AD2D971BE9A560006EFD53 /* ViewController.h */,
+				B2AD2D981BE9A560006EFD53 /* ViewController.m */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		89EFC45B1BF286E9009F6AB9 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				89A765391BEC3AC8006E569B /* BeanTableViewCell.h */,
+				89A7653A1BEC3AC8006E569B /* BeanTableViewCell.m */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		89EFC45C1BF28776009F6AB9 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				2FE7D5371BEAC86A001FA967 /* Main.storyboard */,
+				B2AD2D9F1BE9A560006EFD53 /* LaunchScreen.storyboard */,
+			);
+			name = Storyboards;
+			sourceTree = "<group>";
+		};
+		89EFC45D1BF287A5009F6AB9 /* HomeViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				89EFC4571BF286C5009F6AB9 /* HomeViewController.h */,
+				89EFC4581BF286C5009F6AB9 /* HomeViewController.m */,
+			);
+			name = HomeViewControllers;
+			sourceTree = "<group>";
+		};
+		89EFC45E1BF28847009F6AB9 /* LoginViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				2FE7D5341BEAC6D8001FA967 /* SignUpViewController.h */,
+				2FE7D5351BEAC6D8001FA967 /* SignUpViewController.m */,
+				2FE7D5311BEA99A7001FA967 /* LoginViewController.h */,
+				2FE7D5321BEA99A7001FA967 /* LoginViewController.m */,
+			);
+			name = LoginViewControllers;
+			sourceTree = "<group>";
+		};
+		89EFC45F1BF28991009F6AB9 /* LocationViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = LocationViewControllers;
+			sourceTree = "<group>";
+		};
+		89EFC4601BF289A8009F6AB9 /* EventViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = EventViewControllers;
+			sourceTree = "<group>";
+		};
+		89EFC4611BF289B9009F6AB9 /* StepViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				89EFC4641BF2C0DD009F6AB9 /* CoffeeStepViewController.h */,
+				89EFC4651BF2C0DD009F6AB9 /* CoffeeStepViewController.m */,
+			);
+			name = StepViewControllers;
+			sourceTree = "<group>";
+		};
+		89EFC4621BF289C8009F6AB9 /* BeanViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				B2AD2DF11BE9B32A006EFD53 /* AddBeanViewController.h */,
+				B2AD2DF21BE9B32A006EFD53 /* AddBeanViewController.m */,
+				89A7653C1BEC4005006E569B /* BeanDetailViewController.h */,
+				89A7653D1BEC4005006E569B /* BeanDetailViewController.m */,
+			);
+			name = BeanViewControllers;
+			sourceTree = "<group>";
+		};
+		89EFC4631BF289D9009F6AB9 /* SketchViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = SketchViewControllers;
+			sourceTree = "<group>";
+		};
 		89FBB8081BEF183E00E9B71A /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				89FBB8091BEF193100E9B71A /* Bean.h */,
-				89FBB80A1BEF193100E9B71A /* Bean.m */,
-				89EE82371BF023B200DB1E3D /* Step.h */,
-				89EE82381BF023B200DB1E3D /* Step.m */,
-				89BD40B11BF11FCF00FAAAE5 /* Event.h */,
-				89BD40B21BF11FCF00FAAAE5 /* Event.m */,
-				89BD40B41BF13C8D00FAAAE5 /* Location.h */,
-				89BD40B51BF13C8D00FAAAE5 /* Location.m */,
 				B2AD2EB51BF101A8006EFD53 /* BeanManager.h */,
 				B2AD2EB61BF101A8006EFD53 /* BeanManager.m */,
+				89BD40B41BF13C8D00FAAAE5 /* Location.h */,
+				89BD40B51BF13C8D00FAAAE5 /* Location.m */,
+				89BD40B11BF11FCF00FAAAE5 /* Event.h */,
+				89BD40B21BF11FCF00FAAAE5 /* Event.m */,
+				89EE82371BF023B200DB1E3D /* Step.h */,
+				89EE82381BF023B200DB1E3D /* Step.m */,
+				89FBB8091BEF193100E9B71A /* Bean.h */,
+				89FBB80A1BEF193100E9B71A /* Bean.m */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -129,25 +229,10 @@
 		B2AD2D901BE9A560006EFD53 /* BeanStocks */ = {
 			isa = PBXGroup;
 			children = (
+				89EFC45C1BF28776009F6AB9 /* Storyboards */,
 				89FBB8081BEF183E00E9B71A /* Models */,
-				2FE7D5371BEAC86A001FA967 /* Main.storyboard */,
-				B2AD2D941BE9A560006EFD53 /* AppDelegate.h */,
-				B2AD2D951BE9A560006EFD53 /* AppDelegate.m */,
-				B2AD2D971BE9A560006EFD53 /* ViewController.h */,
-				B2AD2D981BE9A560006EFD53 /* ViewController.m */,
-				2FE7D5341BEAC6D8001FA967 /* SignUpViewController.h */,
-				2FE7D5351BEAC6D8001FA967 /* SignUpViewController.m */,
-				2FE7D5311BEA99A7001FA967 /* LoginViewController.h */,
-				2FE7D5321BEA99A7001FA967 /* LoginViewController.m */,
-				B2AD2DF11BE9B32A006EFD53 /* AddBeanViewController.h */,
-				B2AD2DF21BE9B32A006EFD53 /* AddBeanViewController.m */,
-				89A7653C1BEC4005006E569B /* BeanDetailViewController.h */,
-				89A7653D1BEC4005006E569B /* BeanDetailViewController.m */,
-				89A765391BEC3AC8006E569B /* BeanTableViewCell.h */,
-				89A7653A1BEC3AC8006E569B /* BeanTableViewCell.m */,
-				B2AD2D9D1BE9A560006EFD53 /* Assets.xcassets */,
-				B2AD2D9F1BE9A560006EFD53 /* LaunchScreen.storyboard */,
-				B2AD2DA21BE9A560006EFD53 /* Info.plist */,
+				89EFC45B1BF286E9009F6AB9 /* Views */,
+				89EFC45A1BF286DB009F6AB9 /* Controllers */,
 				B2AD2D911BE9A560006EFD53 /* Supporting Files */,
 			);
 			path = BeanStocks;
@@ -156,6 +241,10 @@
 		B2AD2D911BE9A560006EFD53 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				B2AD2D941BE9A560006EFD53 /* AppDelegate.h */,
+				B2AD2D951BE9A560006EFD53 /* AppDelegate.m */,
+				B2AD2D9D1BE9A560006EFD53 /* Assets.xcassets */,
+				B2AD2DA21BE9A560006EFD53 /* Info.plist */,
 				B2AD2D921BE9A560006EFD53 /* main.m */,
 			);
 			name = "Supporting Files";
@@ -284,6 +373,7 @@
 			files = (
 				89BD40B31BF11FCF00FAAAE5 /* Event.m in Sources */,
 				89FBB80B1BEF193100E9B71A /* Bean.m in Sources */,
+				89EFC4661BF2C0DD009F6AB9 /* CoffeeStepViewController.m in Sources */,
 				B2AD2DF31BE9B32A006EFD53 /* AddBeanViewController.m in Sources */,
 				89A7653B1BEC3AC8006E569B /* BeanTableViewCell.m in Sources */,
 				B2AD2D991BE9A560006EFD53 /* ViewController.m in Sources */,
@@ -294,6 +384,7 @@
 				B2AD2D931BE9A560006EFD53 /* main.m in Sources */,
 				89BD40B61BF13C8D00FAAAE5 /* Location.m in Sources */,
 				2FE7D5331BEA99A7001FA967 /* LoginViewController.m in Sources */,
+				89EFC4591BF286C5009F6AB9 /* HomeViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

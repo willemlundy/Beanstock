@@ -12,6 +12,8 @@
 #import "BeanTableViewCell.h"
 #import "BeanDetailViewController.h"
 #import "PTDBean.h"
+#import "BeanManager.h"
+#import "AppDelegate.h"
 
 @interface AddBeanViewController () <PTDBeanManagerDelegate, PTDBeanDelegate, UITableViewDataSource, UITableViewDelegate>
 
@@ -33,7 +35,15 @@
     self.beans = [NSMutableDictionary dictionary];
     // instantiating the bean starts a scan. make sure you have you delegates implemented
     // to receive bean info
+    
     self.beanManager = [[PTDBeanManager alloc] initWithDelegate:self];
+    //self.beanManager = [[BeanManager sharedInstance] initWithDelegate:self];
+    
+//    AppDelegate *application = [[UIApplication sharedApplication] delegate];
+//    self.beanManager = application.beanManager;
+//    self.beanManager.delegate = self;
+//    [self.tableView reloadData];
+//    self.beanManager.delegate = self;
 }
 
 - (void)viewWillAppear:(BOOL)animated {

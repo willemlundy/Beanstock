@@ -9,7 +9,7 @@
 #import "AppDelegate.h"
 #import <Parse/Parse.h>
 
-@interface AppDelegate ()
+@interface AppDelegate () <PTDBeanManagerDelegate, PTDBeanDelegate>
 
 @end
 
@@ -27,6 +27,8 @@
     
     // [Optional] Track statistics around application opens.
     [PFAnalytics trackAppOpenedWithLaunchOptions:launchOptions];
+    
+    self.beanManager = [[PTDBeanManager alloc] init];
     
     return YES;
 }

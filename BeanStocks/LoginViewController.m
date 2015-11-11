@@ -12,6 +12,9 @@
 @interface LoginViewController () <UITextFieldDelegate>
 @property (weak, nonatomic) IBOutlet UITextField *usernameField;
 @property (weak, nonatomic) IBOutlet UITextField *passwordField;
+@property (weak, nonatomic) IBOutlet UIImageView *backgroundImage;
+@property (weak, nonatomic) IBOutlet UIButton *loginButton;
+@property (weak, nonatomic) IBOutlet UIButton *signUpButton;
 
 @end
 
@@ -24,6 +27,35 @@
     
     UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(resignKeyboard:)];
     [self.view addGestureRecognizer:tap];
+    
+    UIImage *backImage = [UIImage imageNamed: @"BlueGradient"];
+    
+    [self.backgroundImage setImage:backImage];
+    
+    [[self.loginButton layer] setBorderWidth:1.0f];
+    [[self.loginButton layer] setBorderColor:[UIColor whiteColor].CGColor];
+    
+    [[self.signUpButton layer] setBorderWidth:1.0f];
+    [[self.signUpButton layer] setBorderColor:[UIColor whiteColor].CGColor];
+    
+    [[self.usernameField layer] setBorderWidth:1.0f];
+    [[self.usernameField layer] setBorderColor:[UIColor whiteColor].CGColor];
+    
+    
+    [[self.passwordField layer] setBorderWidth:1.0f];
+    [[self.passwordField layer] setBorderColor:[UIColor whiteColor].CGColor];
+    
+    
+    
+    [self.navigationController.navigationBar setBackgroundImage:[UIImage new]
+                                                  forBarMetrics:UIBarMetricsDefault];
+    self.navigationController.navigationBar.shadowImage = [UIImage new];
+    self.navigationController.navigationBar.translucent = YES;
+    self.navigationController.view.backgroundColor = [UIColor clearColor];
+    self.navigationController.navigationBar.titleTextAttributes = @{NSForegroundColorAttributeName:[UIColor whiteColor]};
+    
+    
+
 
 }
 
@@ -37,7 +69,7 @@
                 [controller addAction:action];
                 [self presentViewController:controller animated:YES completion:nil];
             }else{
-                [self performSegueWithIdentifier:@"ShowMainController" sender:self];
+                [self performSegueWithIdentifier:@"CoffeeViewController" sender:self];
             }
         }];
         
