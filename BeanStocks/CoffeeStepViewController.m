@@ -9,6 +9,7 @@
 #import "CoffeeStepViewController.h"
 
 @interface CoffeeStepViewController ()
+@property (weak, nonatomic) IBOutlet UIImageView *coffeeImage;
 
 @end
 
@@ -18,6 +19,12 @@
     [super viewDidLoad];
     
     self.navigationItem.hidesBackButton = YES;
+    
+    UIImage *coffeePic = [UIImage imageNamed: @"Coffee-Cup-23"];
+    
+    [self.coffeeImage setImage:coffeePic];
+    
+    
     // Do any additional setup after loading the view.
 }
 

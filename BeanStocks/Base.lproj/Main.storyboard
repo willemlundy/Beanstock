@@ -100,21 +100,14 @@
                             </button>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Username" textAlignment="center" clearsOnBeginEditing="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="WIx-FR-P7b">
                                 <rect key="frame" x="150" y="106" width="300" height="30"/>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="color" keyPath="_placeholderLabel.textColor">
-                                        <color key="value" white="0.90000000000000002" alpha="1" colorSpace="calibratedWhite"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="9zd-K1-ufh">
                                 <rect key="frame" x="150" y="185" width="300" height="30"/>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                             </textField>
@@ -165,21 +158,48 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gT5-0f-KKP">
-                                <rect key="frame" x="180" y="144" width="240" height="128"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="gT5-0f-KKP">
+                                <rect key="frame" x="180" y="84" width="240" height="240"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="240" id="MJx-pE-Oce"/>
+                                    <constraint firstAttribute="width" constant="240" id="PKB-Ck-G5i"/>
+                                </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="w6x-fF-CNx">
-                                <rect key="frame" x="180" y="312" width="240" height="93"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="w6x-fF-CNx">
+                                <rect key="frame" x="180" y="374" width="240" height="93"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="93" id="B9W-9j-maH"/>
+                                    <constraint firstAttribute="width" constant="240" id="ilE-6m-16R"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pr0-Ns-5QJ">
+                                <rect key="frame" x="180" y="527" width="240" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="5g0-Va-ArQ"/>
+                                    <constraint firstAttribute="width" constant="240" id="Uqt-3p-uhr"/>
+                                </constraints>
+                                <state key="normal" title="Make Coffee!!!"/>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="w6x-fF-CNx" firstAttribute="centerX" secondItem="CS8-GX-9lg" secondAttribute="centerX" id="O7T-yM-HU2"/>
+                            <constraint firstItem="pr0-Ns-5QJ" firstAttribute="centerX" secondItem="CS8-GX-9lg" secondAttribute="centerX" id="Qrp-mj-OLX"/>
+                            <constraint firstItem="w6x-fF-CNx" firstAttribute="top" secondItem="gT5-0f-KKP" secondAttribute="bottom" constant="50" id="bvT-gn-yOJ"/>
+                            <constraint firstItem="pr0-Ns-5QJ" firstAttribute="top" secondItem="w6x-fF-CNx" secondAttribute="bottom" constant="60" id="cnA-MD-YRa"/>
+                            <constraint firstItem="gT5-0f-KKP" firstAttribute="top" secondItem="wDB-Js-fFR" secondAttribute="bottom" constant="20" id="hYa-uJ-NJy"/>
+                            <constraint firstItem="gT5-0f-KKP" firstAttribute="centerX" secondItem="CS8-GX-9lg" secondAttribute="centerX" id="vEx-Lj-RlK"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Coffee" id="tbw-OA-WpP">
                         <barButtonItem key="rightBarButtonItem" title="Item" id="2l5-C6-W2f"/>
                     </navigationItem>
+                    <connections>
+                        <outlet property="coffeeImage" destination="gT5-0f-KKP" id="nRH-1B-bib"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="V2Y-Ab-wnK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -215,9 +235,12 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LbI-QQ-7u0">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="eS9-S9-XN3">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                            </imageView>
+                            <button contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LbI-QQ-7u0">
                                 <rect key="frame" x="150" y="367" width="300" height="30"/>
-                                <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <state key="normal" title="Sign Up!">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -253,17 +276,23 @@
                             <constraint firstItem="YOZ-83-gQu" firstAttribute="top" secondItem="COh-yl-ZZ3" secondAttribute="bottom" constant="183" id="UOf-l8-20O"/>
                             <constraint firstItem="hVc-gP-0Ah" firstAttribute="leading" secondItem="RfL-eQ-pke" secondAttribute="leading" id="VxJ-NA-suI"/>
                             <constraint firstItem="hVc-gP-0Ah" firstAttribute="top" secondItem="RfL-eQ-pke" secondAttribute="bottom" constant="8" symbolic="YES" id="XeH-pG-CAO"/>
+                            <constraint firstAttribute="trailing" secondItem="eS9-S9-XN3" secondAttribute="trailing" id="YRk-1o-1E3"/>
                             <constraint firstItem="RfL-eQ-pke" firstAttribute="trailing" secondItem="hVc-gP-0Ah" secondAttribute="trailing" id="YSm-JE-JFW"/>
+                            <constraint firstItem="eS9-S9-XN3" firstAttribute="leading" secondItem="y0d-8b-7yU" secondAttribute="leading" id="Yb5-gA-dpm"/>
+                            <constraint firstItem="eS9-S9-XN3" firstAttribute="top" secondItem="y0d-8b-7yU" secondAttribute="top" id="ciP-eo-Cng"/>
                             <constraint firstItem="hVc-gP-0Ah" firstAttribute="leading" secondItem="LbI-QQ-7u0" secondAttribute="leading" id="ebh-wC-aDs"/>
                             <constraint firstItem="YOZ-83-gQu" firstAttribute="leading" secondItem="RfL-eQ-pke" secondAttribute="leading" id="h7O-GL-5eA"/>
                             <constraint firstItem="LbI-QQ-7u0" firstAttribute="top" secondItem="hVc-gP-0Ah" secondAttribute="bottom" constant="58" id="hSc-Dd-jfu"/>
                             <constraint firstItem="RfL-eQ-pke" firstAttribute="centerX" secondItem="y0d-8b-7yU" secondAttribute="centerX" id="heC-nf-aBL"/>
+                            <constraint firstItem="atY-1J-0lH" firstAttribute="top" secondItem="eS9-S9-XN3" secondAttribute="bottom" id="t6S-k2-vpa"/>
                             <constraint firstItem="YOZ-83-gQu" firstAttribute="trailing" secondItem="RfL-eQ-pke" secondAttribute="trailing" id="viT-6n-Bka"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="backgroundImage" destination="eS9-S9-XN3" id="NNZ-fE-mkD"/>
                         <outlet property="emailField" destination="hVc-gP-0Ah" id="gNU-M7-E2o"/>
                         <outlet property="passwordField" destination="RfL-eQ-pke" id="t8A-Ev-JwO"/>
+                        <outlet property="signUpButton" destination="LbI-QQ-7u0" id="c3n-5x-tNZ"/>
                         <outlet property="usernameField" destination="YOZ-83-gQu" id="TQC-GH-jFv"/>
                     </connections>
                 </viewController>
