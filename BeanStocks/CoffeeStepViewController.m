@@ -11,7 +11,6 @@
 #import <PTDBeanManager.h>
 
 @interface CoffeeStepViewController () <PTDBeanDelegate,PTDBeanManagerDelegate>
-@interface CoffeeStepViewController ()
 
 // Main ImageView
 @property (weak, nonatomic) IBOutlet UIImageView *coffeeImage;
@@ -20,6 +19,7 @@
 @property (strong,nonatomic) NSMutableDictionary *discoveredBeans;
 @property (strong,nonatomic) PTDBeanManager *beanManager;
 @property (strong,nonatomic) PTDBean *customBean;
+
 // Connected Button Properties
 @property (weak, nonatomic) IBOutlet UIImageView *connectedLED;
 @property (weak, nonatomic) IBOutlet UIButton *connectedButton;
@@ -45,6 +45,13 @@
     
     self.navigationItem.hidesBackButton = YES;
     
+    self.discoveredBeans = [NSMutableDictionary dictionary];
+    self.beanManager = [[PTDBeanManager alloc]initWithDelegate:self];
+    
+    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(connectToCoffeeMachine:)];
+    [self.beanLabel addGestureRecognizer:tap];
+    
+    // UIImage variables
     UIImage *coffeePic = [UIImage imageNamed: @"Coffee-Cup-23"];
     UIImage *ligthblueLED = [UIImage imageNamed: @"ligthblue-led-circle-3-th"];
     UIImage *cyanLED = [UIImage imageNamed: @"cyan-led-circle-3-th"];
@@ -52,18 +59,15 @@
     UIImage *redLED = [UIImage imageNamed: @"red-led-circle-3-th"];
     UIImage *orangeLED = [UIImage imageNamed: @"orange-led-circle-th"];
     
+
+    
     // Set Main Image
     [self.coffeeImage setImage:coffeePic];
     
-    self.discoveredBeans = [NSMutableDictionary dictionary];
-    self.beanManager = [[PTDBeanManager alloc]initWithDelegate:self];
     // Set up Connected Button
     [[self.connectedButton layer] setBorderWidth:1.0f];
     [[self.connectedButton layer] setBorderColor:[UIColor blueColor].CGColor];
     [self.connectedLED setImage:greenLED];
-    
-    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(connectToCoffeeMachine:)];
-    [self.beanLabel addGestureRecognizer:tap];
     
     // Set up Brew Type Button
     [[self.brewTypeButton layer] setBorderWidth:1.0f];
