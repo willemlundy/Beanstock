@@ -11,12 +11,31 @@
 #import <PTDBeanManager.h>
 
 @interface CoffeeStepViewController () <PTDBeanDelegate,PTDBeanManagerDelegate>
+@interface CoffeeStepViewController ()
+
+// Main ImageView
 @property (weak, nonatomic) IBOutlet UIImageView *coffeeImage;
 @property (weak, nonatomic) IBOutlet UILabel *beanLabel;
 
 @property (strong,nonatomic) NSMutableDictionary *discoveredBeans;
 @property (strong,nonatomic) PTDBeanManager *beanManager;
 @property (strong,nonatomic) PTDBean *customBean;
+// Connected Button Properties
+@property (weak, nonatomic) IBOutlet UIImageView *connectedLED;
+@property (weak, nonatomic) IBOutlet UIButton *connectedButton;
+
+// Brew Type Properties
+@property (weak, nonatomic) IBOutlet UIImageView *brewTypeLED;
+@property (weak, nonatomic) IBOutlet UIButton *brewTypeButton;
+
+// Prepped Button Properties
+@property (weak, nonatomic) IBOutlet UIImageView *preppedLED;
+@property (weak, nonatomic) IBOutlet UIButton *preppedButton;
+
+// Start Button Properties
+@property (weak, nonatomic) IBOutlet UIImageView *startLED;
+@property (weak, nonatomic) IBOutlet UIButton *startButton;
+
 @end
 
 @implementation CoffeeStepViewController
@@ -27,15 +46,45 @@
     self.navigationItem.hidesBackButton = YES;
     
     UIImage *coffeePic = [UIImage imageNamed: @"Coffee-Cup-23"];
+    UIImage *ligthblueLED = [UIImage imageNamed: @"ligthblue-led-circle-3-th"];
+    UIImage *cyanLED = [UIImage imageNamed: @"cyan-led-circle-3-th"];
+    UIImage *greenLED = [UIImage imageNamed: @"green1-led-circle-3-th"];
+    UIImage *redLED = [UIImage imageNamed: @"red-led-circle-3-th"];
+    UIImage *orangeLED = [UIImage imageNamed: @"orange-led-circle-th"];
     
+    // Set Main Image
     [self.coffeeImage setImage:coffeePic];
     
     self.discoveredBeans = [NSMutableDictionary dictionary];
     self.beanManager = [[PTDBeanManager alloc]initWithDelegate:self];
+    // Set up Connected Button
+    [[self.connectedButton layer] setBorderWidth:1.0f];
+    [[self.connectedButton layer] setBorderColor:[UIColor blueColor].CGColor];
+    [self.connectedLED setImage:greenLED];
     
     UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(connectToCoffeeMachine:)];
     [self.beanLabel addGestureRecognizer:tap];
     
+    // Set up Brew Type Button
+    [[self.brewTypeButton layer] setBorderWidth:1.0f];
+    [[self.brewTypeButton layer] setBorderColor:[UIColor blueColor].CGColor];
+    [self.brewTypeButton setTitle:@"Regular" forState:UIControlStateNormal];
+    [self.brewTypeLED setImage:ligthblueLED];
+    
+    // Set up Prepped Button
+    [[self.preppedButton layer] setBorderWidth:1.0f];
+    [[self.preppedButton layer] setBorderColor:[UIColor blueColor].CGColor];
+    [self.preppedButton setTitle:@"Not Prepped" forState:UIControlStateNormal];
+    [self.preppedLED setImage:redLED];
+ 
+    // Set up Start Button
+    [[self.startButton layer] setBorderWidth:1.0f];
+    [[self.startButton layer] setBorderColor:[UIColor blueColor].CGColor];
+    [self.startButton setTitle:@"Start" forState:UIControlStateNormal];
+    [self.startLED setImage:orangeLED];
+    
+    
+
 }
 
 - (void)didReceiveMemoryWarning {
