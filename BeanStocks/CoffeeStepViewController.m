@@ -36,6 +36,12 @@
 @property (weak, nonatomic) IBOutlet UIImageView *startLED;
 @property (weak, nonatomic) IBOutlet UIButton *startButton;
 
+@property (strong,nonatomic) UIView *fillView;
+@property (strong,nonatomic) UIView *progressView;
+@property (weak, nonatomic) IBOutlet UISlider *brewSlider;
+
+@property (strong,nonatomic) UILabel *percentage;
+@property (assign,nonatomic) int percentCount;
 @end
 
 @implementation CoffeeStepViewController
@@ -47,10 +53,7 @@
     
     self.discoveredBeans = [NSMutableDictionary dictionary];
     self.beanManager = [[PTDBeanManager alloc]initWithDelegate:self];
-    
-    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(connectToCoffeeMachine:)];
-    [self.beanLabel addGestureRecognizer:tap];
-    
+    self.customBean.delegate = self;
     // UIImage variables
     UIImage *coffeePic = [UIImage imageNamed: @"Coffee-Cup-23"];
     UIImage *ligthblueLED = [UIImage imageNamed: @"ligthblue-led-circle-3-th"];
@@ -66,30 +69,63 @@
     
     // Set up Connected Button
     [[self.connectedButton layer] setBorderWidth:1.0f];
-    [[self.connectedButton layer] setBorderColor:[UIColor blueColor].CGColor];
+    [[self.connectedButton layer] setBorderColor:[UIColor darkGrayColor].CGColor];
     [self.connectedLED setImage:greenLED];
     
     // Set up Brew Type Button
     [[self.brewTypeButton layer] setBorderWidth:1.0f];
-    [[self.brewTypeButton layer] setBorderColor:[UIColor blueColor].CGColor];
+    [[self.brewTypeButton layer] setBorderColor:[UIColor darkGrayColor].CGColor];
     [self.brewTypeButton setTitle:@"Regular" forState:UIControlStateNormal];
     [self.brewTypeLED setImage:ligthblueLED];
     
     // Set up Prepped Button
     [[self.preppedButton layer] setBorderWidth:1.0f];
-    [[self.preppedButton layer] setBorderColor:[UIColor blueColor].CGColor];
+    [[self.preppedButton layer] setBorderColor:[UIColor darkGrayColor].CGColor];
     [self.preppedButton setTitle:@"Not Prepped" forState:UIControlStateNormal];
     [self.preppedLED setImage:redLED];
  
     // Set up Start Button
     [[self.startButton layer] setBorderWidth:1.0f];
-    [[self.startButton layer] setBorderColor:[UIColor blueColor].CGColor];
+    [[self.startButton layer] setBorderColor:[UIColor darkGrayColor].CGColor];
     [self.startButton setTitle:@"Start" forState:UIControlStateNormal];
     [self.startLED setImage:orangeLED];
     
     
-
+    
+    
 }
+
+-(void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+    
+    [self startProgressView];
+}
+
+-(void)startProgressView{
+    self.progressView = [[UIView alloc]initWithFrame:CGRectMake(0,0,150,150)];
+    self.percentage = [[UILabel alloc]initWithFrame:CGRectMake(0, 0, 120, 30)];
+    self.percentage.center = self.progressView.center;
+    self.percentage.textAlignment = NSTextAlignmentCenter;
+    self.percentage.font = [UIFont fontWithName:@"Arial" size:15];
+    
+    self.fillView = [[UIView alloc]initWithFrame:CGRectMake(self.progressView.frame.origin.x, self.progressView.frame.origin.y + 140, 150, 10)];
+    self.fillView.backgroundColor = [UIColor colorWithRed:90/255.0 green:72/255.0 blue:60/255.0 alpha:1.0];
+    
+    self.progressView.center = CGPointMake(self.view.bounds.size.width/2.0,100);
+    self.progressView.layer.cornerRadius = self.progressView.bounds.size.width/2.0;
+    self.progressView.clipsToBounds = YES;
+    self.progressView.layer.borderWidth = 4.0;
+    self.progressView.layer.borderColor = [[UIColor darkGrayColor] CGColor];
+    
+    [self.view addSubview:self.progressView];
+    [self.progressView addSubview:self.fillView];
+    [self.progressView addSubview:self.percentage];
+    
+    [UIView animateWithDuration:0.5 animations:^{
+        self.fillView.frame = CGRectMake(0,150,150,-150);
+    } completion:^(BOOL finished) { self.percentage.text = @"Good Evening!"; }];
+}
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
@@ -131,11 +167,13 @@
         [self.discoveredBeans setObject:bean forKey:key];
         self.customBean = [self.discoveredBeans.allValues objectAtIndex:0];
     }
-    self.beanLabel.text = @"Bean found! Tap to connect.";
+    //self.beanLabel.text = @"Bean found! Tap to connect.";
+    [self.connectedButton setTitle:@"Connect now!" forState:UIControlStateNormal];
 }
 
 - (void)BeanManager:(PTDBeanManager*)beanManager didConnectToBean:(PTDBean*)bean error:(NSError*)error{
-    self.beanLabel.text = @"Connected!";
+    //self.beanLabel.text = @"Connected!";
+    [self.connectedButton setTitle:@"Connected" forState:UIControlStateNormal];
     if (error) {
         
         UIAlertController *alertController = [UIAlertController
@@ -177,22 +215,32 @@
     }
 }
 
-#pragma mark - Connect to Coffee Machine
+-(void)bean:(PTDBean *)bean serialDataReceived:(NSData *)data{
+    NSString *stringReceived = [[NSString alloc]initWithData:data encoding:NSUTF8StringEncoding];
+    NSLog(@"%@",stringReceived);
+}
 
--(void)connectToCoffeeMachine:(UIGestureRecognizer *)sender{
-    NSLog(@"Tapped");
+#pragma mark - Connect to Coffee Machine
+- (IBAction)connectToMachine:(UIButton *)sender {
     if (self.customBean.state == BeanState_Discovered) {
         self.customBean.delegate = self;
         [self.beanManager connectToBean:self.customBean error:nil];
     }
-
-    
 }
 
 #pragma mark - Make Coffee
 - (IBAction)makeCoffeeButtonPressed:(UIButton *)sender {
-    [self.customBean setLedColor:[UIColor blueColor]];
+    //[self.customBean setLedColor:[UIColor blueColor]];
+    [self.customBean sendSerialString:@"TogglePower\n"];
+    self.percentage.text = @"";
+    
+    self.fillView.frame = CGRectMake(self.progressView.bounds.origin.x, self.progressView.frame.origin.y + 140, 150, 10);
+    [UIView animateWithDuration:10.0 animations:^{
+        self.fillView.frame = CGRectMake(0,150,150,-150);
+    } completion:^(BOOL finished) { self.percentage.text = @"READY!"; }];
+    
 }
+
 
 
 

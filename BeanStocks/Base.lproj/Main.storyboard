@@ -170,7 +170,12 @@
                                     </imageView>
                                     <button opaque="NO" contentMode="scaleToFill" semanticContentAttribute="forceLeftToRight" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9gs-7o-xlk">
                                         <rect key="frame" x="0.0" y="0.0" width="240" height="50"/>
-                                        <state key="normal" title="Connected"/>
+                                        <state key="normal" title="Connected">
+                                            <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="connectToMachine:" destination="L8G-rA-ISB" eventType="touchUpInside" id="vBG-nZ-E5x"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -213,7 +218,9 @@
                                     </imageView>
                                     <button opaque="NO" contentMode="scaleToFill" semanticContentAttribute="forceLeftToRight" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dvd-Qh-eUG">
                                         <rect key="frame" x="0.0" y="0.0" width="240" height="50"/>
-                                        <state key="normal" title="Regular"/>
+                                        <state key="normal" title="Regular">
+                                            <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -235,10 +242,10 @@
                                 </constraints>
                                 <variation key="default">
                                     <mask key="constraints">
-                                        <exclude reference="O3L-q5-tmB"/>
                                         <exclude reference="5gx-Mk-HHi"/>
-                                        <exclude reference="GkK-vX-T3v"/>
                                         <exclude reference="7j7-V7-GVL"/>
+                                        <exclude reference="GkK-vX-T3v"/>
+                                        <exclude reference="O3L-q5-tmB"/>
                                         <exclude reference="Ft6-qO-jcC"/>
                                         <exclude reference="gXP-tp-hRO"/>
                                     </mask>
@@ -256,7 +263,9 @@
                                     </imageView>
                                     <button opaque="NO" contentMode="scaleToFill" semanticContentAttribute="forceLeftToRight" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8eR-8w-QkY">
                                         <rect key="frame" x="0.0" y="0.0" width="240" height="50"/>
-                                        <state key="normal" title="Prepared"/>
+                                        <state key="normal" title="Prepared">
+                                            <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -278,12 +287,12 @@
                                 </constraints>
                                 <variation key="default">
                                     <mask key="constraints">
-                                        <exclude reference="4TQ-q3-osw"/>
-                                        <exclude reference="usw-uv-H2d"/>
                                         <exclude reference="1Re-ro-S2M"/>
+                                        <exclude reference="4TQ-q3-osw"/>
                                         <exclude reference="dzc-MG-X1B"/>
-                                        <exclude reference="vCC-F4-n0X"/>
+                                        <exclude reference="usw-uv-H2d"/>
                                         <exclude reference="fzU-N7-sWB"/>
+                                        <exclude reference="vCC-F4-n0X"/>
                                     </mask>
                                 </variation>
                             </view>
@@ -299,7 +308,12 @@
                                     </imageView>
                                     <button opaque="NO" contentMode="scaleToFill" semanticContentAttribute="forceLeftToRight" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="I4J-xG-XIN">
                                         <rect key="frame" x="0.0" y="0.0" width="240" height="50"/>
-                                        <state key="normal" title="Start"/>
+                                        <state key="normal" title="START!">
+                                            <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="makeCoffeeButtonPressed:" destination="L8G-rA-ISB" eventType="touchUpInside" id="ZhM-35-dtL"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -321,42 +335,27 @@
                                 </constraints>
                                 <variation key="default">
                                     <mask key="constraints">
+                                        <exclude reference="61E-kW-FE2"/>
                                         <exclude reference="6OF-zd-KUn"/>
                                         <exclude reference="D8g-h9-fBI"/>
-                                        <exclude reference="61E-kW-FE2"/>
                                         <exclude reference="wNE-wW-IbU"/>
                                         <exclude reference="jF5-Ds-VOe"/>
                                         <exclude reference="yVr-8m-Bb8"/>
                                     </mask>
                                 </variation>
                             </view>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="gT5-0f-KKP">
-                                <rect key="frame" x="225" y="88" width="150" height="150"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="150" id="JJZ-k2-eLO"/>
-                                    <constraint firstAttribute="width" constant="150" id="c1Z-zc-3PC"/>
-                                </constraints>
-                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="hNe-FO-LRH" firstAttribute="top" secondItem="5OH-uH-zBu" secondAttribute="bottom" constant="40" id="4dA-Ma-UCe"/>
-                            <constraint firstItem="ngD-iW-nlb" firstAttribute="top" secondItem="gT5-0f-KKP" secondAttribute="bottom" constant="86" id="5Le-cv-jwC"/>
                             <constraint firstItem="5OH-uH-zBu" firstAttribute="top" secondItem="Kcy-bq-T6c" secondAttribute="bottom" constant="30" id="Aa8-uc-DRK"/>
                             <constraint firstItem="aXO-UW-3Tp" firstAttribute="centerX" secondItem="CS8-GX-9lg" secondAttribute="centerX" id="KOp-dr-WT1"/>
                             <constraint firstItem="5OH-uH-zBu" firstAttribute="centerX" secondItem="CS8-GX-9lg" secondAttribute="centerX" id="NF7-bH-K10"/>
                             <constraint firstItem="ngD-iW-nlb" firstAttribute="centerX" secondItem="CS8-GX-9lg" secondAttribute="centerX" id="PLd-pl-V3q"/>
-                            <constraint firstItem="gT5-0f-KKP" firstAttribute="centerX" secondItem="CS8-GX-9lg" secondAttribute="centerX" id="QQk-zk-kjp"/>
-                            <constraint firstItem="gT5-0f-KKP" firstAttribute="top" secondItem="wDB-Js-fFR" secondAttribute="bottom" constant="24" id="R2C-uv-GAt"/>
                             <constraint firstItem="Kcy-bq-T6c" firstAttribute="centerX" secondItem="CS8-GX-9lg" secondAttribute="centerX" id="TA8-eJ-DxE"/>
                             <constraint firstItem="aXO-UW-3Tp" firstAttribute="top" secondItem="ngD-iW-nlb" secondAttribute="bottom" constant="30" id="kZa-rT-7Bc"/>
                             <constraint firstItem="Kcy-bq-T6c" firstAttribute="top" secondItem="aXO-UW-3Tp" secondAttribute="bottom" constant="30" id="uD5-dR-EfU"/>
                         </constraints>
-                        <variation key="default">
-                            <mask key="constraints">
-                                <exclude reference="5Le-cv-jwC"/>
-                            </mask>
-                        </variation>
                     </view>
                     <navigationItem key="navigationItem" title="Coffee" id="tbw-OA-WpP">
                         <barButtonItem key="rightBarButtonItem" title="Item" id="2l5-C6-W2f"/>
@@ -364,8 +363,7 @@
                     <connections>
                         <outlet property="brewTypeButton" destination="dvd-Qh-eUG" id="gMH-c8-W5z"/>
                         <outlet property="brewTypeLED" destination="YOD-mb-bVq" id="U78-xe-Vuw"/>
-                        <outlet property="coffeeImage" destination="gT5-0f-KKP" id="nRH-1B-bib"/>
-                        <outlet property="connectedButton" destination="9gs-7o-xlk" id="WtI-pk-krs"/>
+                        <outlet property="connectedButton" destination="9gs-7o-xlk" id="REK-uq-wXJ"/>
                         <outlet property="connectedLED" destination="I4O-Cm-VHR" id="x1h-zF-jtb"/>
                         <outlet property="preppedButton" destination="8eR-8w-QkY" id="gtB-4h-kha"/>
                         <outlet property="preppedLED" destination="Xds-Pn-0of" id="6x4-mB-74G"/>
