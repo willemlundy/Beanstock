@@ -10,6 +10,7 @@
 		2FE7D5331BEA99A7001FA967 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FE7D5321BEA99A7001FA967 /* LoginViewController.m */; };
 		2FE7D5361BEAC6D8001FA967 /* SignUpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FE7D5351BEAC6D8001FA967 /* SignUpViewController.m */; };
 		2FE7D5391BEAC86A001FA967 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2FE7D5371BEAC86A001FA967 /* Main.storyboard */; };
+		2FEA39FA1BFA6FD300935A85 /* LightViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FEA39F91BFA6FD300935A85 /* LightViewController.m */; };
 		89A7653B1BEC3AC8006E569B /* BeanTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 89A7653A1BEC3AC8006E569B /* BeanTableViewCell.m */; };
 		89A7653E1BEC4005006E569B /* BeanDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 89A7653D1BEC4005006E569B /* BeanDetailViewController.m */; };
 		89BD40B31BF11FCF00FAAAE5 /* Event.m in Sources */ = {isa = PBXBuildFile; fileRef = 89BD40B21BF11FCF00FAAAE5 /* Event.m */; };
@@ -33,6 +34,8 @@
 		2FE7D5341BEAC6D8001FA967 /* SignUpViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SignUpViewController.h; sourceTree = "<group>"; };
 		2FE7D5351BEAC6D8001FA967 /* SignUpViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SignUpViewController.m; sourceTree = "<group>"; };
 		2FE7D5381BEAC86A001FA967 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		2FEA39F81BFA6FD300935A85 /* LightViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LightViewController.h; sourceTree = "<group>"; };
+		2FEA39F91BFA6FD300935A85 /* LightViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LightViewController.m; sourceTree = "<group>"; };
 		591FD67865B5A60D4D4575EE /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		89A765391BEC3AC8006E569B /* BeanTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BeanTableViewCell.h; sourceTree = "<group>"; };
 		89A7653A1BEC3AC8006E569B /* BeanTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BeanTableViewCell.m; sourceTree = "<group>"; };
@@ -91,6 +94,8 @@
 		89EFC45A1BF286DB009F6AB9 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				2FEA39F81BFA6FD300935A85 /* LightViewController.h */,
+				2FEA39F91BFA6FD300935A85 /* LightViewController.m */,
 				89EFC45E1BF28847009F6AB9 /* LoginViewControllers */,
 				89EFC45D1BF287A5009F6AB9 /* HomeViewControllers */,
 				89EFC45F1BF28991009F6AB9 /* LocationViewControllers */,
@@ -382,6 +387,7 @@
 				B2AD2D961BE9A560006EFD53 /* AppDelegate.m in Sources */,
 				89A7653E1BEC4005006E569B /* BeanDetailViewController.m in Sources */,
 				B2AD2D931BE9A560006EFD53 /* main.m in Sources */,
+				2FEA39FA1BFA6FD300935A85 /* LightViewController.m in Sources */,
 				89BD40B61BF13C8D00FAAAE5 /* Location.m in Sources */,
 				2FE7D5331BEA99A7001FA967 /* LoginViewController.m in Sources */,
 				89EFC4591BF286C5009F6AB9 /* HomeViewController.m in Sources */,
