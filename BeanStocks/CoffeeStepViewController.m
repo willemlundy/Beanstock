@@ -92,6 +92,7 @@
     [self.startButton setTitle:@"Start" forState:UIControlStateNormal];
     [self.startLED setImage:orangeLED];
     
+    [self startProgressView];
     
     self.timerLabel.userInteractionEnabled = YES;
     
@@ -99,12 +100,13 @@
     timerTap.numberOfTapsRequired = 1;
     [self.timerLabel addGestureRecognizer:timerTap];
     
+    
 }
 
 -(void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
     
-    [self startProgressView];
+    
 }
 
 -(void)selectTimer:(UIGestureRecognizer *)sender{

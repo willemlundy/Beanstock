@@ -34,4 +34,7 @@
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 
+- (IBAction)close:(UIButton *)sender {
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
 @end

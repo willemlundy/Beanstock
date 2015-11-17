@@ -512,28 +512,37 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="04X-C2-e7D">
-                                <rect key="frame" x="0.0" y="20" width="600" height="216"/>
+                                <rect key="frame" x="0.0" y="92" width="600" height="216"/>
                                 <date key="date" timeIntervalSinceReferenceDate="469473948.03563303">
                                     <!--2015-11-17 17:25:48 +0000-->
                                 </date>
                             </datePicker>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="shP-6I-AMd">
-                                <rect key="frame" x="0.0" y="266" width="600" height="67"/>
+                                <rect key="frame" x="0.0" y="329" width="600" height="67"/>
                                 <state key="normal" title="Set Timer"/>
                                 <connections>
                                     <action selector="timerSetButtonPressed:" destination="bh1-nw-R3X" eventType="touchUpInside" id="08P-iZ-uLh"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hbx-cx-F4W">
+                                <rect key="frame" x="564" y="28" width="16" height="22"/>
+                                <state key="normal" image="Close"/>
+                                <connections>
+                                    <action selector="close:" destination="bh1-nw-R3X" eventType="touchUpInside" id="XzE-NL-nFd"/>
                                 </connections>
                             </button>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="shP-6I-AMd" firstAttribute="centerY" secondItem="dUz-MI-kMp" secondAttribute="centerY" id="2po-Ae-YaQ"/>
+                            <constraint firstItem="shP-6I-AMd" firstAttribute="centerY" secondItem="dUz-MI-kMp" secondAttribute="centerY" constant="62.5" id="2po-Ae-YaQ"/>
                             <constraint firstAttribute="trailing" secondItem="04X-C2-e7D" secondAttribute="trailing" id="8UF-TC-qMI"/>
+                            <constraint firstItem="Hbx-cx-F4W" firstAttribute="top" secondItem="d0a-GN-ODy" secondAttribute="bottom" constant="8" id="GcG-GD-Fgo"/>
                             <constraint firstItem="04X-C2-e7D" firstAttribute="leading" secondItem="dUz-MI-kMp" secondAttribute="leading" id="Gnd-le-PXe"/>
                             <constraint firstItem="shP-6I-AMd" firstAttribute="trailing" secondItem="04X-C2-e7D" secondAttribute="trailing" id="HAK-J2-Rin"/>
-                            <constraint firstItem="SjM-L0-Zzr" firstAttribute="top" secondItem="shP-6I-AMd" secondAttribute="bottom" constant="267" id="Zkk-u3-Z46"/>
-                            <constraint firstItem="04X-C2-e7D" firstAttribute="top" secondItem="d0a-GN-ODy" secondAttribute="bottom" id="hGy-Tv-xA6"/>
+                            <constraint firstItem="Hbx-cx-F4W" firstAttribute="trailing" secondItem="dUz-MI-kMp" secondAttribute="trailingMargin" id="Iw4-L8-M5j"/>
+                            <constraint firstItem="SjM-L0-Zzr" firstAttribute="top" secondItem="shP-6I-AMd" secondAttribute="bottom" constant="204" id="Zkk-u3-Z46"/>
+                            <constraint firstItem="04X-C2-e7D" firstAttribute="top" secondItem="d0a-GN-ODy" secondAttribute="bottom" constant="72" id="hGy-Tv-xA6"/>
                             <constraint firstItem="shP-6I-AMd" firstAttribute="leading" secondItem="04X-C2-e7D" secondAttribute="leading" id="xTY-6r-vDh"/>
                         </constraints>
                     </view>
@@ -951,6 +960,7 @@
     <resources>
         <image name="0170-fire" width="32" height="32"/>
         <image name="161. Coffee 5" width="20" height="23"/>
+        <image name="Close" width="16" height="16"/>
         <image name="bulbicon" width="32" height="32"/>
         <image name="sandwich" width="32" height="32"/>
         <image name="wind34" width="32" height="32"/>
