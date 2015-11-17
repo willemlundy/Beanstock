@@ -239,7 +239,7 @@
                             <constraint firstItem="3kR-l2-lfd" firstAttribute="centerY" secondItem="CS8-GX-9lg" secondAttribute="centerY" id="sPl-OY-cg1"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item" image="161. Coffee 5" id="TeI-MD-1rc"/>
+                    <tabBarItem key="tabBarItem" title="Coffee" image="161. Coffee 5" id="TeI-MD-1rc"/>
                     <navigationItem key="navigationItem" title="Coffee" id="tbw-OA-WpP">
                         <barButtonItem key="rightBarButtonItem" title="Item" id="2l5-C6-W2f"/>
                     </navigationItem>
