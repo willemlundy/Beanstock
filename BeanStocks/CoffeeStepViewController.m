@@ -16,6 +16,7 @@
 // Main ImageView
 @property (weak, nonatomic) IBOutlet UIImageView *coffeeImage;
 @property (weak, nonatomic) IBOutlet UILabel *beanLabel;
+@property (weak, nonatomic) IBOutlet UIImageView *handleImageView;
 @property (weak, nonatomic) IBOutlet UILabel *timerLabel;
 
 @property (strong,nonatomic) NSMutableDictionary *discoveredBeans;
@@ -50,6 +51,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+
     
     self.navigationItem.hidesBackButton = YES;
     
@@ -94,6 +97,9 @@
     
     [self startProgressView];
     
+//    self.fillView.hidden = YES;
+//    self.progressView.hidden = YES;
+    
     self.timerLabel.userInteractionEnabled = YES;
     
     UITapGestureRecognizer *timerTap = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(selectTimer:)];
@@ -134,10 +140,10 @@
     tap.numberOfTapsRequired = 1;
     [self.percentage addGestureRecognizer:tap];
     
-    self.fillView = [[UIView alloc]initWithFrame:CGRectMake(self.progressView.frame.origin.x, self.progressView.frame.origin.y + 140, 150, 10)];
+    self.fillView = [[UIView alloc]initWithFrame:CGRectMake(self.progressView.frame.origin.x, self.progressView.frame.origin.y + 120, 150, 10)];
     self.fillView.backgroundColor = [UIColor colorWithRed:90/255.0 green:72/255.0 blue:60/255.0 alpha:1.0];
     
-    self.progressView.center = CGPointMake(self.view.bounds.size.width/2.0,100);
+    self.progressView.center = CGPointMake(self.view.bounds.size.width/2.0,168);
     self.progressView.layer.cornerRadius = self.progressView.bounds.size.width/2.0;
     self.progressView.clipsToBounds = YES;
     self.progressView.layer.borderWidth = 4.0;
@@ -146,9 +152,10 @@
     [self.view addSubview:self.progressView];
     [self.progressView addSubview:self.fillView];
     [self.progressView addSubview:self.percentage];
+    [self.view bringSubviewToFront:self.handleImageView];
     
     [UIView animateWithDuration:0.5 animations:^{
-        self.fillView.frame = CGRectMake(0,150,150,-150);
+        self.fillView.frame = CGRectMake(0,150,150,-120);
     } completion:^(BOOL finished) { self.percentage.text = @"Brew Now!"; }];
 }
 
@@ -266,9 +273,10 @@
     [self.customBean sendSerialString:@"TogglePower\n"];
     self.percentage.text = @"";
     
-    self.fillView.frame = CGRectMake(self.progressView.bounds.origin.x, self.progressView.frame.origin.y + 140, 150, 10);
+    self.fillView.frame = CGRectMake(self.progressView.bounds.origin.x, self.progressView.bounds.origin.y + 140, 150, 10);
+    
     [UIView animateWithDuration:10.0 animations:^{
-        self.fillView.frame = CGRectMake(0,150,150,-150);
+        self.fillView.frame = CGRectMake(0,150,150,-120);
     } completion:^(BOOL finished) { self.percentage.text = @"READY!"; }];
     
 }
