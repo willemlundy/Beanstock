@@ -91,7 +91,10 @@
     [self.startLED setImage:orangeLED];
     
     
-    
+//    UIBlurEffect *blurEffect = [UIBlurEffect effectWithStyle:UIBlurEffectStyleExtraLight];
+//    UIVisualEffectView *effectView = [[UIVisualEffectView alloc]initWithEffect:blurEffect];
+//    effectView.frame = self.view.bounds;
+//    [self.view addSubview:effectView];
     
 }
 
@@ -106,7 +109,13 @@
     self.percentage = [[UILabel alloc]initWithFrame:CGRectMake(0, 0, 120, 30)];
     self.percentage.center = self.progressView.center;
     self.percentage.textAlignment = NSTextAlignmentCenter;
-    self.percentage.font = [UIFont fontWithName:@"Arial" size:15];
+    self.percentage.textColor = [UIColor whiteColor];
+    self.percentage.userInteractionEnabled = YES;
+    self.percentage.font = [UIFont fontWithName:@"Arial" size:20];
+    
+    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(tapped:)];
+    tap.numberOfTapsRequired = 1;
+    [self.percentage addGestureRecognizer:tap];
     
     self.fillView = [[UIView alloc]initWithFrame:CGRectMake(self.progressView.frame.origin.x, self.progressView.frame.origin.y + 140, 150, 10)];
     self.fillView.backgroundColor = [UIColor colorWithRed:90/255.0 green:72/255.0 blue:60/255.0 alpha:1.0];
@@ -123,9 +132,15 @@
     
     [UIView animateWithDuration:0.5 animations:^{
         self.fillView.frame = CGRectMake(0,150,150,-150);
-    } completion:^(BOOL finished) { self.percentage.text = @"Good Evening!"; }];
+    } completion:^(BOOL finished) { self.percentage.text = @"Brew Now!"; }];
 }
 
+-(void)tapped:(UIGestureRecognizer *)sender{
+    [self makeCoffee];
+}
+- (IBAction)brewStrengthControl:(UISlider *)sender {
+    self.fillView.backgroundColor = [UIColor colorWithRed:90/255.0 green:72/255.0 blue:60/255.0 alpha:sender.value/10.0];
+}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
@@ -229,7 +244,7 @@
 }
 
 #pragma mark - Make Coffee
-- (IBAction)makeCoffeeButtonPressed:(UIButton *)sender {
+- (void)makeCoffee{
     //[self.customBean setLedColor:[UIColor blueColor]];
     [self.customBean sendSerialString:@"TogglePower\n"];
     self.percentage.text = @"";
