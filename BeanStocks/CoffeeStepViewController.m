@@ -7,14 +7,16 @@
 //
 
 #import "CoffeeStepViewController.h"
+#import "TimerViewController.h"
 #import <PTDBean.h>
 #import <PTDBeanManager.h>
 
-@interface CoffeeStepViewController () <PTDBeanDelegate,PTDBeanManagerDelegate>
+@interface CoffeeStepViewController () <PTDBeanDelegate,PTDBeanManagerDelegate,TimerVCDelegate>
 
 // Main ImageView
 @property (weak, nonatomic) IBOutlet UIImageView *coffeeImage;
 @property (weak, nonatomic) IBOutlet UILabel *beanLabel;
+@property (weak, nonatomic) IBOutlet UILabel *timerLabel;
 
 @property (strong,nonatomic) NSMutableDictionary *discoveredBeans;
 @property (strong,nonatomic) PTDBeanManager *beanManager;
@@ -91,10 +93,11 @@
     [self.startLED setImage:orangeLED];
     
     
-//    UIBlurEffect *blurEffect = [UIBlurEffect effectWithStyle:UIBlurEffectStyleExtraLight];
-//    UIVisualEffectView *effectView = [[UIVisualEffectView alloc]initWithEffect:blurEffect];
-//    effectView.frame = self.view.bounds;
-//    [self.view addSubview:effectView];
+    self.timerLabel.userInteractionEnabled = YES;
+    
+    UITapGestureRecognizer *timerTap = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(selectTimer:)];
+    timerTap.numberOfTapsRequired = 1;
+    [self.timerLabel addGestureRecognizer:timerTap];
     
 }
 
@@ -103,6 +106,18 @@
     
     [self startProgressView];
 }
+
+-(void)selectTimer:(UIGestureRecognizer *)sender{
+    TimerViewController *timerVC = [self.storyboard instantiateViewControllerWithIdentifier:@"TimerVC"];
+    timerVC.delegate = self;
+    [self presentViewController:timerVC animated:YES completion:nil];
+}
+
+#pragma mark - TimerViewController Delegate
+-(void)timerViewControllerWithTimePicked:(NSString *)time{
+    self.timerLabel.text = time;
+}
+
 
 -(void)startProgressView{
     self.progressView = [[UIView alloc]initWithFrame:CGRectMake(0,0,150,150)];
