@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9059" systemVersion="15A284" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="H8G-E1-3NS">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="H8G-E1-3NS">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
@@ -26,7 +26,7 @@
                                         <rect key="frame" x="0.0" y="28" width="600" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="1WJ-Jd-TlZ" id="n6o-L4-Cyn">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <animations/>
                                         </tableViewCellContentView>
@@ -228,14 +228,26 @@
                                 </subviews>
                                 <animations/>
                             </stackView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SET TIMER" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Qr-ya-Jfo">
+                                <rect key="frame" x="20" y="323" width="560" height="71"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="71" id="NgF-PK-fAb"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="40"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" red="0.73700539396464637" green="0.54540734119162448" blue="0.40414504061033563" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="hNe-FO-LRH" firstAttribute="top" secondItem="If3-f0-iGE" secondAttribute="bottom" constant="27" id="0kl-ku-dIq"/>
+                            <constraint firstItem="3Qr-ya-Jfo" firstAttribute="top" secondItem="3kR-l2-lfd" secondAttribute="bottom" constant="8" id="1Av-DB-wSQ"/>
                             <constraint firstItem="3kR-l2-lfd" firstAttribute="centerX" secondItem="CS8-GX-9lg" secondAttribute="centerX" id="CTE-Bl-9CU"/>
                             <constraint firstItem="If3-f0-iGE" firstAttribute="centerX" secondItem="CS8-GX-9lg" secondAttribute="centerX" id="HKz-cb-Gwn"/>
+                            <constraint firstItem="3Qr-ya-Jfo" firstAttribute="leading" secondItem="CS8-GX-9lg" secondAttribute="leadingMargin" id="LuG-lg-2pa"/>
                             <constraint firstItem="3kR-l2-lfd" firstAttribute="leading" secondItem="CS8-GX-9lg" secondAttribute="leadingMargin" id="QU1-aP-aid"/>
+                            <constraint firstItem="3Qr-ya-Jfo" firstAttribute="trailing" secondItem="CS8-GX-9lg" secondAttribute="trailingMargin" id="okg-n4-6DU"/>
                             <constraint firstItem="3kR-l2-lfd" firstAttribute="centerY" secondItem="CS8-GX-9lg" secondAttribute="centerY" id="sPl-OY-cg1"/>
                         </constraints>
                     </view>
@@ -246,6 +258,7 @@
                     <connections>
                         <outlet property="connectedButton" destination="9gs-7o-xlk" id="REK-uq-wXJ"/>
                         <outlet property="preppedButton" destination="8eR-8w-QkY" id="gtB-4h-kha"/>
+                        <outlet property="timerLabel" destination="3Qr-ya-Jfo" id="qdo-7T-aW6"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="V2Y-Ab-wnK" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -486,10 +499,10 @@
             </objects>
             <point key="canvasLocation" x="2634" y="1069"/>
         </scene>
-        <!--View Controller-->
+        <!--Timer View Controller-->
         <scene sceneID="4C2-GV-pAg">
             <objects>
-                <viewController id="bh1-nw-R3X" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="TimerVC" id="bh1-nw-R3X" customClass="TimerViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="d0a-GN-ODy"/>
                         <viewControllerLayoutGuide type="bottom" id="SjM-L0-Zzr"/>
@@ -497,13 +510,40 @@
                     <view key="view" contentMode="scaleToFill" id="dUz-MI-kMp">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="04X-C2-e7D">
+                                <rect key="frame" x="0.0" y="20" width="600" height="216"/>
+                                <date key="date" timeIntervalSinceReferenceDate="469473948.03563303">
+                                    <!--2015-11-17 17:25:48 +0000-->
+                                </date>
+                            </datePicker>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="shP-6I-AMd">
+                                <rect key="frame" x="0.0" y="266" width="600" height="67"/>
+                                <state key="normal" title="Set Timer"/>
+                                <connections>
+                                    <action selector="timerSetButtonPressed:" destination="bh1-nw-R3X" eventType="touchUpInside" id="08P-iZ-uLh"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="shP-6I-AMd" firstAttribute="centerY" secondItem="dUz-MI-kMp" secondAttribute="centerY" id="2po-Ae-YaQ"/>
+                            <constraint firstAttribute="trailing" secondItem="04X-C2-e7D" secondAttribute="trailing" id="8UF-TC-qMI"/>
+                            <constraint firstItem="04X-C2-e7D" firstAttribute="leading" secondItem="dUz-MI-kMp" secondAttribute="leading" id="Gnd-le-PXe"/>
+                            <constraint firstItem="shP-6I-AMd" firstAttribute="trailing" secondItem="04X-C2-e7D" secondAttribute="trailing" id="HAK-J2-Rin"/>
+                            <constraint firstItem="SjM-L0-Zzr" firstAttribute="top" secondItem="shP-6I-AMd" secondAttribute="bottom" constant="267" id="Zkk-u3-Z46"/>
+                            <constraint firstItem="04X-C2-e7D" firstAttribute="top" secondItem="d0a-GN-ODy" secondAttribute="bottom" id="hGy-Tv-xA6"/>
+                            <constraint firstItem="shP-6I-AMd" firstAttribute="leading" secondItem="04X-C2-e7D" secondAttribute="leading" id="xTY-6r-vDh"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="datePicker" destination="04X-C2-e7D" id="psr-g4-pHv"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Tqo-sC-zLw" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="581" y="370"/>
+            <point key="canvasLocation" x="486" y="370"/>
         </scene>
         <!--Sign Up View Controller-->
         <scene sceneID="ZOS-gS-yLf">
@@ -608,7 +648,7 @@
                                         <rect key="frame" x="0.0" y="28" width="600" height="105"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="g6l-t5-K1J" id="mxa-Tx-mVY">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="104.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="104"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d2P-uU-ip9">
@@ -655,7 +695,7 @@
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Status Value" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8VO-Kd-4JH">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Status Value" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8VO-Kd-4JH">
                                                     <rect key="frame" x="75" y="80" width="516" height="20"/>
                                                     <animations/>
                                                     <constraints>
@@ -734,7 +774,7 @@
                                         <rect key="frame" x="0.0" y="28" width="600" height="120"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="eyC-7J-EyP" id="IPe-VC-uqC">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="119.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="119"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sGl-Xc-tMr">
