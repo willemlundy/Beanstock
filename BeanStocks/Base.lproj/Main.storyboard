@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9059" systemVersion="15A284" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Bj3-ug-TLP">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9059" systemVersion="15A284" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="H8G-E1-3NS">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
@@ -393,7 +393,7 @@
             </objects>
             <point key="canvasLocation" x="-190" y="370"/>
         </scene>
-        <!--ON/OFF-->
+        <!--Light-->
         <scene sceneID="aMr-zI-ZR6">
             <objects>
                 <viewController id="Bj3-ug-TLP" customClass="LightViewController" sceneMemberID="viewController">
@@ -405,13 +405,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="J0N-9B-YHu">
-                                <rect key="frame" x="58" y="20" width="484" height="371"/>
-                                <animations/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="484" id="qmG-a5-mcA"/>
-                                </constraints>
-                            </imageView>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="8cN-9e-bN1">
                                 <rect key="frame" x="240" y="445" width="121" height="29"/>
                                 <animations/>
@@ -427,6 +420,13 @@
                                     <action selector="onOrOffButtonTapped:" destination="Bj3-ug-TLP" eventType="valueChanged" id="qmJ-IF-Jmf"/>
                                 </connections>
                             </segmentedControl>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="J0N-9B-YHu">
+                                <rect key="frame" x="58" y="20" width="484" height="371"/>
+                                <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="484" id="qmG-a5-mcA"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
@@ -438,7 +438,7 @@
                             <constraint firstItem="8cN-9e-bN1" firstAttribute="top" secondItem="J0N-9B-YHu" secondAttribute="bottom" constant="54" id="inf-Da-YD9"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="ON/OFF" image="bulbicon" id="TJh-my-iZ2"/>
+                    <tabBarItem key="tabBarItem" title="Light" image="bulbicon" id="TJh-my-iZ2"/>
                     <connections>
                         <outlet property="lightBulbImageView" destination="J0N-9B-YHu" id="xE6-Az-NvR"/>
                         <outlet property="onOffSegmentControl" destination="8cN-9e-bN1" id="Fho-Ml-9Pa"/>
@@ -447,6 +447,185 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Jra-Tc-NrE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="615" y="1069"/>
+        </scene>
+        <!--Toast-->
+        <scene sceneID="pAQ-6U-gqK">
+            <objects>
+                <viewController id="D0W-AY-0rO" customClass="ToasterViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="wFB-Yr-1yf"/>
+                        <viewControllerLayoutGuide type="bottom" id="mvm-oq-Jsm"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Sqs-HL-jhg">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="BaX-UR-oWX">
+                                <rect key="frame" x="240" y="445" width="121" height="29"/>
+                                <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="121" id="Qlf-LC-IA2"/>
+                                    <constraint firstAttribute="height" constant="28" id="hNc-5a-u7X"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="121" id="r60-Qc-ZpZ"/>
+                                </constraints>
+                                <segments>
+                                    <segment title="OFF"/>
+                                    <segment title="ON"/>
+                                </segments>
+                                <connections>
+                                    <action selector="onOffSegmentedToggled:" destination="D0W-AY-0rO" eventType="valueChanged" id="hOr-fa-Wb9"/>
+                                </connections>
+                            </segmentedControl>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ova-LR-NRU">
+                                <rect key="frame" x="58" y="20" width="484" height="371"/>
+                                <animations/>
+                            </imageView>
+                        </subviews>
+                        <animations/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="BaX-UR-oWX" firstAttribute="top" secondItem="ova-LR-NRU" secondAttribute="bottom" constant="54" id="SLa-hS-6sF"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="ova-LR-NRU" secondAttribute="trailing" constant="38" id="b9B-gF-0OU"/>
+                            <constraint firstItem="BaX-UR-oWX" firstAttribute="centerX" secondItem="ova-LR-NRU" secondAttribute="centerX" id="dRc-VE-ve4"/>
+                            <constraint firstItem="ova-LR-NRU" firstAttribute="top" secondItem="wFB-Yr-1yf" secondAttribute="bottom" id="ha8-M0-Sfp"/>
+                            <constraint firstItem="mvm-oq-Jsm" firstAttribute="top" secondItem="BaX-UR-oWX" secondAttribute="bottom" constant="127" id="vIs-dY-7El"/>
+                            <constraint firstItem="ova-LR-NRU" firstAttribute="leading" secondItem="Sqs-HL-jhg" secondAttribute="leadingMargin" constant="38" id="zP6-t5-4no"/>
+                        </constraints>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Toast" image="sandwich" id="JR6-Xk-dQi"/>
+                    <connections>
+                        <outlet property="onOffSegmentControl" destination="BaX-UR-oWX" id="ANd-9w-22c"/>
+                        <outlet property="toasterImageView" destination="ova-LR-NRU" id="giK-Fj-bzi"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Lcf-dw-Qpz" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1328" y="1069"/>
+        </scene>
+        <!--Heater-->
+        <scene sceneID="R51-zY-S4e">
+            <objects>
+                <viewController id="aXx-dP-vhX" customClass="HeaterViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="J4L-7j-OlW"/>
+                        <viewControllerLayoutGuide type="bottom" id="Hd1-RW-TT4"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="66j-1e-nS3">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="T5s-1G-Gbi">
+                                <rect key="frame" x="240" y="445" width="121" height="29"/>
+                                <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="121" id="eiQ-X0-ceg"/>
+                                    <constraint firstAttribute="height" constant="28" id="jay-1x-hff"/>
+                                </constraints>
+                                <segments>
+                                    <segment title="OFF"/>
+                                    <segment title="ON"/>
+                                </segments>
+                                <connections>
+                                    <action selector="onOffSegmentedControlToggled:" destination="aXx-dP-vhX" eventType="valueChanged" id="AXc-38-ecs"/>
+                                </connections>
+                            </segmentedControl>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="t0J-VH-2OY">
+                                <rect key="frame" x="114" y="271" width="371" height="115"/>
+                                <animations/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="XYI-zj-Wpn">
+                                <rect key="frame" x="114" y="58" width="371" height="191"/>
+                                <animations/>
+                            </imageView>
+                        </subviews>
+                        <animations/>
+                        <color key="backgroundColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="XYI-zj-Wpn" firstAttribute="leading" secondItem="t0J-VH-2OY" secondAttribute="leading" id="43i-OV-coq"/>
+                            <constraint firstItem="T5s-1G-Gbi" firstAttribute="top" secondItem="t0J-VH-2OY" secondAttribute="bottom" constant="59" id="8Oc-HB-p9n"/>
+                            <constraint firstItem="XYI-zj-Wpn" firstAttribute="top" secondItem="J4L-7j-OlW" secondAttribute="bottom" constant="38" id="8Ov-BQ-buy"/>
+                            <constraint firstItem="XYI-zj-Wpn" firstAttribute="trailing" secondItem="t0J-VH-2OY" secondAttribute="trailing" id="LAi-iC-rw9"/>
+                            <constraint firstItem="T5s-1G-Gbi" firstAttribute="centerX" secondItem="66j-1e-nS3" secondAttribute="centerX" id="N5w-A4-Y1F"/>
+                            <constraint firstItem="t0J-VH-2OY" firstAttribute="leading" secondItem="66j-1e-nS3" secondAttribute="leadingMargin" constant="94" id="OL1-9f-DJg"/>
+                            <constraint firstItem="t0J-VH-2OY" firstAttribute="top" secondItem="J4L-7j-OlW" secondAttribute="bottom" constant="251" id="V2a-cE-9uK"/>
+                            <constraint firstItem="t0J-VH-2OY" firstAttribute="centerX" secondItem="T5s-1G-Gbi" secondAttribute="centerX" constant="-1" id="YcM-aO-qyf"/>
+                            <constraint firstItem="t0J-VH-2OY" firstAttribute="top" secondItem="XYI-zj-Wpn" secondAttribute="bottom" constant="22" id="hEY-HI-RDe"/>
+                            <constraint firstItem="Hd1-RW-TT4" firstAttribute="top" secondItem="T5s-1G-Gbi" secondAttribute="bottom" constant="127" id="unH-SQ-QEd"/>
+                        </constraints>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Heater" image="0170-fire" id="h9X-gS-aEG"/>
+                    <connections>
+                        <outlet property="heater2ImageView" destination="XYI-zj-Wpn" id="k37-E1-Thq"/>
+                        <outlet property="heaterImageView" destination="t0J-VH-2OY" id="ewk-mf-4Hd"/>
+                        <outlet property="onOffSegmentControl" destination="T5s-1G-Gbi" id="rVT-fG-nFV"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="VU7-3o-YXd" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1983" y="1069"/>
+        </scene>
+        <!--Fan-->
+        <scene sceneID="WVj-Oi-YDN">
+            <objects>
+                <viewController id="OmT-Lu-OeQ" customClass="FanViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="OmB-Vj-QEa"/>
+                        <viewControllerLayoutGuide type="bottom" id="XH8-Ns-RuA"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="GEU-Xu-M9b">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="f4D-sO-euJ">
+                                <rect key="frame" x="114" y="271" width="371" height="115"/>
+                                <animations/>
+                            </imageView>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="9tK-bv-qGV">
+                                <rect key="frame" x="240" y="445" width="121" height="29"/>
+                                <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="121" id="3KI-z7-FsV"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="121" id="Ubv-Iq-2Zg"/>
+                                    <constraint firstAttribute="height" constant="28" id="nX1-I1-ddn"/>
+                                </constraints>
+                                <segments>
+                                    <segment title="OFF"/>
+                                    <segment title="ON"/>
+                                </segments>
+                                <connections>
+                                    <action selector="onOffSegmentedControlToggled:" destination="OmT-Lu-OeQ" eventType="valueChanged" id="aU5-LL-QW9"/>
+                                </connections>
+                            </segmentedControl>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="NV5-eS-WoK">
+                                <rect key="frame" x="114" y="58" width="371" height="191"/>
+                                <animations/>
+                            </imageView>
+                        </subviews>
+                        <animations/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="NV5-eS-WoK" firstAttribute="top" secondItem="OmB-Vj-QEa" secondAttribute="bottom" constant="38" id="6BW-Ty-7rr"/>
+                            <constraint firstItem="f4D-sO-euJ" firstAttribute="centerX" secondItem="GEU-Xu-M9b" secondAttribute="centerX" id="A7f-nn-rQQ"/>
+                            <constraint firstItem="NV5-eS-WoK" firstAttribute="leading" secondItem="f4D-sO-euJ" secondAttribute="leading" id="E5j-1Y-WwP"/>
+                            <constraint firstItem="f4D-sO-euJ" firstAttribute="top" secondItem="OmB-Vj-QEa" secondAttribute="bottom" constant="251" id="OCu-y0-aOU"/>
+                            <constraint firstItem="f4D-sO-euJ" firstAttribute="top" secondItem="NV5-eS-WoK" secondAttribute="bottom" constant="22" id="dHk-ab-7XC"/>
+                            <constraint firstItem="NV5-eS-WoK" firstAttribute="trailing" secondItem="f4D-sO-euJ" secondAttribute="trailing" id="fNZ-NM-4cg"/>
+                            <constraint firstItem="9tK-bv-qGV" firstAttribute="centerX" secondItem="f4D-sO-euJ" secondAttribute="centerX" constant="1" id="fpV-Ug-1Fx"/>
+                            <constraint firstItem="XH8-Ns-RuA" firstAttribute="top" secondItem="9tK-bv-qGV" secondAttribute="bottom" constant="127" id="hig-Fq-FmB"/>
+                            <constraint firstItem="f4D-sO-euJ" firstAttribute="leading" secondItem="GEU-Xu-M9b" secondAttribute="leadingMargin" constant="94" id="yjQ-en-66B"/>
+                            <constraint firstItem="9tK-bv-qGV" firstAttribute="top" secondItem="f4D-sO-euJ" secondAttribute="bottom" constant="59" id="zbg-G1-NCx"/>
+                        </constraints>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Fan" image="wind34" id="Vkf-Iz-fD9"/>
+                    <connections>
+                        <outlet property="fan2ImageView" destination="NV5-eS-WoK" id="irl-r8-gNm"/>
+                        <outlet property="fanImageView" destination="f4D-sO-euJ" id="l1s-rE-N74"/>
+                        <outlet property="onOffSegmentControl" destination="9tK-bv-qGV" id="gwK-Ri-qBv"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="DNQ-XL-2H3" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2634" y="1069"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="4C2-GV-pAg">
@@ -859,6 +1038,9 @@
                     </tabBar>
                     <connections>
                         <segue destination="Bj3-ug-TLP" kind="relationship" relationship="viewControllers" id="5ch-uA-TxI"/>
+                        <segue destination="D0W-AY-0rO" kind="relationship" relationship="viewControllers" id="qFU-LO-x9i"/>
+                        <segue destination="aXx-dP-vhX" kind="relationship" relationship="viewControllers" id="fJ1-Hy-5K1"/>
+                        <segue destination="OmT-Lu-OeQ" kind="relationship" relationship="viewControllers" id="ZYG-6n-QlP"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ANQ-ki-Qe5" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -867,6 +1049,9 @@
         </scene>
     </scenes>
     <resources>
+        <image name="0170-fire" width="32" height="32"/>
         <image name="bulbicon" width="32" height="32"/>
+        <image name="sandwich" width="32" height="32"/>
+        <image name="wind34" width="32" height="32"/>
     </resources>
 </document>
