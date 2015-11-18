@@ -20,7 +20,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.heaterImageView.image = [UIImage imageNamed:@"off"];
-    self.heater2ImageView.image = [UIImage imageNamed:@"heater"];
+    self.heater2ImageView.image = [UIImage imageNamed:@"heart"];
 }
 
 - (IBAction)onOffSegmentedControlToggled:(UISegmentedControl *)sender {
