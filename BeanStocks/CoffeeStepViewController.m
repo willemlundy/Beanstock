@@ -18,6 +18,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *beanLabel;
 @property (weak, nonatomic) IBOutlet UIImageView *handleImageView;
 @property (weak, nonatomic) IBOutlet UILabel *timerLabel;
+@property (weak, nonatomic) IBOutlet UIView *coffeeBackground;
 
 @property (strong,nonatomic) NSMutableDictionary *discoveredBeans;
 @property (strong,nonatomic) PTDBeanManager *beanManager;
@@ -45,6 +46,9 @@
 
 @property (strong,nonatomic) UILabel *percentage;
 @property (assign,nonatomic) int percentCount;
+
+@property (nonatomic) BOOL coffeBrewing;
+@property (nonatomic) BOOL coffeeMakerPrepped;
 @end
 
 @implementation CoffeeStepViewController
@@ -52,13 +56,23 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-
+//    [self.navigationController.navigationBar setBackgroundImage:[UIImage new] forBarMetrics:UIBarMetricsDefault];
+//    self.navigationController.navigationBar.shadowImage = [UIImage new];
+//    self.navigationController.navigationBar.barStyle = UIBarStyleBlack;
+//    self.navigationController.navigationBar.translucent = YES;
+    
     
     self.navigationItem.hidesBackButton = YES;
     
     self.discoveredBeans = [NSMutableDictionary dictionary];
     self.beanManager = [[PTDBeanManager alloc]initWithDelegate:self];
     self.customBean.delegate = self;
+    
+    self.connectedButton.layer.cornerRadius = 2.0;
+    self.preppedButton.layer.cornerRadius = 2.0;
+    
+    [self.connectedButton setTitle:@"Not Found" forState:UIControlStateNormal];
+    
     // UIImage variables
 //    UIImage *coffeePic = [UIImage imageNamed: @"Coffee-Cup-23"];
 //    UIImage *ligthblueLED = [UIImage imageNamed: @"ligthblue-led-circle-3-th"];
@@ -101,6 +115,7 @@
 //    self.progressView.hidden = YES;
     
     self.timerLabel.userInteractionEnabled = YES;
+    self.coffeeBackground.layer.cornerRadius = 5.0;
     
     UITapGestureRecognizer *timerTap = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(selectTimer:)];
     timerTap.numberOfTapsRequired = 1;
@@ -109,16 +124,12 @@
     
 }
 
--(void)viewWillAppear:(BOOL)animated{
-    [super viewWillAppear:animated];
-    
-    
-}
 
 -(void)selectTimer:(UIGestureRecognizer *)sender{
-    TimerViewController *timerVC = [self.storyboard instantiateViewControllerWithIdentifier:@"TimerVC"];
+    UINavigationController *timerNavVC = [self.storyboard instantiateViewControllerWithIdentifier:@"TimerNavController"];
+    TimerViewController *timerVC = timerNavVC.viewControllers[0];
     timerVC.delegate = self;
-    [self presentViewController:timerVC animated:YES completion:nil];
+    [self presentViewController:timerNavVC animated:YES completion:nil];
 }
 
 #pragma mark - TimerViewController Delegate
@@ -174,6 +185,9 @@
 #pragma mark - BeanManagerDelegate Callbacks
 
 - (void)beanManagerDidUpdateState:(PTDBeanManager *)manager{
+    NSLog(@"SSState: %lu",(unsigned long)manager.state);
+    NSLog(@"SSState: %lu",(unsigned long)self.beanManager.state);
+    
     if(self.beanManager.state == BeanManagerState_PoweredOn){
         [self.beanManager startScanningForBeans_error:nil];
     }
@@ -200,14 +214,30 @@
 
 - (void)BeanManager:(PTDBeanManager*)beanManager didDiscoverBean:(PTDBean*)bean error:(NSError*)error{
     NSUUID * key = bean.identifier;
+    NSLog(@"BBBState: %lu",(unsigned long)self.customBean.state);
     if (![self.discoveredBeans objectForKey:key]) {
         // New bean
         NSLog(@"BeanManager:didDiscoverBean:error %@", bean);
         [self.discoveredBeans setObject:bean forKey:key];
-        self.customBean = [self.discoveredBeans.allValues objectAtIndex:0];
+        
+        //[self.discoveredBeans.allValues objectAtIndex:0];
+        for (PTDBean *bean in self.discoveredBeans.allValues) {
+            [self isCoffeeMachineFound:bean];
+        }
     }
     //self.beanLabel.text = @"Bean found! Tap to connect.";
     [self.connectedButton setTitle:@"Connect now!" forState:UIControlStateNormal];
+}
+
+-(BOOL)isCoffeeMachineFound:(PTDBean *)bean{
+    if ([bean.name isEqualToString:@"CoffeeBean"] || [bean.name isEqualToString:@"Coffee Bean"]) {
+        self.customBean = bean;
+        return YES;
+    }else{
+        [self.connectedButton setTitle:@"Not found!" forState:UIControlStateNormal];
+        return NO;
+    }
+
 }
 
 - (void)BeanManager:(PTDBeanManager*)beanManager didConnectToBean:(PTDBean*)bean error:(NSError*)error{
@@ -256,7 +286,20 @@
 
 -(void)bean:(PTDBean *)bean serialDataReceived:(NSData *)data{
     NSString *stringReceived = [[NSString alloc]initWithData:data encoding:NSUTF8StringEncoding];
-    NSLog(@"%@",stringReceived);
+    
+    if ([stringReceived isEqualToString:@"Button One Pressed"]) {
+        //NSLog(@"Button one pressed");
+        self.coffeeMakerPrepped = YES;
+        [self.preppedButton setTitle:@"Coffee Prepped!" forState:UIControlStateNormal];
+    } else if([stringReceived isEqualToString:@"Button Two Pressed"]){
+        NSLog(@"Button Two pressed");
+    }else if ([stringReceived isEqualToString:@"Power Toggled"]){
+        NSLog(@"Power Toggled");
+    }else if ([stringReceived isEqualToString:@"Brew Toggled"]){
+        NSLog(@"Brew Toggled");
+    }else{
+        NSLog(@"Unrecognized: %@",stringReceived);
+    }
 }
 
 #pragma mark - Connect to Coffee Machine
@@ -273,15 +316,32 @@
     [self.customBean sendSerialString:@"TogglePower\n"];
     self.percentage.text = @"";
     
-    self.fillView.frame = CGRectMake(self.progressView.bounds.origin.x, self.progressView.bounds.origin.y + 140, 150, 10);
     
-    [UIView animateWithDuration:10.0 animations:^{
-        self.fillView.frame = CGRectMake(0,150,150,-120);
-    } completion:^(BOOL finished) { self.percentage.text = @"READY!"; }];
+    if (!self.coffeBrewing && self.coffeeMakerPrepped) {
+        self.fillView.frame = CGRectMake(self.progressView.bounds.origin.x, self.progressView.bounds.origin.y + 140, 150, 10);
+        self.coffeBrewing = YES;
+        self.coffeeMakerPrepped = NO;
+        [UIView animateWithDuration:10.0 animations:^{
+            self.fillView.frame = CGRectMake(0,150,150,-120);
+        } completion:^(BOOL finished) {
+            self.percentage.text = @"READY!";
+            [self.preppedButton setTitle:@"Coffee not prepped!" forState:UIControlStateNormal];
+            self.coffeBrewing = NO;
+        }];
+    }
+    
     
 }
 
-
+-(void)viewWillDisappear:(BOOL)animated{
+    [super viewWillDisappear:animated];
+    
+    [self.beanManager disconnectBean:self.customBean error:nil];
+    [self.discoveredBeans removeAllObjects];
+    
+    NSLog(@"BEAN STATE: %ld",(long)self.customBean.state);
+    NSLog(@"COUNT: %lu",self.discoveredBeans.count);
+}
 
 
 @end
