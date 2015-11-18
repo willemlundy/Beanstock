@@ -60,40 +60,40 @@
     self.beanManager = [[PTDBeanManager alloc]initWithDelegate:self];
     self.customBean.delegate = self;
     // UIImage variables
-    UIImage *coffeePic = [UIImage imageNamed: @"Coffee-Cup-23"];
-    UIImage *ligthblueLED = [UIImage imageNamed: @"ligthblue-led-circle-3-th"];
-    UIImage *cyanLED = [UIImage imageNamed: @"cyan-led-circle-3-th"];
-    UIImage *greenLED = [UIImage imageNamed: @"green1-led-circle-3-th"];
-    UIImage *redLED = [UIImage imageNamed: @"red-led-circle-3-th"];
-    UIImage *orangeLED = [UIImage imageNamed: @"orange-led-circle-th"];
+//    UIImage *coffeePic = [UIImage imageNamed: @"Coffee-Cup-23"];
+//    UIImage *ligthblueLED = [UIImage imageNamed: @"ligthblue-led-circle-3-th"];
+//    UIImage *cyanLED = [UIImage imageNamed: @"cyan-led-circle-3-th"];
+//    UIImage *greenLED = [UIImage imageNamed: @"green1-led-circle-3-th"];
+//    UIImage *redLED = [UIImage imageNamed: @"red-led-circle-3-th"];
+//    UIImage *orangeLED = [UIImage imageNamed: @"orange-led-circle-th"];
     
 
     
     // Set Main Image
-    [self.coffeeImage setImage:coffeePic];
-    
-    // Set up Connected Button
-    [[self.connectedButton layer] setBorderWidth:1.0f];
-    [[self.connectedButton layer] setBorderColor:[UIColor darkGrayColor].CGColor];
-    [self.connectedLED setImage:greenLED];
-    
-    // Set up Brew Type Button
-    [[self.brewTypeButton layer] setBorderWidth:1.0f];
-    [[self.brewTypeButton layer] setBorderColor:[UIColor darkGrayColor].CGColor];
-    [self.brewTypeButton setTitle:@"Regular" forState:UIControlStateNormal];
-    [self.brewTypeLED setImage:ligthblueLED];
-    
-    // Set up Prepped Button
-    [[self.preppedButton layer] setBorderWidth:1.0f];
-    [[self.preppedButton layer] setBorderColor:[UIColor darkGrayColor].CGColor];
-    [self.preppedButton setTitle:@"Not Prepped" forState:UIControlStateNormal];
-    [self.preppedLED setImage:redLED];
- 
-    // Set up Start Button
-    [[self.startButton layer] setBorderWidth:1.0f];
-    [[self.startButton layer] setBorderColor:[UIColor darkGrayColor].CGColor];
-    [self.startButton setTitle:@"Start" forState:UIControlStateNormal];
-    [self.startLED setImage:orangeLED];
+//    [self.coffeeImage setImage:coffeePic];
+//    
+//    // Set up Connected Button
+//    [[self.connectedButton layer] setBorderWidth:1.0f];
+//    [[self.connectedButton layer] setBorderColor:[UIColor darkGrayColor].CGColor];
+//    [self.connectedLED setImage:greenLED];
+//    
+//    // Set up Brew Type Button
+//    [[self.brewTypeButton layer] setBorderWidth:1.0f];
+//    [[self.brewTypeButton layer] setBorderColor:[UIColor darkGrayColor].CGColor];
+//    [self.brewTypeButton setTitle:@"Regular" forState:UIControlStateNormal];
+//    [self.brewTypeLED setImage:ligthblueLED];
+//    
+//    // Set up Prepped Button
+//    [[self.preppedButton layer] setBorderWidth:1.0f];
+//    [[self.preppedButton layer] setBorderColor:[UIColor darkGrayColor].CGColor];
+//    [self.preppedButton setTitle:@"Not Prepped" forState:UIControlStateNormal];
+//    [self.preppedLED setImage:redLED];
+// 
+//    // Set up Start Button
+//    [[self.startButton layer] setBorderWidth:1.0f];
+//    [[self.startButton layer] setBorderColor:[UIColor darkGrayColor].CGColor];
+//    [self.startButton setTitle:@"Start" forState:UIControlStateNormal];
+//    [self.startLED setImage:orangeLED];
     
     [self startProgressView];
     
@@ -143,7 +143,7 @@
     self.fillView = [[UIView alloc]initWithFrame:CGRectMake(self.progressView.frame.origin.x, self.progressView.frame.origin.y + 120, 150, 10)];
     self.fillView.backgroundColor = [UIColor colorWithRed:90/255.0 green:72/255.0 blue:60/255.0 alpha:1.0];
     
-    self.progressView.center = CGPointMake(self.view.bounds.size.width/2.0,168);
+    self.progressView.center = CGPointMake(self.view.bounds.size.width/2.0,165);
     self.progressView.layer.cornerRadius = self.progressView.bounds.size.width/2.0;
     self.progressView.clipsToBounds = YES;
     self.progressView.layer.borderWidth = 4.0;
