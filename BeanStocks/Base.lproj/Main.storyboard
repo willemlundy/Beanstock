@@ -418,17 +418,6 @@
                                 <rect key="frame" x="116" y="173" width="369" height="200"/>
                                 <animations/>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sUn-79-vmX">
-                                <rect key="frame" x="180" y="403" width="241" height="30"/>
-                                <animations/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="241" id="1mq-93-ZeE"/>
-                                </constraints>
-                                <state key="normal" title="Button"/>
-                                <connections>
-                                    <action selector="connectButtonPressed:" destination="aXx-dP-vhX" eventType="touchUpInside" id="uR5-bg-ilF"/>
-                                </connections>
-                            </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="POWER" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nhw-MW-kfD">
                                 <rect key="frame" x="261" y="488" width="79" height="25"/>
                                 <animations/>
@@ -440,23 +429,30 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="r7u-nO-6JB">
+                                <rect key="frame" x="264" y="405" width="72" height="30"/>
+                                <state key="normal" title="Not Found"/>
+                                <connections>
+                                    <action selector="onConnectButtonPressed:" destination="aXx-dP-vhX" eventType="touchUpInside" id="fjK-IK-1Bv"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="sUn-79-vmX" firstAttribute="centerX" secondItem="XYI-zj-Wpn" secondAttribute="centerX" id="2XW-GA-onU"/>
-                            <constraint firstItem="sUn-79-vmX" firstAttribute="centerX" secondItem="nhw-MW-kfD" secondAttribute="centerX" id="2rs-Kv-gND"/>
+                            <constraint firstItem="nhw-MW-kfD" firstAttribute="centerX" secondItem="XYI-zj-Wpn" secondAttribute="centerX" id="3Jd-7w-Gut"/>
+                            <constraint firstItem="r7u-nO-6JB" firstAttribute="centerX" secondItem="66j-1e-nS3" secondAttribute="centerX" id="3Sx-yD-rvM"/>
                             <constraint firstItem="XYI-zj-Wpn" firstAttribute="leading" secondItem="66j-1e-nS3" secondAttribute="leadingMargin" constant="96" id="Fkh-l4-BjJ"/>
-                            <constraint firstItem="nhw-MW-kfD" firstAttribute="top" secondItem="sUn-79-vmX" secondAttribute="bottom" constant="55" id="UQh-g6-f7p"/>
-                            <constraint firstItem="sUn-79-vmX" firstAttribute="top" secondItem="XYI-zj-Wpn" secondAttribute="bottom" constant="30" id="iMs-fo-R5q"/>
-                            <constraint firstItem="sUn-79-vmX" firstAttribute="centerX" secondItem="66j-1e-nS3" secondAttribute="centerX" id="rIF-Qg-594"/>
+                            <constraint firstItem="nhw-MW-kfD" firstAttribute="centerX" secondItem="r7u-nO-6JB" secondAttribute="centerX" id="S25-5e-i5O"/>
+                            <constraint firstItem="nhw-MW-kfD" firstAttribute="top" secondItem="r7u-nO-6JB" secondAttribute="bottom" constant="53" id="ZFj-pp-cI5"/>
+                            <constraint firstItem="r7u-nO-6JB" firstAttribute="top" secondItem="XYI-zj-Wpn" secondAttribute="bottom" constant="32" id="aBe-SG-DAK"/>
                             <constraint firstItem="XYI-zj-Wpn" firstAttribute="top" secondItem="J4L-7j-OlW" secondAttribute="bottom" constant="109" id="xED-ye-kBl"/>
                             <constraint firstItem="Hd1-RW-TT4" firstAttribute="top" secondItem="nhw-MW-kfD" secondAttribute="bottom" constant="38" id="xfE-e1-Z0u"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Heater" id="0MU-Dk-csP"/>
                     <connections>
-                        <outlet property="connectButton" destination="sUn-79-vmX" id="OkW-SD-e8z"/>
+                        <outlet property="connectButton" destination="r7u-nO-6JB" id="vPO-tC-Iut"/>
                         <outlet property="heater2ImageView" destination="XYI-zj-Wpn" id="k37-E1-Thq"/>
                     </connections>
                 </viewController>
