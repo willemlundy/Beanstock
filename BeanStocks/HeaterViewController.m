@@ -61,6 +61,7 @@
 - (void)toggled {
     if (self.heatIsOn == YES) {
         self.heater2ImageView.image = [UIImage imageNamed:@"heateron"];
+        [self.customBean sendSerialString:@"TogglePowerOn\n"];
         CATransition *animation = [CATransition animation];
         [animation setDelegate:self];
         [animation setDuration:1.0f];
@@ -70,6 +71,7 @@
         [self.heater2ImageView shakeWithOptions:SCShakeOptionsDirectionRotate | SCShakeOptionsForceInterpolationExpDown | SCShakeOptionsAtEndRestart | SCShakeOptionsAutoreverse force:0.15 duration:1 iterationDuration:0.03 completionHandler:nil];
     } else {
         self.heater2ImageView.image = [UIImage imageNamed:@"heater"];
+        [self.customBean sendSerialString:@"TogglePowerOff\n"];
         [self.heater2ImageView endShake];
     }
 
@@ -138,9 +140,9 @@
     //self.beanLabel.text = @"Bean found! Tap to connect.";
     [self.connectButton setTitle:@"Connect now!" forState:UIControlStateNormal];
 }
-    // TODO: 
+
 -(void)isLightBeanFound:(PTDBean *)bean{
-    if ([bean.name isEqualToString:@"LampBean"] || [bean.name isEqualToString:@"Lamp Bean"]){// ||  [bean.name isEqualToString:@"Coffee"]) {
+    if ([bean.name isEqualToString:@"HeaterBean"] || [bean.name isEqualToString:@"Heater Bean"] || [bean.name isEqualToString:@"Bean"]){
         self.customBean = bean;
     }else{
         //[self.connectedButton setTitle:@"Not found!" forState:UIControlStateNormal];

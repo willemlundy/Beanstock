@@ -67,6 +67,7 @@
 
     if (self.fanIsOn == YES) {
         self.fan2ImageView.image = [UIImage imageNamed:@"fanon"];
+        [self.customBean sendSerialString:@"TogglePowerOn\n"];
         CATransition *animation = [CATransition animation];
         [animation setDelegate:self];
         [animation setDuration:1.0f];
@@ -76,6 +77,7 @@
         [self.fan2ImageView shakeWithOptions:SCShakeOptionsDirectionRotate | SCShakeOptionsForceInterpolationExpDown | SCShakeOptionsAtEndRestart | SCShakeOptionsAutoreverse force:0.15 duration:1 iterationDuration:0.03 completionHandler:nil];
     } else {
         self.fan2ImageView.image = [UIImage imageNamed:@"fanpic"];
+        [self.customBean sendSerialString:@"TogglePowerOff\n"];
         [self.fan2ImageView endShake];
     }
 }
