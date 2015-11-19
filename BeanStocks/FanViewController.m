@@ -11,8 +11,9 @@
 #import "CircularPower.h"
 
 @interface FanViewController ()
-@property (weak, nonatomic) IBOutlet UISegmentedControl *onOffSegmentControl;
 @property (weak, nonatomic) IBOutlet UIImageView *fan2ImageView;
+@property BOOL fanIsOn;
+@property (weak, nonatomic) IBOutlet UIButton *connectButton;
 
 @end
 
@@ -24,8 +25,7 @@
 
     self.view.backgroundColor = [UIColor whiteColor];
 
-    CircularLock *c = [[CircularLock alloc] initWithCenter:CGPointMake(self.view.center.x, self.view.frame.size.height - 100)
-                                                    radius:50
+    CircularLock *c = [[CircularLock alloc] initWithCenter:CGPointMake(self.view.center.x, self.view.frame.size.height - 100) radius:50
                                                   duration:1.5
                                                strokeWidth:15
                                                  ringColor:[UIColor orangeColor]
@@ -35,34 +35,37 @@
                                                   isLocked:NO
                                          didlockedCallback:^{
                                              [self alertWithMessage:@"Fan is ON!"];
+                                             self.fanIsOn = YES;
+                                             [self toggled];
                                          }
                                        didUnlockedCallback:^{
                                            [self alertWithMessage:@"Fan is OFF!"];
+                                           self.fanIsOn = NO;
+                                           [self toggled];
                                        }];
     [self.view addSubview:c];
 
 
-//    [self startApp];
 }
 
-//- (IBAction)onOffSegmentedControlToggled:(UISegmentedControl *)sender {
-//
-////    [self startApp];
-//
-//    if (self.onOffSegmentControl.selectedSegmentIndex == 1) {
-//        self.fan2ImageView.image = [UIImage imageNamed:@"fanon"];
-//        CATransition *animation = [CATransition animation];
-//        [animation setDelegate:self];
-//        [animation setDuration:1.0f];
-//        [animation setTimingFunction:UIViewAnimationCurveEaseInOut];
-//        [animation setType:@"windEffect" ];
-//        [self.fan2ImageView.layer addAnimation:animation forKey:NULL];
-//        [self.fan2ImageView shakeWithOptions:SCShakeOptionsDirectionRotate | SCShakeOptionsForceInterpolationExpDown | SCShakeOptionsAtEndRestart | SCShakeOptionsAutoreverse force:0.15 duration:1 iterationDuration:0.03 completionHandler:nil];
-//    } else {
-//        self.fan2ImageView.image = [UIImage imageNamed:@"fanpic"];
-//        [self.fan2ImageView endShake];
-//    }
-//}
+- (void)toggled {
+
+
+
+    if (self.fanIsOn == YES) {
+        self.fan2ImageView.image = [UIImage imageNamed:@"fanon"];
+        CATransition *animation = [CATransition animation];
+        [animation setDelegate:self];
+        [animation setDuration:1.0f];
+        [animation setTimingFunction:UIViewAnimationCurveEaseInOut];
+        [animation setType:@"windEffect" ];
+        [self.fan2ImageView.layer addAnimation:animation forKey:NULL];
+        [self.fan2ImageView shakeWithOptions:SCShakeOptionsDirectionRotate | SCShakeOptionsForceInterpolationExpDown | SCShakeOptionsAtEndRestart | SCShakeOptionsAutoreverse force:0.15 duration:1 iterationDuration:0.03 completionHandler:nil];
+    } else {
+        self.fan2ImageView.image = [UIImage imageNamed:@"fanpic"];
+        [self.fan2ImageView endShake];
+    }
+}
 
 - (void)viewDidDisappear:(BOOL)animated {
     [super viewDidDisappear:animated];
@@ -70,43 +73,18 @@
     [self.fan2ImageView endShake];
 
 }
-//- (void)moveImage:(UIImageView *)image duration:(NSTimeInterval)duration
-//            curve:(int)curve x:(CGFloat)x y:(CGFloat)y
-//{
-//    // Setup the animation
-//    [UIView beginAnimations:nil context:NULL];
-//    [UIView setAnimationDuration:duration];
-//    [UIView setAnimationCurve:curve];
-//    [UIView setAnimationBeginsFromCurrentState:YES];
-//
-//    // The transform matrix
-//    CGAffineTransform transform = CGAffineTransformMakeTranslation(x, y);
-//    image.transform = transform;
-//
-//    // Commit the changes
-//    [UIView commitAnimations];
-//    
-//}
-//
-//- (void)startApp
-//{
-//    UIImageView *imageToMove =
-//    [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"fanpic"]];
-//    imageToMove.frame = CGRectMake(10, 10, 20, 100);
-//    [self.view addSubview:imageToMove];
-//
-//    // Move the image
-//    [self moveImage:imageToMove duration:3.0
-//              curve:UIViewAnimationCurveLinear x:116.0 y:129.0];
-//    
-//
-//    
-//}
+
+
 - (void)alertWithMessage:(NSString *)message{
-    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"" message:message delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
-    [alert show];
+
+    UIAlertController *controller = [UIAlertController alertControllerWithTitle:@"Fan status" message:message preferredStyle:UIAlertControllerStyleAlert];
+    UIAlertAction *action = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:nil];
+    [controller addAction:action];
+    [self presentViewController:controller animated:YES completion:nil];
 }
 
+- (IBAction)connectButtonPressed:(UIButton *)sender {
+}
 
 
 @end
