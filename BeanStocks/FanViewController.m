@@ -32,6 +32,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.fan2ImageView.image = [UIImage imageNamed:@"fanpic"];
+    self.navigationController.navigationBar.tintColor = [UIColor whiteColor];
     self.discoveredBeans = [NSMutableDictionary dictionary];
     self.beanManager = [[PTDBeanManager alloc]initWithDelegate:self];
     
