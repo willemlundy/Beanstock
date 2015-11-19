@@ -20,6 +20,7 @@
 		2FF3071E1BFD2EE400F73F25 /* UIView+Shake.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FF3071D1BFD2EE400F73F25 /* UIView+Shake.m */; };
 		2FF307211BFD339D00F73F25 /* AnyObjectViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FF307201BFD339D00F73F25 /* AnyObjectViewController.m */; };
 		2FF3072F1BFD547400F73F25 /* CircularPower.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FF3072E1BFD547400F73F25 /* CircularPower.m */; };
+		2FF307331BFDAAD500F73F25 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2FF307321BFDAAD500F73F25 /* Assets.xcassets */; };
 		89A7653B1BEC3AC8006E569B /* BeanTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 89A7653A1BEC3AC8006E569B /* BeanTableViewCell.m */; };
 		89A7653E1BEC4005006E569B /* BeanDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 89A7653D1BEC4005006E569B /* BeanDetailViewController.m */; };
 		89BD40B31BF11FCF00FAAAE5 /* Event.m in Sources */ = {isa = PBXBuildFile; fileRef = 89BD40B21BF11FCF00FAAAE5 /* Event.m */; };
@@ -27,11 +28,10 @@
 		89EFC4591BF286C5009F6AB9 /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 89EFC4581BF286C5009F6AB9 /* HomeViewController.m */; };
 		89EFC4661BF2C0DD009F6AB9 /* CoffeeStepViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 89EFC4651BF2C0DD009F6AB9 /* CoffeeStepViewController.m */; };
 		89FBB80B1BEF193100E9B71A /* Bean.m in Sources */ = {isa = PBXBuildFile; fileRef = 89FBB80A1BEF193100E9B71A /* Bean.m */; };
-		B26D72641BFB9AD900A9B4C4 /* TimerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B26D72631BFB9AD900A9B4C4 /* TimerViewController.m */; settings = {ASSET_TAGS = (); }; };
+		B26D72641BFB9AD900A9B4C4 /* TimerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B26D72631BFB9AD900A9B4C4 /* TimerViewController.m */; };
 		B2AD2D931BE9A560006EFD53 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B2AD2D921BE9A560006EFD53 /* main.m */; };
 		B2AD2D961BE9A560006EFD53 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B2AD2D951BE9A560006EFD53 /* AppDelegate.m */; };
 		B2AD2D991BE9A560006EFD53 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B2AD2D981BE9A560006EFD53 /* ViewController.m */; };
-		B2AD2D9E1BE9A560006EFD53 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B2AD2D9D1BE9A560006EFD53 /* Assets.xcassets */; };
 		B2AD2DA11BE9A560006EFD53 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B2AD2D9F1BE9A560006EFD53 /* LaunchScreen.storyboard */; };
 		B2AD2DF31BE9B32A006EFD53 /* AddBeanViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B2AD2DF21BE9B32A006EFD53 /* AddBeanViewController.m */; };
 		B2AD2EB71BF101A8006EFD53 /* BeanManager.m in Sources */ = {isa = PBXBuildFile; fileRef = B2AD2EB61BF101A8006EFD53 /* BeanManager.m */; };
@@ -61,6 +61,7 @@
 		2FF307201BFD339D00F73F25 /* AnyObjectViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AnyObjectViewController.m; sourceTree = "<group>"; };
 		2FF3072D1BFD547400F73F25 /* CircularPower.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CircularPower.h; sourceTree = "<group>"; };
 		2FF3072E1BFD547400F73F25 /* CircularPower.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CircularPower.m; sourceTree = "<group>"; };
+		2FF307321BFDAAD500F73F25 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		591FD67865B5A60D4D4575EE /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		89A765391BEC3AC8006E569B /* BeanTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BeanTableViewCell.h; sourceTree = "<group>"; };
 		89A7653A1BEC3AC8006E569B /* BeanTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BeanTableViewCell.m; sourceTree = "<group>"; };
@@ -86,7 +87,6 @@
 		B2AD2D951BE9A560006EFD53 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		B2AD2D971BE9A560006EFD53 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		B2AD2D981BE9A560006EFD53 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
-		B2AD2D9D1BE9A560006EFD53 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B2AD2DA01BE9A560006EFD53 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B2AD2DA21BE9A560006EFD53 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B2AD2DF11BE9B32A006EFD53 /* AddBeanViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddBeanViewController.h; sourceTree = "<group>"; };
@@ -293,9 +293,9 @@
 		B2AD2D911BE9A560006EFD53 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				2FF307321BFDAAD500F73F25 /* Assets.xcassets */,
 				B2AD2D941BE9A560006EFD53 /* AppDelegate.h */,
 				B2AD2D951BE9A560006EFD53 /* AppDelegate.m */,
-				B2AD2D9D1BE9A560006EFD53 /* Assets.xcassets */,
 				B2AD2DA21BE9A560006EFD53 /* Info.plist */,
 				B2AD2D921BE9A560006EFD53 /* main.m */,
 			);
@@ -364,7 +364,7 @@
 			files = (
 				2FE7D5391BEAC86A001FA967 /* Main.storyboard in Resources */,
 				B2AD2DA11BE9A560006EFD53 /* LaunchScreen.storyboard in Resources */,
-				B2AD2D9E1BE9A560006EFD53 /* Assets.xcassets in Resources */,
+				2FF307331BFDAAD500F73F25 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
