@@ -12,6 +12,7 @@
 @interface HeaterViewController ()
 @property (weak, nonatomic) IBOutlet UISegmentedControl *onOffSegmentControl;
 @property (weak, nonatomic) IBOutlet UIImageView *heater2ImageView;
+@property (weak, nonatomic) IBOutlet UIButton *connectButton;
 
 @end
 
@@ -46,5 +47,7 @@
     
 }
 
+- (IBAction)connectButtonPressed:(UIButton *)sender {
+}
 
 @end
