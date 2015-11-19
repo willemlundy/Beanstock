@@ -9,11 +9,13 @@
 #import "LightViewController.h"
 #import <PTDBean.h>
 #import <PTDBeanManager.h>
+#import "UIView+Shake.h"
+#import "CircularPower.h"
 
 @interface LightViewController () <PTDBeanDelegate,PTDBeanManagerDelegate>
 @property (weak, nonatomic) IBOutlet UIImageView *lightBulbImageView;
 @property (weak, nonatomic) IBOutlet UIButton *connectButton;
-@property (weak, nonatomic) IBOutlet UISegmentedControl *onOffSegmentControl;
+@property BOOL lightIsOn;
 @property (strong,nonatomic) NSMutableDictionary *discoveredBeans;
 
 @property (strong,nonatomic) PTDBeanManager *beanManager;
@@ -33,12 +35,34 @@
 
     self.lightBulbImageView.image = [UIImage imageNamed:@"lightbulb"];
 
+    self.view.backgroundColor = [UIColor whiteColor];
+
+    CircularLock *c = [[CircularLock alloc] initWithCenter:CGPointMake(self.view.center.x, self.view.frame.size.height - 100) radius:50
+                                                  duration:1.5
+                                               strokeWidth:15
+                                                 ringColor:[UIColor blackColor]
+                                               strokeColor:[UIColor blueColor]
+                                               lockedImage:[UIImage imageNamed:@"lockedTransparent.png"]
+                                             unlockedImage:[UIImage imageNamed:@"unlocked.png"]
+                                                  isLocked:NO
+                                         didlockedCallback:^{
+                                             [self alertWithMessage:@"Light is ON!"];
+                                             self.lightIsOn = YES;
+                                             [self toggled];
+                                         }
+                                       didUnlockedCallback:^{
+                                           [self alertWithMessage:@"Light is OFF!"];
+                                           self.lightIsOn = NO;
+                                           [self toggled];
+                                       }];
+    [self.view addSubview:c];
+
 
 }
 
 
-- (IBAction)onOrOffButtonTapped:(UISegmentedControl *)sender {
-    if (self.onOffSegmentControl.selectedSegmentIndex == 1) {
+- (void)toggled {
+    if (self.lightIsOn == YES) {
         self.lightBulbImageView.image = [UIImage imageNamed:@"onlightbulb"];
         [self.customBean sendSerialString:@"TogglePowerOn\n"];
         self.lightBulbImageView.image = [UIImage imageNamed:@"lightbulbon"];
@@ -48,12 +72,28 @@
         [animation setTimingFunction:UIViewAnimationCurveEaseInOut];
         [animation setType:@"waveEffect"];
         [self.lightBulbImageView.layer addAnimation:animation forKey:NULL];
+        [self.lightBulbImageView shakeWithOptions:SCShakeOptionsDirectionRotate | SCShakeOptionsForceInterpolationExpDown | SCShakeOptionsAtEndRestart | SCShakeOptionsAutoreverse force:0.15 duration:1 iterationDuration:0.03 completionHandler:nil];
     } else {
         self.lightBulbImageView.image = [UIImage imageNamed:@"offlightbulb"];
         [self.customBean sendSerialString:@"TogglePowerOff\n"];
         self.lightBulbImageView.image = [UIImage imageNamed:@"lightbulb"];
     }
 
+}
+
+- (void)viewDidDisappear:(BOOL)animated {
+    [super viewDidDisappear:animated];
+
+    [self.lightBulbImageView endShake];
+
+}
+
+- (void)alertWithMessage:(NSString *)message{
+
+    UIAlertController *controller = [UIAlertController alertControllerWithTitle:@"Fan status" message:message preferredStyle:UIAlertControllerStyleAlert];
+    UIAlertAction *action = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:nil];
+    [controller addAction:action];
+    [self presentViewController:controller animated:YES completion:nil];
 }
 
 #pragma mark - BeanManagerDelegate Callbacks
