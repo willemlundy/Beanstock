@@ -1016,7 +1016,7 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     </tabBar>
                     <connections>
-                        <segue destination="L8G-rA-ISB" kind="relationship" relationship="viewControllers" id="9dG-V8-uSS"/>
+                        <segue destination="dUE-NI-BDs" kind="relationship" relationship="viewControllers" id="gco-pD-dsc"/>
                         <segue destination="D0W-AY-0rO" kind="relationship" relationship="viewControllers" id="qFU-LO-x9i"/>
                         <segue destination="aXx-dP-vhX" kind="relationship" relationship="viewControllers" id="fJ1-Hy-5K1"/>
                         <segue destination="OmT-Lu-OeQ" kind="relationship" relationship="viewControllers" id="ZYG-6n-QlP"/>
@@ -1078,7 +1078,4 @@
         <image name="staricon" width="32" height="32"/>
         <image name="wind34" width="32" height="32"/>
     </resources>
-    <inferredMetricsTieBreakers>
-        <segue reference="uBX-cj-QpL"/>
-    </inferredMetricsTieBreakers>
 </document>
