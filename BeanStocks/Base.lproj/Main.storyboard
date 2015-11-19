@@ -494,15 +494,11 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3c0-bk-X63">
-                                <rect key="frame" x="180" y="403" width="241" height="30"/>
-                                <animations/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="241" id="ZRI-n2-THq"/>
-                                </constraints>
-                                <state key="normal" title="Button"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kDy-Jk-jGn">
+                                <rect key="frame" x="264" y="408" width="72" height="30"/>
+                                <state key="normal" title="Not Found"/>
                                 <connections>
-                                    <action selector="connectButtonPressed:" destination="OmT-Lu-OeQ" eventType="touchUpInside" id="eIh-3E-Oq0"/>
+                                    <action selector="onConnectButtonPressed:" destination="OmT-Lu-OeQ" eventType="touchUpInside" id="lTA-44-l4I"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -510,17 +506,17 @@
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="NV5-eS-WoK" firstAttribute="top" secondItem="OmB-Vj-QEa" secondAttribute="bottom" constant="76" id="5sz-xj-0yN"/>
+                            <constraint firstItem="kDy-Jk-jGn" firstAttribute="top" secondItem="NV5-eS-WoK" secondAttribute="bottom" constant="24" id="8fz-NL-0m1"/>
+                            <constraint firstItem="kDy-Jk-jGn" firstAttribute="centerX" secondItem="GEU-Xu-M9b" secondAttribute="centerX" id="MxV-Wp-uo6"/>
                             <constraint firstItem="XH8-Ns-RuA" firstAttribute="top" secondItem="sFb-tz-5Gu" secondAttribute="bottom" constant="38" id="Nuh-Tz-RC9"/>
                             <constraint firstItem="sFb-tz-5Gu" firstAttribute="centerX" secondItem="NV5-eS-WoK" secondAttribute="centerX" id="Q33-Op-X2D"/>
                             <constraint firstItem="NV5-eS-WoK" firstAttribute="centerX" secondItem="GEU-Xu-M9b" secondAttribute="centerX" id="brR-eI-9Ni"/>
-                            <constraint firstItem="sFb-tz-5Gu" firstAttribute="top" secondItem="3c0-bk-X63" secondAttribute="bottom" constant="55" id="e3v-md-q1w"/>
                             <constraint firstItem="NV5-eS-WoK" firstAttribute="leading" secondItem="GEU-Xu-M9b" secondAttribute="leadingMargin" constant="96" id="kir-MB-3NI"/>
-                            <constraint firstItem="3c0-bk-X63" firstAttribute="centerX" secondItem="sFb-tz-5Gu" secondAttribute="centerX" id="o1G-qu-z8v"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Fan" id="oEO-NB-IcC"/>
                     <connections>
-                        <outlet property="connectButton" destination="3c0-bk-X63" id="vZr-ma-eRi"/>
+                        <outlet property="connectButton" destination="kDy-Jk-jGn" id="eBx-1x-LJr"/>
                         <outlet property="fan2ImageView" destination="NV5-eS-WoK" id="irl-r8-gNm"/>
                     </connections>
                 </viewController>
