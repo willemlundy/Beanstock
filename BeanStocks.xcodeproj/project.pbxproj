@@ -21,6 +21,7 @@
 		89EFC4591BF286C5009F6AB9 /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 89EFC4581BF286C5009F6AB9 /* HomeViewController.m */; };
 		89EFC4661BF2C0DD009F6AB9 /* CoffeeStepViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 89EFC4651BF2C0DD009F6AB9 /* CoffeeStepViewController.m */; };
 		89FBB80B1BEF193100E9B71A /* Bean.m in Sources */ = {isa = PBXBuildFile; fileRef = 89FBB80A1BEF193100E9B71A /* Bean.m */; };
+		B26D72641BFB9AD900A9B4C4 /* TimerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B26D72631BFB9AD900A9B4C4 /* TimerViewController.m */; settings = {ASSET_TAGS = (); }; };
 		B2AD2D931BE9A560006EFD53 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B2AD2D921BE9A560006EFD53 /* main.m */; };
 		B2AD2D961BE9A560006EFD53 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B2AD2D951BE9A560006EFD53 /* AppDelegate.m */; };
 		B2AD2D991BE9A560006EFD53 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B2AD2D981BE9A560006EFD53 /* ViewController.m */; };
@@ -62,6 +63,8 @@
 		89EFC4651BF2C0DD009F6AB9 /* CoffeeStepViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoffeeStepViewController.m; sourceTree = "<group>"; };
 		89FBB8091BEF193100E9B71A /* Bean.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Bean.h; sourceTree = "<group>"; };
 		89FBB80A1BEF193100E9B71A /* Bean.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Bean.m; sourceTree = "<group>"; };
+		B26D72621BFB9AD900A9B4C4 /* TimerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TimerViewController.h; sourceTree = "<group>"; };
+		B26D72631BFB9AD900A9B4C4 /* TimerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TimerViewController.m; sourceTree = "<group>"; };
 		B2AD2D8E1BE9A560006EFD53 /* BeanStocks.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BeanStocks.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B2AD2D921BE9A560006EFD53 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		B2AD2D941BE9A560006EFD53 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -181,6 +184,8 @@
 			children = (
 				89EFC4641BF2C0DD009F6AB9 /* CoffeeStepViewController.h */,
 				89EFC4651BF2C0DD009F6AB9 /* CoffeeStepViewController.m */,
+				B26D72621BFB9AD900A9B4C4 /* TimerViewController.h */,
+				B26D72631BFB9AD900A9B4C4 /* TimerViewController.m */,
 			);
 			name = StepViewControllers;
 			sourceTree = "<group>";
@@ -401,6 +406,7 @@
 				2FE7D5361BEAC6D8001FA967 /* SignUpViewController.m in Sources */,
 				B2AD2EB71BF101A8006EFD53 /* BeanManager.m in Sources */,
 				B2AD2D961BE9A560006EFD53 /* AppDelegate.m in Sources */,
+				B26D72641BFB9AD900A9B4C4 /* TimerViewController.m in Sources */,
 				2FEA3A031BFAAA7200935A85 /* FanViewController.m in Sources */,
 				89A7653E1BEC4005006E569B /* BeanDetailViewController.m in Sources */,
 				B2AD2D931BE9A560006EFD53 /* main.m in Sources */,
