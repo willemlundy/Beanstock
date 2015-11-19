@@ -28,8 +28,8 @@
     CircularLock *c = [[CircularLock alloc] initWithCenter:CGPointMake(self.view.center.x, self.view.frame.size.height - 100) radius:50
                                                   duration:1.5
                                                strokeWidth:15
-                                                 ringColor:[UIColor orangeColor]
-                                               strokeColor:[UIColor blackColor]
+                                                 ringColor:[UIColor blackColor]
+                                               strokeColor:[UIColor blueColor]
                                                lockedImage:[UIImage imageNamed:@"lockedTransparent.png"]
                                              unlockedImage:[UIImage imageNamed:@"unlocked.png"]
                                                   isLocked:NO

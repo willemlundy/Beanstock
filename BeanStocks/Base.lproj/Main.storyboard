@@ -193,7 +193,7 @@
                                     <action selector="brewStrengthControl:" destination="L8G-rA-ISB" eventType="valueChanged" id="bd6-Cp-EQa"/>
                                 </connections>
                             </slider>
-                            <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" axis="vertical" distribution="equalSpacing" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="If3-f0-iGE">
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="If3-f0-iGE">
                                 <rect key="frame" x="180" y="434" width="240" height="90"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" semanticContentAttribute="forceLeftToRight" horizontalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9gs-7o-xlk">
@@ -292,57 +292,50 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="8cN-9e-bN1">
-                                <rect key="frame" x="240" y="445" width="121" height="29"/>
-                                <animations/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="28" id="WoS-lZ-WHg"/>
-                                    <constraint firstAttribute="width" constant="121" id="xa1-n8-mjW"/>
-                                </constraints>
-                                <segments>
-                                    <segment title="OFF"/>
-                                    <segment title="ON"/>
-                                </segments>
-                                <connections>
-                                    <action selector="onOrOffButtonTapped:" destination="Bj3-ug-TLP" eventType="valueChanged" id="qmJ-IF-Jmf"/>
-                                </connections>
-                            </segmentedControl>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="J0N-9B-YHu">
-                                <rect key="frame" x="116" y="133" width="369" height="258"/>
+                                <rect key="frame" x="116" y="121" width="369" height="258"/>
                                 <animations/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="369" id="qmG-a5-mcA"/>
-                                </constraints>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fZY-q8-yTV">
-                                <rect key="frame" x="180" y="486" width="241" height="30"/>
+                                <rect key="frame" x="180" y="403" width="241" height="30"/>
                                 <animations/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="241" id="UdW-ul-oB3"/>
+                                    <constraint firstAttribute="width" constant="241" id="H8x-oB-000"/>
                                 </constraints>
                                 <state key="normal" title="Button"/>
                                 <connections>
                                     <action selector="connectButton:" destination="Bj3-ug-TLP" eventType="touchUpInside" id="gFc-7r-Wme"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="POWER" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AzQ-Uw-2T7">
+                                <rect key="frame" x="261" y="488" width="79" height="25"/>
+                                <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="79" id="YSh-BU-hhk"/>
+                                    <constraint firstAttribute="height" constant="25" id="wBB-1Y-WwT"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="J0N-9B-YHu" firstAttribute="centerX" secondItem="LlO-v2-Qxo" secondAttribute="centerX" id="0JN-RP-vKM"/>
-                            <constraint firstItem="fZY-q8-yTV" firstAttribute="centerX" secondItem="LlO-v2-Qxo" secondAttribute="centerX" id="6EU-Y9-6yr"/>
-                            <constraint firstItem="J0N-9B-YHu" firstAttribute="top" secondItem="Bue-50-Nqv" secondAttribute="bottom" constant="69" id="Gjh-wR-NS2"/>
-                            <constraint firstItem="E0N-uT-1cb" firstAttribute="top" secondItem="8cN-9e-bN1" secondAttribute="bottom" constant="78" id="Qjh-Hd-2c6"/>
-                            <constraint firstItem="8cN-9e-bN1" firstAttribute="centerX" secondItem="J0N-9B-YHu" secondAttribute="centerX" id="SMW-XO-O7U"/>
-                            <constraint firstItem="8cN-9e-bN1" firstAttribute="top" secondItem="J0N-9B-YHu" secondAttribute="bottom" constant="54" id="inf-Da-YD9"/>
-                            <constraint firstItem="fZY-q8-yTV" firstAttribute="top" secondItem="8cN-9e-bN1" secondAttribute="bottom" constant="13" id="yS6-eH-VMN"/>
+                            <constraint firstItem="fZY-q8-yTV" firstAttribute="top" secondItem="J0N-9B-YHu" secondAttribute="bottom" constant="24" id="3eZ-st-FWi"/>
+                            <constraint firstItem="J0N-9B-YHu" firstAttribute="top" secondItem="Bue-50-Nqv" secondAttribute="bottom" constant="57" id="Bn5-Dp-5uR"/>
+                            <constraint firstItem="AzQ-Uw-2T7" firstAttribute="centerX" secondItem="LlO-v2-Qxo" secondAttribute="centerX" id="EUe-P4-48C"/>
+                            <constraint firstItem="AzQ-Uw-2T7" firstAttribute="top" secondItem="fZY-q8-yTV" secondAttribute="bottom" constant="55" id="XKS-Tz-i85"/>
+                            <constraint firstItem="J0N-9B-YHu" firstAttribute="leading" secondItem="LlO-v2-Qxo" secondAttribute="leadingMargin" constant="96" id="Z6R-XK-Lx1"/>
+                            <constraint firstItem="E0N-uT-1cb" firstAttribute="top" secondItem="AzQ-Uw-2T7" secondAttribute="bottom" constant="38" id="dG1-Tc-56R"/>
+                            <constraint firstItem="AzQ-Uw-2T7" firstAttribute="centerX" secondItem="fZY-q8-yTV" secondAttribute="centerX" id="fNb-f2-AhJ"/>
+                            <constraint firstItem="fZY-q8-yTV" firstAttribute="centerX" secondItem="J0N-9B-YHu" secondAttribute="centerX" id="tOO-CV-7mS"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Light" id="flv-C0-1XO"/>
                     <connections>
                         <outlet property="connectButton" destination="fZY-q8-yTV" id="FnP-0i-gjQ"/>
                         <outlet property="lightBulbImageView" destination="J0N-9B-YHu" id="xE6-Az-NvR"/>
-                        <outlet property="onOffSegmentControl" destination="8cN-9e-bN1" id="Fho-Ml-9Pa"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Jra-Tc-NrE" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -361,41 +354,49 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="BaX-UR-oWX">
-                                <rect key="frame" x="240" y="445" width="121" height="29"/>
-                                <animations/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="121" id="Qlf-LC-IA2"/>
-                                    <constraint firstAttribute="height" constant="28" id="hNc-5a-u7X"/>
-                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="121" id="r60-Qc-ZpZ"/>
-                                </constraints>
-                                <segments>
-                                    <segment title="OFF"/>
-                                    <segment title="ON"/>
-                                </segments>
-                                <connections>
-                                    <action selector="onOffSegmentedToggled:" destination="D0W-AY-0rO" eventType="valueChanged" id="hOr-fa-Wb9"/>
-                                </connections>
-                            </segmentedControl>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ova-LR-NRU">
                                 <rect key="frame" x="116" y="129" width="369" height="244"/>
                                 <animations/>
                             </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="POWER" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lor-wl-BsF">
+                                <rect key="frame" x="261" y="488" width="79" height="25"/>
+                                <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="79" id="hRe-OW-IgG"/>
+                                    <constraint firstAttribute="height" constant="25" id="y3n-Qh-LSH"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BWO-tg-hYw">
+                                <rect key="frame" x="180" y="403" width="241" height="30"/>
+                                <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="241" id="M5x-7x-dXv"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="connectButtonPressed:" destination="D0W-AY-0rO" eventType="touchUpInside" id="At9-qR-9JU"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="BaX-UR-oWX" firstAttribute="top" secondItem="ova-LR-NRU" secondAttribute="bottom" constant="72" id="SLa-hS-6sF"/>
+                            <constraint firstItem="BWO-tg-hYw" firstAttribute="centerX" secondItem="Lor-wl-BsF" secondAttribute="centerX" id="ON8-7O-2ce"/>
+                            <constraint firstItem="mvm-oq-Jsm" firstAttribute="top" secondItem="Lor-wl-BsF" secondAttribute="bottom" constant="87" id="YNp-4V-SLj"/>
+                            <constraint firstItem="ova-LR-NRU" firstAttribute="centerX" secondItem="BWO-tg-hYw" secondAttribute="centerX" id="Z7V-Nl-ZTa"/>
                             <constraint firstAttribute="trailingMargin" secondItem="ova-LR-NRU" secondAttribute="trailing" constant="38" id="b9B-gF-0OU"/>
-                            <constraint firstItem="BaX-UR-oWX" firstAttribute="centerX" secondItem="ova-LR-NRU" secondAttribute="centerX" id="dRc-VE-ve4"/>
+                            <constraint firstItem="Lor-wl-BsF" firstAttribute="top" secondItem="BWO-tg-hYw" secondAttribute="bottom" constant="55" id="eLV-ma-CGQ"/>
+                            <constraint firstItem="BWO-tg-hYw" firstAttribute="top" secondItem="ova-LR-NRU" secondAttribute="bottom" constant="30" id="ezn-IS-cZS"/>
                             <constraint firstItem="ova-LR-NRU" firstAttribute="top" secondItem="wFB-Yr-1yf" secondAttribute="bottom" id="ha8-M0-Sfp"/>
-                            <constraint firstItem="mvm-oq-Jsm" firstAttribute="top" secondItem="BaX-UR-oWX" secondAttribute="bottom" constant="78" id="vIs-dY-7El"/>
                             <constraint firstItem="ova-LR-NRU" firstAttribute="leading" secondItem="Sqs-HL-jhg" secondAttribute="leadingMargin" constant="38" id="zP6-t5-4no"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Toaster" image="sandwich" id="JR6-Xk-dQi"/>
                     <connections>
-                        <outlet property="onOffSegmentControl" destination="BaX-UR-oWX" id="ANd-9w-22c"/>
+                        <outlet property="connectButton" destination="BWO-tg-hYw" id="r6N-tZ-yeF"/>
                         <outlet property="toasterImageView" destination="ova-LR-NRU" id="giK-Fj-bzi"/>
                     </connections>
                 </viewController>
@@ -415,31 +416,15 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="T5s-1G-Gbi">
-                                <rect key="frame" x="240" y="445" width="121" height="29"/>
-                                <animations/>
-                                <constraints>
-                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="121" id="Lq4-SP-lx6"/>
-                                    <constraint firstAttribute="height" constant="28" id="MGh-4K-UKO"/>
-                                    <constraint firstAttribute="width" constant="121" id="fB6-XM-k4g"/>
-                                </constraints>
-                                <segments>
-                                    <segment title="OFF"/>
-                                    <segment title="ON"/>
-                                </segments>
-                                <connections>
-                                    <action selector="onOffSegmentedControlToggled:" destination="aXx-dP-vhX" eventType="valueChanged" id="AXc-38-ecs"/>
-                                </connections>
-                            </segmentedControl>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="XYI-zj-Wpn">
                                 <rect key="frame" x="116" y="173" width="369" height="200"/>
                                 <animations/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sUn-79-vmX">
-                                <rect key="frame" x="180" y="490" width="241" height="30"/>
+                                <rect key="frame" x="180" y="403" width="241" height="30"/>
                                 <animations/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="241" id="7qU-UA-paq"/>
+                                    <constraint firstAttribute="width" constant="241" id="1mq-93-ZeE"/>
                                 </constraints>
                                 <state key="normal" title="Button"/>
                                 <connections>
@@ -447,25 +432,35 @@
                                     <action selector="connectButtonPressed:" destination="aXx-dP-vhX" eventType="touchUpInside" id="uR5-bg-ilF"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="POWER" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nhw-MW-kfD">
+                                <rect key="frame" x="261" y="488" width="79" height="25"/>
+                                <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="25" id="Ro0-GS-vW4"/>
+                                    <constraint firstAttribute="width" constant="79" id="vX7-a0-vah"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="sUn-79-vmX" firstAttribute="top" secondItem="T5s-1G-Gbi" secondAttribute="bottom" constant="17" id="4Ww-Yg-UX4"/>
-                            <constraint firstItem="XYI-zj-Wpn" firstAttribute="leading" secondItem="66j-1e-nS3" secondAttribute="leadingMargin" constant="96" id="5zh-m4-7qy"/>
-                            <constraint firstItem="Hd1-RW-TT4" firstAttribute="top" secondItem="T5s-1G-Gbi" secondAttribute="bottom" constant="78" id="EvT-Hp-CQi"/>
-                            <constraint firstItem="sUn-79-vmX" firstAttribute="centerX" secondItem="66j-1e-nS3" secondAttribute="centerX" id="QeF-63-OfI"/>
-                            <constraint firstItem="XYI-zj-Wpn" firstAttribute="centerX" secondItem="T5s-1G-Gbi" secondAttribute="centerX" id="YAX-Y1-8pR"/>
-                            <constraint firstItem="T5s-1G-Gbi" firstAttribute="top" secondItem="XYI-zj-Wpn" secondAttribute="bottom" constant="72" id="b6m-2q-YaO"/>
-                            <constraint firstItem="XYI-zj-Wpn" firstAttribute="top" secondItem="J4L-7j-OlW" secondAttribute="bottom" constant="109" id="dPM-Wp-h9L"/>
-                            <constraint firstItem="T5s-1G-Gbi" firstAttribute="centerX" secondItem="66j-1e-nS3" secondAttribute="centerX" id="zLH-Ge-GwI"/>
+                            <constraint firstItem="sUn-79-vmX" firstAttribute="centerX" secondItem="XYI-zj-Wpn" secondAttribute="centerX" id="2XW-GA-onU"/>
+                            <constraint firstItem="sUn-79-vmX" firstAttribute="centerX" secondItem="nhw-MW-kfD" secondAttribute="centerX" id="2rs-Kv-gND"/>
+                            <constraint firstItem="XYI-zj-Wpn" firstAttribute="leading" secondItem="66j-1e-nS3" secondAttribute="leadingMargin" constant="96" id="Fkh-l4-BjJ"/>
+                            <constraint firstItem="nhw-MW-kfD" firstAttribute="top" secondItem="sUn-79-vmX" secondAttribute="bottom" constant="55" id="UQh-g6-f7p"/>
+                            <constraint firstItem="sUn-79-vmX" firstAttribute="top" secondItem="XYI-zj-Wpn" secondAttribute="bottom" constant="30" id="iMs-fo-R5q"/>
+                            <constraint firstItem="sUn-79-vmX" firstAttribute="centerX" secondItem="66j-1e-nS3" secondAttribute="centerX" id="rIF-Qg-594"/>
+                            <constraint firstItem="XYI-zj-Wpn" firstAttribute="top" secondItem="J4L-7j-OlW" secondAttribute="bottom" constant="109" id="xED-ye-kBl"/>
+                            <constraint firstItem="Hd1-RW-TT4" firstAttribute="top" secondItem="nhw-MW-kfD" secondAttribute="bottom" constant="38" id="xfE-e1-Z0u"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Heater" id="0MU-Dk-csP"/>
                     <connections>
                         <outlet property="connectButton" destination="sUn-79-vmX" id="OkW-SD-e8z"/>
                         <outlet property="heater2ImageView" destination="XYI-zj-Wpn" id="k37-E1-Thq"/>
-                        <outlet property="onOffSegmentControl" destination="T5s-1G-Gbi" id="rVT-fG-nFV"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VU7-3o-YXd" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -484,8 +479,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="NV5-eS-WoK">
-                                <rect key="frame" x="116" y="140" width="369" height="244"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="NV5-eS-WoK">
+                                <rect key="frame" x="116" y="94" width="369" height="244"/>
                                 <animations/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="244" id="U4E-tD-wdl"/>
@@ -553,27 +548,11 @@
                                 <rect key="frame" x="116" y="173" width="369" height="200"/>
                                 <animations/>
                             </imageView>
-                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="csm-5Z-BzM">
-                                <rect key="frame" x="240" y="445" width="121" height="29"/>
-                                <animations/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="28" id="2rI-TV-dAf"/>
-                                    <constraint firstAttribute="width" constant="121" id="Mjh-iC-jkS"/>
-                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="121" id="XjG-w2-y1k"/>
-                                </constraints>
-                                <segments>
-                                    <segment title="OFF"/>
-                                    <segment title="ON"/>
-                                </segments>
-                                <connections>
-                                    <action selector="onSegmentedControlToggled:" destination="YyQ-bF-YbV" eventType="valueChanged" id="OX8-9D-IGJ"/>
-                                </connections>
-                            </segmentedControl>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MHt-PN-dAq">
-                                <rect key="frame" x="180" y="495" width="241" height="30"/>
+                                <rect key="frame" x="180" y="403" width="241" height="30"/>
                                 <animations/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="241" id="44s-Ft-GyH"/>
+                                    <constraint firstAttribute="width" constant="241" id="hfX-En-9tx"/>
                                 </constraints>
                                 <state key="normal" title="Button"/>
                                 <connections>
@@ -581,25 +560,35 @@
                                     <action selector="connectButtonPressed:" destination="YyQ-bF-YbV" eventType="touchUpInside" id="c3g-np-VIk"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="POWER" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LP2-QS-Yrl">
+                                <rect key="frame" x="261" y="488" width="79" height="25"/>
+                                <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="79" id="tj9-GU-VBf"/>
+                                    <constraint firstAttribute="height" constant="25" id="zJh-of-kmh"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="MHt-PN-dAq" firstAttribute="centerX" secondItem="500-bQ-tiC" secondAttribute="centerX" id="4BG-JO-aWN"/>
-                            <constraint firstItem="csm-5Z-BzM" firstAttribute="top" secondItem="L84-xt-d9g" secondAttribute="bottom" constant="72" id="4gq-FS-EJh"/>
-                            <constraint firstItem="SA1-qi-4a8" firstAttribute="top" secondItem="csm-5Z-BzM" secondAttribute="bottom" constant="78" id="JJk-kF-4se"/>
-                            <constraint firstItem="L84-xt-d9g" firstAttribute="centerX" secondItem="500-bQ-tiC" secondAttribute="centerX" id="Kh5-5H-Gdt"/>
-                            <constraint firstItem="MHt-PN-dAq" firstAttribute="top" secondItem="csm-5Z-BzM" secondAttribute="bottom" constant="22" id="Oeo-6f-crw"/>
-                            <constraint firstItem="L84-xt-d9g" firstAttribute="centerX" secondItem="csm-5Z-BzM" secondAttribute="centerX" id="YzW-fb-J8F"/>
-                            <constraint firstItem="L84-xt-d9g" firstAttribute="leading" secondItem="500-bQ-tiC" secondAttribute="leadingMargin" constant="96" id="i6s-ri-lqL"/>
-                            <constraint firstItem="L84-xt-d9g" firstAttribute="top" secondItem="AJU-Fm-UXL" secondAttribute="bottom" constant="109" id="wnl-7v-bIf"/>
+                            <constraint firstItem="L84-xt-d9g" firstAttribute="top" secondItem="AJU-Fm-UXL" secondAttribute="bottom" constant="109" id="4BU-xY-L4s"/>
+                            <constraint firstItem="SA1-qi-4a8" firstAttribute="top" secondItem="LP2-QS-Yrl" secondAttribute="bottom" constant="38" id="RsE-ZI-xCx"/>
+                            <constraint firstItem="LP2-QS-Yrl" firstAttribute="top" secondItem="MHt-PN-dAq" secondAttribute="bottom" constant="55" id="Trz-pa-3Lx"/>
+                            <constraint firstItem="MHt-PN-dAq" firstAttribute="centerX" secondItem="LP2-QS-Yrl" secondAttribute="centerX" id="k2X-RW-9ad"/>
+                            <constraint firstItem="L84-xt-d9g" firstAttribute="leading" secondItem="500-bQ-tiC" secondAttribute="leadingMargin" constant="96" id="kUX-q2-qx5"/>
+                            <constraint firstItem="MHt-PN-dAq" firstAttribute="top" secondItem="L84-xt-d9g" secondAttribute="bottom" constant="30" id="p7Z-oq-gRJ"/>
+                            <constraint firstItem="MHt-PN-dAq" firstAttribute="centerX" secondItem="L84-xt-d9g" secondAttribute="centerX" id="rmi-4e-1Lp"/>
+                            <constraint firstItem="L84-xt-d9g" firstAttribute="centerX" secondItem="500-bQ-tiC" secondAttribute="centerX" id="xCS-mM-Qha"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="w64-dh-CVG"/>
                     <connections>
                         <outlet property="anyObjectImageView" destination="L84-xt-d9g" id="duV-OL-Ht8"/>
                         <outlet property="connectButton" destination="MHt-PN-dAq" id="lFY-Df-tlL"/>
-                        <outlet property="onOffSegmentControl" destination="csm-5Z-BzM" id="RTe-cq-JPL"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fDs-u7-lsJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
