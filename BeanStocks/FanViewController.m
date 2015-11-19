@@ -17,12 +17,14 @@
 @property BOOL fanIsOn;
 
 @property (weak, nonatomic) IBOutlet UIButton *connectButton;
+@property (weak, nonatomic) IBOutlet UITextField *temperature;
 
 @property (strong,nonatomic) NSMutableDictionary *discoveredBeans;
 
 @property (strong,nonatomic) PTDBeanManager *beanManager;
 @property (strong,nonatomic) PTDBean *customBean;
 
+@property (assign,nonatomic) BOOL beanIsOn;
 @end
 
 @implementation FanViewController
@@ -38,6 +40,10 @@
 
     self.view.backgroundColor = [UIColor whiteColor];
 
+    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(dismissTemperature:)];
+    tap.numberOfTapsRequired = 1;
+    [self.view addGestureRecognizer:tap];
+    
     CircularLock *c = [[CircularLock alloc] initWithCenter:CGPointMake(self.view.center.x, self.view.frame.size.height - 100) radius:50
                                                   duration:1.5
                                                strokeWidth:15
@@ -68,6 +74,7 @@
     if (self.fanIsOn == YES) {
         self.fan2ImageView.image = [UIImage imageNamed:@"fanon"];
         [self.customBean sendSerialString:@"TogglePowerOn\n"];
+        self.beanIsOn = YES;
         CATransition *animation = [CATransition animation];
         [animation setDelegate:self];
         [animation setDuration:1.0f];
@@ -82,6 +89,10 @@
     }
 }
 
+-(void)dismissTemperature:(UITapGestureRecognizer *)sender{
+    [self.temperature resignFirstResponder];
+}
+
 - (void)viewDidDisappear:(BOOL)animated {
     [super viewDidDisappear:animated];
 
@@ -89,6 +100,47 @@
 
 }
 
+- (IBAction)onSetTemperaturePressed:(UIButton *)sender {
+    if (self.customBean.state != BeanState_ConnectedAndValidated) {
+        UIAlertController *alertController = [UIAlertController
+                                              alertControllerWithTitle:@"Error"
+                                              message:@"Please connect to the bean first!"
+                                              preferredStyle:UIAlertControllerStyleAlert];
+        
+        UIAlertAction *okAction = [UIAlertAction
+                                   actionWithTitle:NSLocalizedString(@"OK", @"OK Action")
+                                   style:UIAlertActionStyleDefault
+                                   handler:^(UIAlertAction * _Nonnull action) {
+                                       NSLog(@"OK action");
+                                   }];
+        [alertController addAction:okAction];
+        
+        [self presentViewController:alertController animated:YES completion:nil];
+        return;
+    }
+    [self.temperature resignFirstResponder];
+    int temperatureEntered = [self.temperature.text intValue];
+    if (temperatureEntered < 1 || temperatureEntered > 50) {
+        UIAlertController *alertController = [UIAlertController
+                                              alertControllerWithTitle:@"Error"
+                                              message:@"Number has to be between 0 and 50!"
+                                              preferredStyle:UIAlertControllerStyleAlert];
+        
+        UIAlertAction *okAction = [UIAlertAction
+                                   actionWithTitle:NSLocalizedString(@"OK", @"OK Action")
+                                   style:UIAlertActionStyleDefault
+                                   handler:^(UIAlertAction * _Nonnull action) {
+                                       NSLog(@"OK action");
+                                   }];
+        [alertController addAction:okAction];
+        
+        [self presentViewController:alertController animated:YES completion:nil];
+    }else{
+        NSString *temperatureString = [NSString stringWithFormat:@"%d\n",temperatureEntered];
+        [self.customBean sendSerialString:temperatureString];
+        NSLog(@"NUMBER: %@",temperatureString);
+    }
+}
 
 - (void)alertWithMessage:(NSString *)message{
 
@@ -207,13 +259,18 @@
     if (self.customBean.state == BeanState_Discovered) {
         self.customBean.delegate = self;
         [self.beanManager connectToBean:self.customBean error:nil];
+        [self.customBean sendSerialString:@"CheckSetTemp\n"];
     }
 }
 
 
 -(void)bean:(PTDBean *)bean serialDataReceived:(NSData *)data{
     NSString *stringReceived = [[NSString alloc]initWithData:data encoding:NSUTF8StringEncoding];
-    NSLog(@"%@",stringReceived);
+    
+    if (![stringReceived isEqual:[NSString class]]) {
+        NSLog(@"%d",[stringReceived intValue]);
+    }
+
     //    if ([stringReceived isEqualToString:@"Button One Pressed"]) {
     //        //NSLog(@"Button one pressed");
     //    } else if([stringReceived isEqualToString:@"Button Two Pressed"]){
