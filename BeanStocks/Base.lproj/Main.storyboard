@@ -309,26 +309,39 @@
                                     <constraint firstAttribute="width" constant="484" id="qmG-a5-mcA"/>
                                 </constraints>
                             </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fZY-q8-yTV">
+                                <rect key="frame" x="180" y="486" width="241" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="241" id="UdW-ul-oB3"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="connectButton:" destination="Bj3-ug-TLP" eventType="touchUpInside" id="gFc-7r-Wme"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <animations/>
-                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="J0N-9B-YHu" firstAttribute="centerX" secondItem="LlO-v2-Qxo" secondAttribute="centerX" id="0JN-RP-vKM"/>
+                            <constraint firstItem="fZY-q8-yTV" firstAttribute="centerX" secondItem="LlO-v2-Qxo" secondAttribute="centerX" id="6EU-Y9-6yr"/>
                             <constraint firstItem="E0N-uT-1cb" firstAttribute="top" secondItem="8cN-9e-bN1" secondAttribute="bottom" constant="78" id="Qjh-Hd-2c6"/>
                             <constraint firstItem="8cN-9e-bN1" firstAttribute="centerX" secondItem="J0N-9B-YHu" secondAttribute="centerX" id="SMW-XO-O7U"/>
                             <constraint firstItem="J0N-9B-YHu" firstAttribute="top" secondItem="Bue-50-Nqv" secondAttribute="bottom" id="TT2-Kh-BrU"/>
                             <constraint firstItem="8cN-9e-bN1" firstAttribute="top" secondItem="J0N-9B-YHu" secondAttribute="bottom" constant="54" id="inf-Da-YD9"/>
+                            <constraint firstItem="fZY-q8-yTV" firstAttribute="top" secondItem="8cN-9e-bN1" secondAttribute="bottom" constant="13" id="yS6-eH-VMN"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Light" image="bulbicon" id="TJh-my-iZ2"/>
                     <connections>
+                        <outlet property="connectButton" destination="fZY-q8-yTV" id="FnP-0i-gjQ"/>
                         <outlet property="lightBulbImageView" destination="J0N-9B-YHu" id="xE6-Az-NvR"/>
                         <outlet property="onOffSegmentControl" destination="8cN-9e-bN1" id="Fho-Ml-9Pa"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Jra-Tc-NrE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="668" y="1118"/>
+            <point key="canvasLocation" x="574" y="1050"/>
         </scene>
         <!--Toast-->
         <scene sceneID="pAQ-6U-gqK">
@@ -382,7 +395,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Lcf-dw-Qpz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1328" y="1069"/>
+            <point key="canvasLocation" x="1318" y="1621"/>
         </scene>
         <!--Heater-->
         <scene sceneID="R51-zY-S4e">
@@ -444,7 +457,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VU7-3o-YXd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1983" y="1069"/>
+            <point key="canvasLocation" x="1973" y="1621"/>
         </scene>
         <!--Fan-->
         <scene sceneID="WVj-Oi-YDN">
@@ -507,7 +520,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DNQ-XL-2H3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2634" y="1069"/>
+            <point key="canvasLocation" x="2784" y="1621"/>
         </scene>
         <!--Timer-->
         <scene sceneID="4C2-GV-pAg">
@@ -650,7 +663,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="17R-v1-V4V" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1053" y="1139"/>
+            <point key="canvasLocation" x="-1235" y="1195"/>
         </scene>
         <!--Add Bean View Controller-->
         <scene sceneID="oOr-Ds-fGk">
@@ -970,7 +983,7 @@
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ANQ-ki-Qe5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-204" y="1040"/>
+            <point key="canvasLocation" x="-410" y="1292"/>
         </scene>
         <!--Coffee-->
         <scene sceneID="Fmn-BI-2Wk">
