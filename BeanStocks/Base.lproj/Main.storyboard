@@ -536,17 +536,6 @@
                                 <rect key="frame" x="116" y="173" width="369" height="200"/>
                                 <animations/>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MHt-PN-dAq">
-                                <rect key="frame" x="180" y="403" width="241" height="30"/>
-                                <animations/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="241" id="hfX-En-9tx"/>
-                                </constraints>
-                                <state key="normal" title="Button"/>
-                                <connections>
-                                    <action selector="connectButtonPressed:" destination="YyQ-bF-YbV" eventType="touchUpInside" id="c3g-np-VIk"/>
-                                </connections>
-                            </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="POWER" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LP2-QS-Yrl">
                                 <rect key="frame" x="261" y="488" width="79" height="25"/>
                                 <animations/>
@@ -558,24 +547,31 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xjb-eC-FEQ">
+                                <rect key="frame" x="264" y="414" width="72" height="30"/>
+                                <state key="normal" title="Not Found"/>
+                                <connections>
+                                    <action selector="onConnectButtonPressed:" destination="YyQ-bF-YbV" eventType="touchUpInside" id="hVi-dT-Ktd"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="L84-xt-d9g" firstAttribute="top" secondItem="AJU-Fm-UXL" secondAttribute="bottom" constant="109" id="4BU-xY-L4s"/>
+                            <constraint firstItem="xjb-eC-FEQ" firstAttribute="centerX" secondItem="500-bQ-tiC" secondAttribute="centerX" id="FaM-Vw-5B7"/>
+                            <constraint firstItem="LP2-QS-Yrl" firstAttribute="top" secondItem="xjb-eC-FEQ" secondAttribute="bottom" constant="44" id="KBn-Lr-NFm"/>
                             <constraint firstItem="SA1-qi-4a8" firstAttribute="top" secondItem="LP2-QS-Yrl" secondAttribute="bottom" constant="38" id="RsE-ZI-xCx"/>
-                            <constraint firstItem="LP2-QS-Yrl" firstAttribute="top" secondItem="MHt-PN-dAq" secondAttribute="bottom" constant="55" id="Trz-pa-3Lx"/>
-                            <constraint firstItem="MHt-PN-dAq" firstAttribute="centerX" secondItem="LP2-QS-Yrl" secondAttribute="centerX" id="k2X-RW-9ad"/>
+                            <constraint firstItem="LP2-QS-Yrl" firstAttribute="centerX" secondItem="xjb-eC-FEQ" secondAttribute="centerX" id="fw6-aa-up2"/>
+                            <constraint firstItem="xjb-eC-FEQ" firstAttribute="top" secondItem="L84-xt-d9g" secondAttribute="bottom" constant="41" id="fzt-IS-0zl"/>
                             <constraint firstItem="L84-xt-d9g" firstAttribute="leading" secondItem="500-bQ-tiC" secondAttribute="leadingMargin" constant="96" id="kUX-q2-qx5"/>
-                            <constraint firstItem="MHt-PN-dAq" firstAttribute="top" secondItem="L84-xt-d9g" secondAttribute="bottom" constant="30" id="p7Z-oq-gRJ"/>
-                            <constraint firstItem="MHt-PN-dAq" firstAttribute="centerX" secondItem="L84-xt-d9g" secondAttribute="centerX" id="rmi-4e-1Lp"/>
                             <constraint firstItem="L84-xt-d9g" firstAttribute="centerX" secondItem="500-bQ-tiC" secondAttribute="centerX" id="xCS-mM-Qha"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="w64-dh-CVG"/>
                     <connections>
                         <outlet property="anyObjectImageView" destination="L84-xt-d9g" id="duV-OL-Ht8"/>
-                        <outlet property="connectButton" destination="MHt-PN-dAq" id="lFY-Df-tlL"/>
+                        <outlet property="connectButton" destination="xjb-eC-FEQ" id="CH1-8p-WMQ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fDs-u7-lsJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
