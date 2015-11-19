@@ -58,6 +58,7 @@
         [self.toasterImageView shakeWithOptions:SCShakeOptionsDirectionRotate | SCShakeOptionsForceInterpolationExpDown | SCShakeOptionsAtEndRestart | SCShakeOptionsAutoreverse force:0.15 duration:1 iterationDuration:0.03 completionHandler:nil];
     } else {
         self.toasterImageView.image = [UIImage imageNamed:@"toaster"];
+
     }
 
 }

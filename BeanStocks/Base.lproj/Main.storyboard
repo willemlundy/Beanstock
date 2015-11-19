@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="H8G-E1-3NS">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9059" systemVersion="15A284" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="H8G-E1-3NS">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
@@ -26,7 +26,7 @@
                                         <rect key="frame" x="0.0" y="28" width="600" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="1WJ-Jd-TlZ" id="n6o-L4-Cyn">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <animations/>
                                         </tableViewCellContentView>
@@ -312,6 +312,7 @@
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zpn-tw-j3a">
                                 <rect key="frame" x="257" y="410" width="87" height="30"/>
+                                <animations/>
                                 <state key="normal" title="Not Connect"/>
                                 <connections>
                                     <action selector="onConnectButtonPressed:" destination="Bj3-ug-TLP" eventType="touchUpInside" id="heE-R2-qyK"/>
@@ -431,6 +432,7 @@
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="r7u-nO-6JB">
                                 <rect key="frame" x="264" y="405" width="72" height="30"/>
+                                <animations/>
                                 <state key="normal" title="Not Found"/>
                                 <connections>
                                     <action selector="onConnectButtonPressed:" destination="aXx-dP-vhX" eventType="touchUpInside" id="fjK-IK-1Bv"/>
@@ -491,6 +493,7 @@
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kDy-Jk-jGn">
                                 <rect key="frame" x="264" y="408" width="72" height="30"/>
+                                <animations/>
                                 <state key="normal" title="Not Found"/>
                                 <connections>
                                     <action selector="onConnectButtonPressed:" destination="OmT-Lu-OeQ" eventType="touchUpInside" id="lTA-44-l4I"/>
@@ -546,17 +549,20 @@
                         <subviews>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="5by-Oj-Xfk">
                                 <rect key="frame" x="20" y="95" width="560" height="30"/>
+                                <animations/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8GY-tj-Pft">
                                 <rect key="frame" x="20" y="153" width="560" height="30"/>
+                                <animations/>
                                 <state key="normal" title="Set Temperature"/>
                                 <connections>
                                     <action selector="onSetTemperaturePressed:" destination="HQz-Xz-6tY" eventType="touchUpInside" id="kyC-LS-FwS"/>
                                 </connections>
                             </button>
                         </subviews>
+                        <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="5by-Oj-Xfk" firstAttribute="leading" secondItem="bLB-6K-ECH" secondAttribute="leadingMargin" id="4kb-wx-HTs"/>
@@ -575,7 +581,7 @@
             </objects>
             <point key="canvasLocation" x="5837" y="2301"/>
         </scene>
-        <!--Any Object View Controller-->
+        <!--Appliance-->
         <scene sceneID="uck-3A-MBQ">
             <objects>
                 <viewController id="YyQ-bF-YbV" customClass="AnyObjectViewController" sceneMemberID="viewController">
@@ -604,6 +610,7 @@
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xjb-eC-FEQ">
                                 <rect key="frame" x="264" y="414" width="72" height="30"/>
+                                <animations/>
                                 <state key="normal" title="Not Found"/>
                                 <connections>
                                     <action selector="onConnectButtonPressed:" destination="YyQ-bF-YbV" eventType="touchUpInside" id="hVi-dT-Ktd"/>
@@ -623,7 +630,7 @@
                             <constraint firstItem="L84-xt-d9g" firstAttribute="centerX" secondItem="500-bQ-tiC" secondAttribute="centerX" id="xCS-mM-Qha"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="w64-dh-CVG"/>
+                    <navigationItem key="navigationItem" title="Appliance" id="w64-dh-CVG"/>
                     <connections>
                         <outlet property="anyObjectImageView" destination="L84-xt-d9g" id="duV-OL-Ht8"/>
                         <outlet property="connectButton" destination="xjb-eC-FEQ" id="CH1-8p-WMQ"/>
@@ -800,7 +807,7 @@
                                         <rect key="frame" x="0.0" y="28" width="600" height="105"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="g6l-t5-K1J" id="mxa-Tx-mVY">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="104"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="104.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d2P-uU-ip9">
@@ -847,7 +854,7 @@
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Status Value" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8VO-Kd-4JH">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Status Value" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8VO-Kd-4JH">
                                                     <rect key="frame" x="75" y="80" width="516" height="20"/>
                                                     <animations/>
                                                     <constraints>
@@ -926,7 +933,7 @@
                                         <rect key="frame" x="0.0" y="28" width="600" height="120"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="eyC-7J-EyP" id="IPe-VC-uqC">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="119"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="119.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sGl-Xc-tMr">
@@ -1199,11 +1206,11 @@
             </objects>
             <point key="canvasLocation" x="2785" y="1621"/>
         </scene>
-        <!--Chosen Object-->
+        <!--Appliance-->
         <scene sceneID="FRm-Aq-ss2">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="j8X-0c-rxA" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Chosen Object" image="staricon" id="dxD-A1-Cb4"/>
+                    <tabBarItem key="tabBarItem" title="Appliance" image="staricon" id="dxD-A1-Cb4"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="MoS-YF-yCf">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
