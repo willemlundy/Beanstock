@@ -7,17 +7,19 @@
 //
 
 #import "HeaterViewController.h"
+#import "TempSettingsViewController.h"
 #import "UIView+Shake.h"
 #import "CircularPower.h"
 #import <PTDBean.h>
 #import <PTDBeanManager.h>
 
-@interface HeaterViewController () <PTDBeanDelegate,PTDBeanManagerDelegate>
+@interface HeaterViewController () <PTDBeanDelegate,PTDBeanManagerDelegate,TempSettingDelegate>
 
-@property (weak, nonatomic) IBOutlet UITextField *temperature;
 @property (weak, nonatomic) IBOutlet UIButton *connectButton;
 @property (weak, nonatomic) IBOutlet UIImageView *heater2ImageView;
 @property BOOL heatIsOn;
+
+@property (strong,nonatomic) NSString *temperatureString;
 
 @property (strong,nonatomic) NSMutableDictionary *discoveredBeans;
 
@@ -37,10 +39,7 @@
     self.heater2ImageView.image = [UIImage imageNamed:@"heater"];
 
     self.view.backgroundColor = [UIColor whiteColor];
-    
-    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(dismissTemperature:)];
-    tap.numberOfTapsRequired = 1;
-    [self.view addGestureRecognizer:tap];
+    self.navigationController.navigationBar.tintColor = [UIColor whiteColor];
 
     CircularLock *c = [[CircularLock alloc] initWithCenter:CGPointMake(self.view.center.x, self.view.frame.size.height - 100) radius:50
                                                   duration:1.5
@@ -63,9 +62,6 @@
     [self.view addSubview:c];
 }
 
--(void)dismissTemperature:(UITapGestureRecognizer *)sender{
-    [self.temperature resignFirstResponder];
-}
 
 - (void)toggled {
     if (self.heatIsOn == YES) {
@@ -92,51 +88,50 @@
 
 }
 
-- (IBAction)onSetTemperaturePressed:(UIButton *)sender {
-    if (self.customBean.state != BeanState_ConnectedAndValidated) {
-        UIAlertController *alertController = [UIAlertController
-                                              alertControllerWithTitle:@"Error"
-                                              message:@"Please connect to the bean first!"
-                                              preferredStyle:UIAlertControllerStyleAlert];
-        
-        UIAlertAction *okAction = [UIAlertAction
-                                   actionWithTitle:NSLocalizedString(@"OK", @"OK Action")
-                                   style:UIAlertActionStyleDefault
-                                   handler:^(UIAlertAction * _Nonnull action) {
-                                       NSLog(@"OK action");
-                                   }];
-        [alertController addAction:okAction];
-        
-        [self presentViewController:alertController animated:YES completion:nil];
-        return;
-    }
-    [self.temperature resignFirstResponder];
-    int temperatureEntered = [self.temperature.text intValue];
-    if (temperatureEntered < 1 || temperatureEntered > 50) {
-        UIAlertController *alertController = [UIAlertController
-                                              alertControllerWithTitle:@"Error"
-                                              message:@"Number has to be between 0 and 50!"
-                                              preferredStyle:UIAlertControllerStyleAlert];
-        
-        UIAlertAction *okAction = [UIAlertAction
-                                   actionWithTitle:NSLocalizedString(@"OK", @"OK Action")
-                                   style:UIAlertActionStyleDefault
-                                   handler:^(UIAlertAction * _Nonnull action) {
-                                       NSLog(@"OK action");
-                                   }];
-        [alertController addAction:okAction];
-        
-        [self presentViewController:alertController animated:YES completion:nil];
-    }else{
-        NSString *temperatureString = [NSString stringWithFormat:@"%d\n",temperatureEntered];
-        [self.customBean sendSerialString:temperatureString];
-        NSLog(@"NUMBER: %@",temperatureString);
-    }
-}
+//- (IBAction)onSetTemperaturePressed:(UIButton *)sender {
+//    if (self.customBean.state != BeanState_ConnectedAndValidated) {
+//        UIAlertController *alertController = [UIAlertController
+//                                              alertControllerWithTitle:@"Error"
+//                                              message:@"Please connect to the bean first!"
+//                                              preferredStyle:UIAlertControllerStyleAlert];
+//        
+//        UIAlertAction *okAction = [UIAlertAction
+//                                   actionWithTitle:NSLocalizedString(@"OK", @"OK Action")
+//                                   style:UIAlertActionStyleDefault
+//                                   handler:^(UIAlertAction * _Nonnull action) {
+//                                       NSLog(@"OK action");
+//                                   }];
+//        [alertController addAction:okAction];
+//        
+//        [self presentViewController:alertController animated:YES completion:nil];
+//        return;
+//    }
+//    int temperatureEntered = [self.temperature.text intValue];
+//    if (temperatureEntered < 1 || temperatureEntered > 50) {
+//        UIAlertController *alertController = [UIAlertController
+//                                              alertControllerWithTitle:@"Error"
+//                                              message:@"Number has to be between 0 and 50!"
+//                                              preferredStyle:UIAlertControllerStyleAlert];
+//        
+//        UIAlertAction *okAction = [UIAlertAction
+//                                   actionWithTitle:NSLocalizedString(@"OK", @"OK Action")
+//                                   style:UIAlertActionStyleDefault
+//                                   handler:^(UIAlertAction * _Nonnull action) {
+//                                       NSLog(@"OK action");
+//                                   }];
+//        [alertController addAction:okAction];
+//        
+//        [self presentViewController:alertController animated:YES completion:nil];
+//    }else{
+//        NSString *temperatureString = [NSString stringWithFormat:@"%d\n",temperatureEntered];
+//        [self.customBean sendSerialString:temperatureString];
+//        NSLog(@"NUMBER: %@",temperatureString);
+//    }
+//}
 
 - (void)alertWithMessage:(NSString *)message{
 
-    UIAlertController *controller = [UIAlertController alertControllerWithTitle:@"Fan status" message:message preferredStyle:UIAlertControllerStyleAlert];
+    UIAlertController *controller = [UIAlertController alertControllerWithTitle:@"Heat status" message:message preferredStyle:UIAlertControllerStyleAlert];
     UIAlertAction *action = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:nil];
     [controller addAction:action];
     [self presentViewController:controller animated:YES completion:nil];
@@ -250,6 +245,9 @@
     if (self.customBean.state == BeanState_Discovered) {
         self.customBean.delegate = self;
         [self.beanManager connectToBean:self.customBean error:nil];
+        [self.customBean sendSerialString:self.temperatureString];
+        [self.customBean sendSerialString:@"CheckSetTemp\n"];
+
     }
 }
 
@@ -269,6 +267,11 @@
     //    }
 }
 
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
+    TempSettingsViewController *tempVC = segue.destinationViewController;
+    tempVC.delegate = self;
+}
+
 #pragma mark - Cleanup Code
 -(void)viewWillDisappear:(BOOL)animated{
     [super viewWillDisappear:animated];
@@ -278,6 +281,12 @@
     
     NSLog(@"BEAN STATE: %ld",(long)self.customBean.state);
     NSLog(@"COUNT: %lu",self.discoveredBeans.count);
+}
+
+#pragma mark - TempSettingsDelegate
+-(void)tempSettingsWithTemperature:(NSString *)temperature{
+    self.temperatureString = temperature;
+    [self.navigationController popViewControllerAnimated:YES];
 }
 
 @end

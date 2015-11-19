@@ -436,46 +436,30 @@
                                     <action selector="onConnectButtonPressed:" destination="aXx-dP-vhX" eventType="touchUpInside" id="fjK-IK-1Bv"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Tn0-G2-nHl">
-                                <rect key="frame" x="116" y="135" width="369" height="30"/>
-                                <state key="normal" title="Set Temperature"/>
-                                <connections>
-                                    <action selector="onSetTemperaturePressed:" destination="aXx-dP-vhX" eventType="touchUpInside" id="Czl-z0-amO"/>
-                                </connections>
-                            </button>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Temperature" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dcz-ok-Ryv">
-                                <rect key="frame" x="252" y="97" width="97" height="30"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="97" id="Erq-V3-hGZ"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
-                            </textField>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="nhw-MW-kfD" firstAttribute="centerX" secondItem="XYI-zj-Wpn" secondAttribute="centerX" id="3Jd-7w-Gut"/>
                             <constraint firstItem="r7u-nO-6JB" firstAttribute="centerX" secondItem="66j-1e-nS3" secondAttribute="centerX" id="3Sx-yD-rvM"/>
-                            <constraint firstItem="Tn0-G2-nHl" firstAttribute="leading" secondItem="XYI-zj-Wpn" secondAttribute="leading" id="CTS-yC-Vez"/>
-                            <constraint firstItem="XYI-zj-Wpn" firstAttribute="top" secondItem="Tn0-G2-nHl" secondAttribute="bottom" constant="8" id="DmX-WM-9gR"/>
                             <constraint firstItem="XYI-zj-Wpn" firstAttribute="leading" secondItem="66j-1e-nS3" secondAttribute="leadingMargin" constant="96" id="Fkh-l4-BjJ"/>
-                            <constraint firstItem="dcz-ok-Ryv" firstAttribute="top" secondItem="J4L-7j-OlW" secondAttribute="bottom" constant="33" id="GAz-BG-Qfk"/>
                             <constraint firstItem="nhw-MW-kfD" firstAttribute="centerX" secondItem="r7u-nO-6JB" secondAttribute="centerX" id="S25-5e-i5O"/>
                             <constraint firstItem="nhw-MW-kfD" firstAttribute="top" secondItem="r7u-nO-6JB" secondAttribute="bottom" constant="53" id="ZFj-pp-cI5"/>
                             <constraint firstItem="r7u-nO-6JB" firstAttribute="top" secondItem="XYI-zj-Wpn" secondAttribute="bottom" constant="32" id="aBe-SG-DAK"/>
-                            <constraint firstItem="dcz-ok-Ryv" firstAttribute="centerX" secondItem="Tn0-G2-nHl" secondAttribute="centerX" id="jad-pk-Z5K"/>
-                            <constraint firstItem="Tn0-G2-nHl" firstAttribute="trailing" secondItem="XYI-zj-Wpn" secondAttribute="trailing" id="sd5-ob-jXF"/>
-                            <constraint firstItem="Tn0-G2-nHl" firstAttribute="top" secondItem="dcz-ok-Ryv" secondAttribute="bottom" constant="8" id="uQA-jU-asD"/>
                             <constraint firstItem="XYI-zj-Wpn" firstAttribute="top" secondItem="J4L-7j-OlW" secondAttribute="bottom" constant="109" id="xED-ye-kBl"/>
                             <constraint firstItem="Hd1-RW-TT4" firstAttribute="top" secondItem="nhw-MW-kfD" secondAttribute="bottom" constant="38" id="xfE-e1-Z0u"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Heater" id="0MU-Dk-csP"/>
+                    <navigationItem key="navigationItem" title="Heater" id="0MU-Dk-csP">
+                        <barButtonItem key="rightBarButtonItem" image="089. Settings" id="Gk1-na-wY9">
+                            <connections>
+                                <segue destination="HQz-Xz-6tY" kind="show" id="FL6-bP-Ij9"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="connectButton" destination="r7u-nO-6JB" id="vPO-tC-Iut"/>
                         <outlet property="heater2ImageView" destination="XYI-zj-Wpn" id="k37-E1-Thq"/>
-                        <outlet property="temperature" destination="dcz-ok-Ryv" id="piV-Ce-6Mt"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VU7-3o-YXd" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -512,18 +496,6 @@
                                     <action selector="onConnectButtonPressed:" destination="OmT-Lu-OeQ" eventType="touchUpInside" id="lTA-44-l4I"/>
                                 </connections>
                             </button>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Temperature" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="q28-8K-E0d">
-                                <rect key="frame" x="248" y="72" width="104" height="30"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
-                            </textField>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ze8-pb-8sW">
-                                <rect key="frame" x="247" y="110" width="106" height="30"/>
-                                <state key="normal" title="Set Temerature"/>
-                                <connections>
-                                    <action selector="onSetTemperaturePressed:" destination="OmT-Lu-OeQ" eventType="touchUpInside" id="zex-4s-Gxs"/>
-                                </connections>
-                            </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="NV5-eS-WoK">
                                 <rect key="frame" x="116" y="156" width="369" height="244"/>
                                 <animations/>
@@ -540,12 +512,8 @@
                             <constraint firstItem="kDy-Jk-jGn" firstAttribute="centerX" secondItem="GEU-Xu-M9b" secondAttribute="centerX" id="MxV-Wp-uo6"/>
                             <constraint firstItem="XH8-Ns-RuA" firstAttribute="top" secondItem="sFb-tz-5Gu" secondAttribute="bottom" constant="38" id="Nuh-Tz-RC9"/>
                             <constraint firstItem="sFb-tz-5Gu" firstAttribute="centerX" secondItem="NV5-eS-WoK" secondAttribute="centerX" id="Q33-Op-X2D"/>
-                            <constraint firstItem="ze8-pb-8sW" firstAttribute="top" secondItem="q28-8K-E0d" secondAttribute="bottom" constant="8" id="Rn7-0i-hlt"/>
                             <constraint firstItem="NV5-eS-WoK" firstAttribute="centerX" secondItem="GEU-Xu-M9b" secondAttribute="centerX" id="brR-eI-9Ni"/>
                             <constraint firstItem="NV5-eS-WoK" firstAttribute="leading" secondItem="GEU-Xu-M9b" secondAttribute="leadingMargin" constant="96" id="kir-MB-3NI"/>
-                            <constraint firstItem="ze8-pb-8sW" firstAttribute="centerX" secondItem="q28-8K-E0d" secondAttribute="centerX" id="oQ6-tp-1xF"/>
-                            <constraint firstItem="q28-8K-E0d" firstAttribute="top" secondItem="OmB-Vj-QEa" secondAttribute="bottom" constant="8" id="qbZ-Sh-75g"/>
-                            <constraint firstItem="ze8-pb-8sW" firstAttribute="centerX" secondItem="NV5-eS-WoK" secondAttribute="centerX" id="qlT-Nl-3s3"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Fan" id="oEO-NB-IcC">
@@ -558,17 +526,16 @@
                     <connections>
                         <outlet property="connectButton" destination="kDy-Jk-jGn" id="eBx-1x-LJr"/>
                         <outlet property="fan2ImageView" destination="NV5-eS-WoK" id="irl-r8-gNm"/>
-                        <outlet property="temperature" destination="q28-8K-E0d" id="FCf-28-fN1"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DNQ-XL-2H3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="6694" y="1069"/>
         </scene>
-        <!--View Controller-->
+        <!--Temp Settings View Controller-->
         <scene sceneID="qGo-IQ-fS9">
             <objects>
-                <viewController id="HQz-Xz-6tY" sceneMemberID="viewController">
+                <viewController id="HQz-Xz-6tY" customClass="TempSettingsViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="IrP-wi-WEr"/>
                         <viewControllerLayoutGuide type="bottom" id="HUe-89-fOG"/>
@@ -576,12 +543,37 @@
                     <view key="view" contentMode="scaleToFill" id="bLB-6K-ECH">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="5by-Oj-Xfk">
+                                <rect key="frame" x="20" y="95" width="560" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8GY-tj-Pft">
+                                <rect key="frame" x="20" y="153" width="560" height="30"/>
+                                <state key="normal" title="Set Temperature"/>
+                                <connections>
+                                    <action selector="onSetTemperaturePressed:" destination="HQz-Xz-6tY" eventType="touchUpInside" id="kyC-LS-FwS"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="5by-Oj-Xfk" firstAttribute="leading" secondItem="bLB-6K-ECH" secondAttribute="leadingMargin" id="4kb-wx-HTs"/>
+                            <constraint firstItem="5by-Oj-Xfk" firstAttribute="trailing" secondItem="bLB-6K-ECH" secondAttribute="trailingMargin" id="7qm-jb-vuD"/>
+                            <constraint firstItem="8GY-tj-Pft" firstAttribute="leading" secondItem="bLB-6K-ECH" secondAttribute="leadingMargin" id="Htc-7t-tWi"/>
+                            <constraint firstItem="8GY-tj-Pft" firstAttribute="trailing" secondItem="bLB-6K-ECH" secondAttribute="trailingMargin" id="KpE-c7-Uan"/>
+                            <constraint firstItem="5by-Oj-Xfk" firstAttribute="top" secondItem="IrP-wi-WEr" secondAttribute="bottom" constant="31" id="VmK-7y-5Cu"/>
+                            <constraint firstItem="8GY-tj-Pft" firstAttribute="top" secondItem="5by-Oj-Xfk" secondAttribute="bottom" constant="28" id="uC6-Nv-b5J"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="temperatureTextField" destination="5by-Oj-Xfk" id="YK9-Kb-JSp"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ULv-BN-83f" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="7389" y="1069"/>
+            <point key="canvasLocation" x="5837" y="2301"/>
         </scene>
         <!--Any Object View Controller-->
         <scene sceneID="uck-3A-MBQ">
@@ -1240,4 +1232,7 @@
         <image name="staricon" width="32" height="32"/>
         <image name="wind34" width="32" height="32"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="FL6-bP-Ij9"/>
+    </inferredMetricsTieBreakers>
 </document>

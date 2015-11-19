@@ -29,6 +29,7 @@
 		89EFC4661BF2C0DD009F6AB9 /* CoffeeStepViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 89EFC4651BF2C0DD009F6AB9 /* CoffeeStepViewController.m */; };
 		89FBB80B1BEF193100E9B71A /* Bean.m in Sources */ = {isa = PBXBuildFile; fileRef = 89FBB80A1BEF193100E9B71A /* Bean.m */; };
 		B26D72641BFB9AD900A9B4C4 /* TimerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B26D72631BFB9AD900A9B4C4 /* TimerViewController.m */; };
+		B26D72671BFE46D200A9B4C4 /* TempSettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B26D72661BFE46D200A9B4C4 /* TempSettingsViewController.m */; settings = {ASSET_TAGS = (); }; };
 		B2AD2D931BE9A560006EFD53 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B2AD2D921BE9A560006EFD53 /* main.m */; };
 		B2AD2D961BE9A560006EFD53 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B2AD2D951BE9A560006EFD53 /* AppDelegate.m */; };
 		B2AD2D991BE9A560006EFD53 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B2AD2D981BE9A560006EFD53 /* ViewController.m */; };
@@ -81,6 +82,8 @@
 		89FBB80A1BEF193100E9B71A /* Bean.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Bean.m; sourceTree = "<group>"; };
 		B26D72621BFB9AD900A9B4C4 /* TimerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TimerViewController.h; sourceTree = "<group>"; };
 		B26D72631BFB9AD900A9B4C4 /* TimerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TimerViewController.m; sourceTree = "<group>"; };
+		B26D72651BFE46D200A9B4C4 /* TempSettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TempSettingsViewController.h; sourceTree = "<group>"; };
+		B26D72661BFE46D200A9B4C4 /* TempSettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TempSettingsViewController.m; sourceTree = "<group>"; };
 		B2AD2D8E1BE9A560006EFD53 /* BeanStocks.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BeanStocks.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B2AD2D921BE9A560006EFD53 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		B2AD2D941BE9A560006EFD53 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -245,6 +248,8 @@
 				89EE82381BF023B200DB1E3D /* Step.m */,
 				89FBB8091BEF193100E9B71A /* Bean.h */,
 				89FBB80A1BEF193100E9B71A /* Bean.m */,
+				B26D72651BFE46D200A9B4C4 /* TempSettingsViewController.h */,
+				B26D72661BFE46D200A9B4C4 /* TempSettingsViewController.m */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -444,6 +449,7 @@
 				89BD40B61BF13C8D00FAAAE5 /* Location.m in Sources */,
 				2FEA3A001BFA9D3A00935A85 /* HeaterViewController.m in Sources */,
 				2FE7D5331BEA99A7001FA967 /* LoginViewController.m in Sources */,
+				B26D72671BFE46D200A9B4C4 /* TempSettingsViewController.m in Sources */,
 				89EFC4591BF286C5009F6AB9 /* HomeViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
