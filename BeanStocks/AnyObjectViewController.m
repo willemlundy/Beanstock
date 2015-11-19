@@ -1,41 +1,41 @@
 //
-//  LightViewController.m
+//  AnyObjectViewController.m
 //  BeanStocks
 //
-//  Created by Anthony Tran on 11/16/15.
+//  Created by Anthony Tran on 11/18/15.
 //  Copyright © 2015 Ehsan Jahromi. All rights reserved.
 //
 
-#import "LightViewController.h"
-#import <PTDBean.h>
-#import <PTDBeanManager.h>
+#import "AnyObjectViewController.h"
 #import "UIView+Shake.h"
 #import "CircularPower.h"
+#import <PTDBean.h>
+#import <PTDBeanManager.h>
 
-@interface LightViewController () <PTDBeanDelegate,PTDBeanManagerDelegate>
-@property (weak, nonatomic) IBOutlet UIImageView *lightBulbImageView;
+@interface AnyObjectViewController () <PTDBeanDelegate,PTDBeanManagerDelegate>
+@property (weak, nonatomic) IBOutlet UIImageView *anyObjectImageView;
+@property BOOL objectIsOn;
 @property (weak, nonatomic) IBOutlet UIButton *connectButton;
 
-@property BOOL lightIsOn;
 @property (strong,nonatomic) NSMutableDictionary *discoveredBeans;
 
 @property (strong,nonatomic) PTDBeanManager *beanManager;
 @property (strong,nonatomic) PTDBean *customBean;
+
 @end
 
-@implementation LightViewController
+@implementation AnyObjectViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
+    self.anyObjectImageView.image = [UIImage imageNamed:@"starisoff"];
     self.discoveredBeans = [NSMutableDictionary dictionary];
     self.beanManager = [[PTDBeanManager alloc]initWithDelegate:self];
     
     self.customBean.delegate = self;
     self.beanManager.delegate = self;
 
-    self.lightBulbImageView.image = [UIImage imageNamed:@"lightbulb"];
-
+    
     self.view.backgroundColor = [UIColor whiteColor];
 
     CircularLock *c = [[CircularLock alloc] initWithCenter:CGPointMake(self.view.center.x, self.view.frame.size.height - 100) radius:50
@@ -47,48 +47,41 @@
                                              unlockedImage:[UIImage imageNamed:@"unlocked.png"]
                                                   isLocked:NO
                                          didlockedCallback:^{
-                                             [self alertWithMessage:@"Light is ON!"];
-                                             self.lightIsOn = YES;
+                                             [self alertWithMessage:@"Object is ON!"];
+                                             self.objectIsOn = YES;
                                              [self toggled];
                                          }
                                        didUnlockedCallback:^{
-                                           [self alertWithMessage:@"Light is OFF!"];
-                                           self.lightIsOn = NO;
+                                           [self alertWithMessage:@"Object is OFF!"];
+                                           self.objectIsOn = NO;
                                            [self toggled];
                                        }];
     [self.view addSubview:c];
 
-
 }
 
-
 - (void)toggled {
-    if (self.lightIsOn == YES) {
-        self.lightBulbImageView.image = [UIImage imageNamed:@"onlightbulb"];
-        [self.customBean sendSerialString:@"TogglePowerOn\n"];
-        self.lightBulbImageView.image = [UIImage imageNamed:@"lightbulbon"];
+    if (self.objectIsOn == YES) {
+        self.anyObjectImageView.image = [UIImage imageNamed:@"starison"];
         CATransition *animation = [CATransition animation];
         [animation setDelegate:self];
         [animation setDuration:1.0f];
         [animation setTimingFunction:UIViewAnimationCurveEaseInOut];
-        [animation setType:@"waveEffect"];
-        [self.lightBulbImageView.layer addAnimation:animation forKey:NULL];
-        [self.lightBulbImageView shakeWithOptions:SCShakeOptionsDirectionRotate | SCShakeOptionsForceInterpolationExpDown | SCShakeOptionsAtEndRestart | SCShakeOptionsAutoreverse force:0.15 duration:1 iterationDuration:0.03 completionHandler:nil];
+        [animation setType:@"windEffect" ];
+        [self.anyObjectImageView.layer addAnimation:animation forKey:NULL];
+        [self.anyObjectImageView shakeWithOptions:SCShakeOptionsDirectionRotate | SCShakeOptionsForceInterpolationExpDown | SCShakeOptionsAtEndRestart | SCShakeOptionsAutoreverse force:0.15 duration:1 iterationDuration:0.03 completionHandler:nil];
     } else {
-        self.lightBulbImageView.image = [UIImage imageNamed:@"offlightbulb"];
-        [self.customBean sendSerialString:@"TogglePowerOff\n"];
-        self.lightBulbImageView.image = [UIImage imageNamed:@"lightbulb"];
-        [self.lightBulbImageView endShake];
+        self.anyObjectImageView.image = [UIImage imageNamed:@"starisoff"];
     }
-
 }
 
 - (void)viewDidDisappear:(BOOL)animated {
     [super viewDidDisappear:animated];
 
-    [self.lightBulbImageView endShake];
+    [self.anyObjectImageView endShake];
 
 }
+
 
 - (void)alertWithMessage:(NSString *)message{
 
@@ -146,7 +139,7 @@
     //self.beanLabel.text = @"Bean found! Tap to connect.";
     [self.connectButton setTitle:@"Connect now!" forState:UIControlStateNormal];
 }
-
+// TODO:
 -(void)isLightBeanFound:(PTDBean *)bean{
     if ([bean.name isEqualToString:@"LampBean"] || [bean.name isEqualToString:@"Lamp Bean"]){// ||  [bean.name isEqualToString:@"Coffee"]) {
         self.customBean = bean;
@@ -201,6 +194,7 @@
     }
 }
 
+
 - (IBAction)onConnectButtonPressed:(UIButton *)sender {
     if (self.customBean.state == BeanState_Discovered) {
         self.customBean.delegate = self;
@@ -211,17 +205,17 @@
 -(void)bean:(PTDBean *)bean serialDataReceived:(NSData *)data{
     NSString *stringReceived = [[NSString alloc]initWithData:data encoding:NSUTF8StringEncoding];
     NSLog(@"%@",stringReceived);
-//    if ([stringReceived isEqualToString:@"Button One Pressed"]) {
-//        //NSLog(@"Button one pressed");
-//    } else if([stringReceived isEqualToString:@"Button Two Pressed"]){
-//        NSLog(@"Button Two pressed");
-//    }else if ([stringReceived isEqualToString:@"Power Toggled"]){
-//        NSLog(@"Power Toggled");
-//    }else if ([stringReceived isEqualToString:@"Brew Toggled"]){
-//        NSLog(@"Brew Toggled");
-//    }else{
-//        NSLog(@"Unrecognized: %@",stringReceived);
-//    }
+    //    if ([stringReceived isEqualToString:@"Button One Pressed"]) {
+    //        //NSLog(@"Button one pressed");
+    //    } else if([stringReceived isEqualToString:@"Button Two Pressed"]){
+    //        NSLog(@"Button Two pressed");
+    //    }else if ([stringReceived isEqualToString:@"Power Toggled"]){
+    //        NSLog(@"Power Toggled");
+    //    }else if ([stringReceived isEqualToString:@"Brew Toggled"]){
+    //        NSLog(@"Brew Toggled");
+    //    }else{
+    //        NSLog(@"Unrecognized: %@",stringReceived);
+    //    }
 }
 
 #pragma mark - Cleanup Code
