@@ -41,7 +41,7 @@
     self.view.backgroundColor = [UIColor whiteColor];
     self.navigationController.navigationBar.tintColor = [UIColor whiteColor];
 
-    CircularLock *c = [[CircularLock alloc] initWithCenter:CGPointMake(self.view.center.x, self.view.frame.size.height - 100) radius:50
+    CircularLock *c = [[CircularLock alloc] initWithCenter:CGPointMake(self.view.center.x, self.view.frame.size.height - 100) radius:40
                                                   duration:1.5
                                                strokeWidth:15
                                                  ringColor:[UIColor blackColor]
@@ -50,12 +50,12 @@
                                              unlockedImage:[UIImage imageNamed:@"unlocked.png"]
                                                   isLocked:NO
                                          didlockedCallback:^{
-                                             [self alertWithMessage:@"Heat is ON!"];
+                                             [self alertWithMessage:@"ON"];
                                              self.heatIsOn = YES;
                                              [self toggled];
                                          }
                                        didUnlockedCallback:^{
-                                           [self alertWithMessage:@"Heat is OFF!"];
+                                           [self alertWithMessage:@"OFF"];
                                            self.heatIsOn = NO;
                                            [self toggled];
                                        }];

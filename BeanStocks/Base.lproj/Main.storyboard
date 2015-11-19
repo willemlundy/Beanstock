@@ -581,7 +581,7 @@
             </objects>
             <point key="canvasLocation" x="5837" y="2301"/>
         </scene>
-        <!--Any Object View Controller-->
+        <!--Appliance-->
         <scene sceneID="uck-3A-MBQ">
             <objects>
                 <viewController id="YyQ-bF-YbV" customClass="AnyObjectViewController" sceneMemberID="viewController">
@@ -630,7 +630,7 @@
                             <constraint firstItem="L84-xt-d9g" firstAttribute="centerX" secondItem="500-bQ-tiC" secondAttribute="centerX" id="xCS-mM-Qha"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="w64-dh-CVG"/>
+                    <navigationItem key="navigationItem" title="Appliance" id="w64-dh-CVG"/>
                     <connections>
                         <outlet property="anyObjectImageView" destination="L84-xt-d9g" id="duV-OL-Ht8"/>
                         <outlet property="connectButton" destination="xjb-eC-FEQ" id="CH1-8p-WMQ"/>
@@ -1206,11 +1206,11 @@
             </objects>
             <point key="canvasLocation" x="2785" y="1621"/>
         </scene>
-        <!--Chosen Object-->
+        <!--Appliance-->
         <scene sceneID="FRm-Aq-ss2">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="j8X-0c-rxA" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Chosen Object" image="staricon" id="dxD-A1-Cb4"/>
+                    <tabBarItem key="tabBarItem" title="Appliance" image="staricon" id="dxD-A1-Cb4"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="MoS-YF-yCf">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>

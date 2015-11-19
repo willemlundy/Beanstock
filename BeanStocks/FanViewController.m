@@ -44,7 +44,7 @@
     self.view.backgroundColor = [UIColor whiteColor];
 
     
-    CircularLock *c = [[CircularLock alloc] initWithCenter:CGPointMake(self.view.center.x, self.view.frame.size.height - 100) radius:50
+    CircularLock *c = [[CircularLock alloc] initWithCenter:CGPointMake(self.view.center.x, self.view.frame.size.height - 100) radius:40
                                                   duration:1.5
                                                strokeWidth:15
                                                  ringColor:[UIColor blackColor]
@@ -53,12 +53,12 @@
                                              unlockedImage:[UIImage imageNamed:@"unlocked.png"]
                                                   isLocked:NO
                                          didlockedCallback:^{
-                                             [self alertWithMessage:@"Fan is ON!"];
+                                             [self alertWithMessage:@"ON"];
                                              self.fanIsOn = YES;
                                              [self toggled];
                                          }
                                        didUnlockedCallback:^{
-                                           [self alertWithMessage:@"Fan is OFF!"];
+                                           [self alertWithMessage:@"OFF"];
                                            self.fanIsOn = NO;
                                            [self toggled];
                                        }];
@@ -141,7 +141,7 @@
 
 - (void)alertWithMessage:(NSString *)message{
 
-    UIAlertController *controller = [UIAlertController alertControllerWithTitle:@"Fan status" message:message preferredStyle:UIAlertControllerStyleAlert];
+    UIAlertController *controller = [UIAlertController alertControllerWithTitle:@"Fan Status" message:message preferredStyle:UIAlertControllerStyleAlert];
     UIAlertAction *action = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:nil];
     [controller addAction:action];
     [self presentViewController:controller animated:YES completion:nil];
