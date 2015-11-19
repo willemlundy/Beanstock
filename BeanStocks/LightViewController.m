@@ -15,6 +15,7 @@
 @interface LightViewController () <PTDBeanDelegate,PTDBeanManagerDelegate>
 @property (weak, nonatomic) IBOutlet UIImageView *lightBulbImageView;
 @property (weak, nonatomic) IBOutlet UIButton *connectButton;
+
 @property BOOL lightIsOn;
 @property (strong,nonatomic) NSMutableDictionary *discoveredBeans;
 
@@ -77,6 +78,7 @@
         self.lightBulbImageView.image = [UIImage imageNamed:@"offlightbulb"];
         [self.customBean sendSerialString:@"TogglePowerOff\n"];
         self.lightBulbImageView.image = [UIImage imageNamed:@"lightbulb"];
+        [self.lightBulbImageView endShake];
     }
 
 }
@@ -198,7 +200,8 @@
         return;
     }
 }
-- (IBAction)connectButton:(UIButton *)sender {
+
+- (IBAction)onConnectButtonPressed:(UIButton *)sender {
     if (self.customBean.state == BeanState_Discovered) {
         self.customBean.delegate = self;
         [self.beanManager connectToBean:self.customBean error:nil];

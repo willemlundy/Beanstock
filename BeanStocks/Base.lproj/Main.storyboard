@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9059" systemVersion="15A284" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="H8G-E1-3NS">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="H8G-E1-3NS">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
@@ -26,7 +26,7 @@
                                         <rect key="frame" x="0.0" y="28" width="600" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="1WJ-Jd-TlZ" id="n6o-L4-Cyn">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <animations/>
                                         </tableViewCellContentView>
@@ -295,18 +295,10 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="J0N-9B-YHu">
                                 <rect key="frame" x="116" y="121" width="369" height="258"/>
                                 <animations/>
-                            </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fZY-q8-yTV">
-                                <rect key="frame" x="180" y="403" width="241" height="30"/>
-                                <animations/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="241" id="H8x-oB-000"/>
+                                    <constraint firstAttribute="height" constant="258" id="E4O-SW-7dX"/>
                                 </constraints>
-                                <state key="normal" title="Button"/>
-                                <connections>
-                                    <action selector="connectButton:" destination="Bj3-ug-TLP" eventType="touchUpInside" id="gFc-7r-Wme"/>
-                                </connections>
-                            </button>
+                            </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="POWER" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AzQ-Uw-2T7">
                                 <rect key="frame" x="261" y="488" width="79" height="25"/>
                                 <animations/>
@@ -318,23 +310,29 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zpn-tw-j3a">
+                                <rect key="frame" x="257" y="410" width="87" height="30"/>
+                                <state key="normal" title="Not Connect"/>
+                                <connections>
+                                    <action selector="onConnectButtonPressed:" destination="Bj3-ug-TLP" eventType="touchUpInside" id="heE-R2-qyK"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="fZY-q8-yTV" firstAttribute="top" secondItem="J0N-9B-YHu" secondAttribute="bottom" constant="24" id="3eZ-st-FWi"/>
                             <constraint firstItem="J0N-9B-YHu" firstAttribute="top" secondItem="Bue-50-Nqv" secondAttribute="bottom" constant="57" id="Bn5-Dp-5uR"/>
                             <constraint firstItem="AzQ-Uw-2T7" firstAttribute="centerX" secondItem="LlO-v2-Qxo" secondAttribute="centerX" id="EUe-P4-48C"/>
-                            <constraint firstItem="AzQ-Uw-2T7" firstAttribute="top" secondItem="fZY-q8-yTV" secondAttribute="bottom" constant="55" id="XKS-Tz-i85"/>
                             <constraint firstItem="J0N-9B-YHu" firstAttribute="leading" secondItem="LlO-v2-Qxo" secondAttribute="leadingMargin" constant="96" id="Z6R-XK-Lx1"/>
                             <constraint firstItem="E0N-uT-1cb" firstAttribute="top" secondItem="AzQ-Uw-2T7" secondAttribute="bottom" constant="38" id="dG1-Tc-56R"/>
-                            <constraint firstItem="AzQ-Uw-2T7" firstAttribute="centerX" secondItem="fZY-q8-yTV" secondAttribute="centerX" id="fNb-f2-AhJ"/>
-                            <constraint firstItem="fZY-q8-yTV" firstAttribute="centerX" secondItem="J0N-9B-YHu" secondAttribute="centerX" id="tOO-CV-7mS"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="J0N-9B-YHu" secondAttribute="trailing" constant="95" id="gBC-TI-FqB"/>
+                            <constraint firstItem="Zpn-tw-j3a" firstAttribute="top" secondItem="J0N-9B-YHu" secondAttribute="bottom" constant="31" id="i5q-V3-Awi"/>
+                            <constraint firstItem="Zpn-tw-j3a" firstAttribute="centerX" secondItem="LlO-v2-Qxo" secondAttribute="centerX" id="yKS-Na-FJS"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Light" id="flv-C0-1XO"/>
                     <connections>
-                        <outlet property="connectButton" destination="fZY-q8-yTV" id="FnP-0i-gjQ"/>
+                        <outlet property="connectButton" destination="Zpn-tw-j3a" id="Z2t-Na-VYb"/>
                         <outlet property="lightBulbImageView" destination="J0N-9B-YHu" id="xE6-Az-NvR"/>
                     </connections>
                 </viewController>
@@ -428,7 +426,6 @@
                                 </constraints>
                                 <state key="normal" title="Button"/>
                                 <connections>
-                                    <action selector="connectButton:" destination="Bj3-ug-TLP" eventType="touchUpInside" id="l0x-6P-X2f"/>
                                     <action selector="connectButtonPressed:" destination="aXx-dP-vhX" eventType="touchUpInside" id="uR5-bg-ilF"/>
                                 </connections>
                             </button>
@@ -479,8 +476,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="NV5-eS-WoK">
-                                <rect key="frame" x="116" y="94" width="369" height="244"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="NV5-eS-WoK">
+                                <rect key="frame" x="116" y="140" width="369" height="244"/>
                                 <animations/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="244" id="U4E-tD-wdl"/>
@@ -498,14 +495,13 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3c0-bk-X63">
-                                <rect key="frame" x="180" y="407" width="241" height="30"/>
+                                <rect key="frame" x="180" y="403" width="241" height="30"/>
                                 <animations/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="241" id="UNn-ph-C3H"/>
+                                    <constraint firstAttribute="width" constant="241" id="ZRI-n2-THq"/>
                                 </constraints>
                                 <state key="normal" title="Button"/>
                                 <connections>
-                                    <action selector="connectButton:" destination="Bj3-ug-TLP" eventType="touchUpInside" id="bm9-CC-Fyj"/>
                                     <action selector="connectButtonPressed:" destination="OmT-Lu-OeQ" eventType="touchUpInside" id="eIh-3E-Oq0"/>
                                 </connections>
                             </button>
@@ -514,12 +510,12 @@
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="NV5-eS-WoK" firstAttribute="top" secondItem="OmB-Vj-QEa" secondAttribute="bottom" constant="76" id="5sz-xj-0yN"/>
-                            <constraint firstItem="3c0-bk-X63" firstAttribute="top" secondItem="NV5-eS-WoK" secondAttribute="bottom" constant="23" id="JpJ-Yc-5ik"/>
                             <constraint firstItem="XH8-Ns-RuA" firstAttribute="top" secondItem="sFb-tz-5Gu" secondAttribute="bottom" constant="38" id="Nuh-Tz-RC9"/>
                             <constraint firstItem="sFb-tz-5Gu" firstAttribute="centerX" secondItem="NV5-eS-WoK" secondAttribute="centerX" id="Q33-Op-X2D"/>
                             <constraint firstItem="NV5-eS-WoK" firstAttribute="centerX" secondItem="GEU-Xu-M9b" secondAttribute="centerX" id="brR-eI-9Ni"/>
+                            <constraint firstItem="sFb-tz-5Gu" firstAttribute="top" secondItem="3c0-bk-X63" secondAttribute="bottom" constant="55" id="e3v-md-q1w"/>
                             <constraint firstItem="NV5-eS-WoK" firstAttribute="leading" secondItem="GEU-Xu-M9b" secondAttribute="leadingMargin" constant="96" id="kir-MB-3NI"/>
-                            <constraint firstItem="3c0-bk-X63" firstAttribute="centerX" secondItem="GEU-Xu-M9b" secondAttribute="centerX" id="umo-Wx-4UJ"/>
+                            <constraint firstItem="3c0-bk-X63" firstAttribute="centerX" secondItem="sFb-tz-5Gu" secondAttribute="centerX" id="o1G-qu-z8v"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Fan" id="oEO-NB-IcC"/>
@@ -556,7 +552,6 @@
                                 </constraints>
                                 <state key="normal" title="Button"/>
                                 <connections>
-                                    <action selector="connectButton:" destination="Bj3-ug-TLP" eventType="touchUpInside" id="JIQ-20-VkX"/>
                                     <action selector="connectButtonPressed:" destination="YyQ-bF-YbV" eventType="touchUpInside" id="c3g-np-VIk"/>
                                 </connections>
                             </button>
@@ -762,7 +757,7 @@
                                         <rect key="frame" x="0.0" y="28" width="600" height="105"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="g6l-t5-K1J" id="mxa-Tx-mVY">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="104.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="104"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d2P-uU-ip9">
@@ -809,7 +804,7 @@
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Status Value" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8VO-Kd-4JH">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Status Value" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8VO-Kd-4JH">
                                                     <rect key="frame" x="75" y="80" width="516" height="20"/>
                                                     <animations/>
                                                     <constraints>
@@ -888,7 +883,7 @@
                                         <rect key="frame" x="0.0" y="28" width="600" height="120"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="eyC-7J-EyP" id="IPe-VC-uqC">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="119.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="119"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sGl-Xc-tMr">
