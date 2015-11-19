@@ -7,8 +7,12 @@
 //
 
 #import "FanViewController.h"
+<<<<<<< HEAD
+#define DEGREES_TO_RADIANS(x) (M_PI * (x) / 180.0)
+=======
 #import "UIView+Shake.h"
 #import "CircularPower.h"
+>>>>>>> tonystouchupbranch
 
 @interface FanViewController ()
 @property (weak, nonatomic) IBOutlet UISegmentedControl *onOffSegmentControl;
@@ -20,6 +24,27 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+<<<<<<< HEAD
+    //self.fanImageView.image = [UIImage imageNamed:@"off"];
+    //self.fan2ImageView.image = [UIImage imageNamed:@"fan"];
+    
+    self.fan2ImageView.image = [UIImage imageNamed:@"fan-1"];
+}
+
+- (IBAction)onOffSegmentedControlToggled:(UISegmentedControl *)sender {
+    if (self.onOffSegmentControl.selectedSegmentIndex == 1) {
+        
+        [UIView animateWithDuration:2.0 animations:^{
+            self.fan2ImageView.transform = CGAffineTransformMakeRotation(DEGREES_TO_RADIANS(180));
+        } completion:^(BOOL finished){
+            self.fan2ImageView.transform = CGAffineTransformIdentity;
+        }];
+        
+        
+    } else {
+        self.fanImageView.image = [UIImage imageNamed:@"off"];
+    }
+=======
     self.fan2ImageView.image = [UIImage imageNamed:@"fanpic"];
 
     self.view.backgroundColor = [UIColor whiteColor];
@@ -105,6 +130,7 @@
 - (void)alertWithMessage:(NSString *)message{
     UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"" message:message delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
     [alert show];
+>>>>>>> tonystouchupbranch
 }
 
 

@@ -24,34 +24,31 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+<<<<<<< HEAD
     
     self.discoveredBeans = [NSMutableDictionary dictionary];
     self.beanManager = [[PTDBeanManager alloc]initWithDelegate:self];
     
     self.customBean.delegate = self;
     self.beanManager.delegate = self;
+}
+=======
 
     self.lightBulbImageView.image = [UIImage imageNamed:@"lightbulb"];
 
+>>>>>>> tonystouchupbranch
 
 }
 
 
 - (IBAction)onOrOffButtonTapped:(UISegmentedControl *)sender {
     if (self.onOffSegmentControl.selectedSegmentIndex == 1) {
+<<<<<<< HEAD
         self.lightBulbImageView.image = [UIImage imageNamed:@"onlightbulb"];
         [self.customBean sendSerialString:@"TogglePowerOn\n"];
-        self.lightBulbImageView.image = [UIImage imageNamed:@"lightbulbon"];
-        CATransition *animation = [CATransition animation];
-        [animation setDelegate:self];
-        [animation setDuration:1.0f];
-        [animation setTimingFunction:UIViewAnimationCurveEaseInOut];
-        [animation setType:@"waveEffect"];
-        [self.lightBulbImageView.layer addAnimation:animation forKey:NULL];
     } else {
         self.lightBulbImageView.image = [UIImage imageNamed:@"offlightbulb"];
         [self.customBean sendSerialString:@"TogglePowerOff\n"];
-        self.lightBulbImageView.image = [UIImage imageNamed:@"lightbulb"];
     }
 
 }
@@ -100,6 +97,17 @@
         for (PTDBean *bean in self.discoveredBeans.allValues) {
             [self isLightBeanFound:bean];
         }
+=======
+        self.lightBulbImageView.image = [UIImage imageNamed:@"lightbulbon"];
+        CATransition *animation = [CATransition animation];
+        [animation setDelegate:self];
+        [animation setDuration:1.0f];
+        [animation setTimingFunction:UIViewAnimationCurveEaseInOut];
+        [animation setType:@"waveEffect"];
+        [self.lightBulbImageView.layer addAnimation:animation forKey:NULL];
+    } else {
+        self.lightBulbImageView.image = [UIImage imageNamed:@"lightbulb"];
+>>>>>>> tonystouchupbranch
     }
     //self.beanLabel.text = @"Bean found! Tap to connect.";
     [self.connectButton setTitle:@"Connect now!" forState:UIControlStateNormal];

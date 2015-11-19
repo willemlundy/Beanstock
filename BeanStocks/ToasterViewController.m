@@ -18,15 +18,21 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.toasterImageView.image = [UIImage imageNamed:@"bread"];
+    self.toasterImageView.image = [UIImage imageNamed:@"toaster"];
 //    self.toasterImageView.backgroundColor = [UIColor greenColor];
 }
 
 - (IBAction)onOffSegmentedToggled:(UISegmentedControl *)sender {
     if (self.onOffSegmentControl.selectedSegmentIndex == 1) {
-        self.toasterImageView.image = [UIImage imageNamed:@"toasting"];
+        self.toasterImageView.image = [UIImage imageNamed:@"toasteron"];
+        CATransition *animation = [CATransition animation];
+        [animation setDelegate:self];
+        [animation setDuration:1.0f];
+        [animation setTimingFunction:UIViewAnimationCurveEaseInOut];
+        [animation setType:@"waveEffect" ];
+        [self.toasterImageView.layer addAnimation:animation forKey:NULL];
     } else {
-        self.toasterImageView.image = [UIImage imageNamed:@"bread"];
+        self.toasterImageView.image = [UIImage imageNamed:@"toaster"];
     }
 
 }

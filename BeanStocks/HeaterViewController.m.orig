@@ -19,8 +19,13 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+<<<<<<< HEAD
+    self.heaterImageView.image = [UIImage imageNamed:@"off"];
+    self.heater2ImageView.image = [UIImage imageNamed:@"heart"];
+=======
 
     self.heater2ImageView.image = [UIImage imageNamed:@"heater"];
+>>>>>>> tonystouchupbranch
 }
 
 - (IBAction)onOffSegmentedControlToggled:(UISegmentedControl *)sender {
